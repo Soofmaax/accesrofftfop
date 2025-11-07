@@ -15,7 +15,8 @@ const ContactForm: React.FC = () => {
     consent: false
   });
 
-  const [errors, setErrors] = useState<Partial<FormData>>({});
+  type FormErrors = Partial<Record<keyof FormData, string>>;
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const projectTypes = [
@@ -28,7 +29,7 @@ const ContactForm: React.FC = () => {
   ];
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.firstName.trim()) newErrors.firstName = 'Prénom requis';
     if (!formData.lastName.trim()) newErrors.lastName = 'Nom requis';
@@ -59,8 +60,9 @@ const ContactForm: React.FC = () => {
     }));
     
     // Clear error when user starts typing
-    if (errors[name as keyof FormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+    const key = name as keyof FormData;
+    if (errors[key]) {
+      setErrors(prev => ({ ...prev, [key]: '' }));
     }
   };
 

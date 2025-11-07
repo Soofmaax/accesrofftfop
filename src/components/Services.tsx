@@ -1,11 +1,9 @@
 import React from 'react';
 import { services } from '../data/mockData';
-import { Square, Stairs, Ladder, Home, CheckCircle } from 'lucide-react';
+import { Square, Home, CheckCircle } from 'lucide-react';
 
 const iconMap = {
   Square,
-  Stairs,
-  Ladder,
   Home,
   CheckCircle,
 };
