@@ -1,5 +1,6 @@
 import React from 'react';
-import { Shield, Award, Clock, ArrowRight, Star, CheckCircle2 } from 'lucide-react';
+import { Shield, Award, Clock, ArrowRight, Star, CheckCircle2, Phone } from 'lucide-react';
+import { site } from '../config/site';
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -61,11 +62,11 @@ const Hero: React.FC = () => {
                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
-                href="tel:0123456789"
+                href={site.phoneHref}
                 className="group border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center hover:shadow-xl"
               >
                 <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-                01 23 45 67 89
+                {site.phone}
               </a>
             </div>
 
@@ -82,8 +83,6 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-            </p>
-          </div>
 
           {/* Hero Image */}
           <div className="relative animate-fade-in-right">
@@ -91,6 +90,9 @@ const Hero: React.FC = () => {
               src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" 
               alt="Installation d'accès toit professionnel"
               className="rounded-3xl shadow-2xl w-full h-[450px] lg:h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
             />
             
             {/* Floating Stats */}

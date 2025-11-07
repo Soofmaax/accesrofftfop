@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import { site } from '../config/site';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,15 +71,15 @@ const Header: React.FC = () => {
             {/* Phone & CTA */}
             <div className="hidden lg:flex items-center space-x-6">
               <a 
-                href="tel:0123456789" 
+                href={site.phoneHref} 
                 className="flex items-center text-gray-700 hover:text-blue-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50"
               >
                 <div className="bg-blue-100 p-2 rounded-full mr-3">
                   <Phone className="w-4 h-4 text-blue-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold">01 23 45 67 89</div>
-                  <div className="text-xs text-gray-500">Appel gratuit</div>
+                  <div className="text-sm font-semibold">{site.phone}</div>
+                  <div className="text-xs text-gray-500">{site.callLabel}</div>
                 </div>
               </a>
               <button 
@@ -123,15 +124,15 @@ const Header: React.FC = () => {
               </button>
               <div className="border-t border-gray-200 my-4"></div>
               <a 
-                href="tel:0123456789" 
+                href={site.phoneHref} 
                 className="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
               >
                 <div className="bg-blue-100 p-2 rounded-full mr-3">
                   <Phone className="w-4 h-4 text-blue-600" />
                 </div>
                 <div>
-                  <div className="font-semibold">01 23 45 67 89</div>
-                  <div className="text-sm text-gray-500">Appel gratuit</div>
+                  <div className="font-semibold">{site.phone}</div>
+                  <div className="text-sm text-gray-500">{site.callLabel}</div>
                 </div>
               </a>
               <button 

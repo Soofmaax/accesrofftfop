@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail } from 'lucide-react';
+import { Facebook, Linkedin, Instagram, Phone, Mail } from 'lucide-react';
+import { site } from '../config/site';
 
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,14 +22,14 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-blue-400" />
-                <a href="tel:0123456789" className="text-gray-300 hover:text-white">
-                  01 23 45 67 89
+                <a href={site.phoneHref} className="text-gray-300 hover:text-white">
+                  {site.phone}
                 </a>
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-blue-400" />
-                <a href="mailto:contact@acces-rooftop.fr" className="text-gray-300 hover:text-white">
-                  contact@acces-rooftop.fr
+                <a href={`mailto:${site.email}`} className="text-gray-300 hover:text-white">
+                  {site.email}
                 </a>
               </div>
             </div>
@@ -107,7 +108,7 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="space-y-2 text-sm text-gray-400">
-              <p>SIRET: 123 456 789 00012</p>
+              <p>SIRET: {site.siret}</p>
               <p>Assurance décennale</p>
               <p>Artisan certifié RGE</p>
             </div>

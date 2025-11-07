@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock, MapPin, Send, CheckCircle } from 'lucide-react';
 import { FormData } from '../types';
+import { site } from '../config/site';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -46,8 +47,7 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitted(true);
-      // Here you would normally send the data to your backend
-      console.log('Form submitted:', formData);
+      // Ici vous enverrez normalement les données vers votre backend
     }
   };
 
@@ -78,8 +78,8 @@ const ContactForm: React.FC = () => {
             </p>
             <p className="text-gray-600">
               Pour toute urgence, appelez-nous directement au{' '}
-              <a href="tel:0123456789" className="text-blue-600 font-semibold">
-                01 23 45 67 89
+              <a href={site.phoneHref} className="text-blue-600 font-semibold">
+                {site.phone}
               </a>
             </p>
           </div>
@@ -114,8 +114,8 @@ const ContactForm: React.FC = () => {
                   <Phone className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold text-gray-900">Téléphone</div>
-                    <a href="tel:0123456789" className="text-blue-600 hover:text-blue-700">
-                      01 23 45 67 89
+                    <a href={site.phoneHref} className="text-blue-600 hover:text-blue-700">
+                      {site.phone}
                     </a>
                   </div>
                 </div>
@@ -124,8 +124,8 @@ const ContactForm: React.FC = () => {
                   <Mail className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold text-gray-900">Email</div>
-                    <a href="mailto:contact@acces-rooftop.fr" className="text-blue-600 hover:text-blue-700">
-                      contact@acces-rooftop.fr
+                    <a href={`mailto:${site.email}`} className="text-blue-600 hover:text-blue-700">
+                      {site.email}
                     </a>
                   </div>
                 </div>
@@ -329,5 +329,3 @@ const ContactForm: React.FC = () => {
 };
 
 export default ContactForm;
-
-export default ContactForm
