@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Award, Clock, ArrowRight, Star, CheckCircle2, Phone } from 'lucide-react';
+import { Award, Clock, ArrowRight, Star, CheckCircle2, Phone } from 'lucide-react';
 import { site } from '../config/site';
 
 const Hero: React.FC = () => {
