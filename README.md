@@ -64,7 +64,8 @@ Accès: http://localhost:5173
 - Headers de sécurité: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy.
 - Mettez Vite ≥ 5.4.6 (patch CVE-2024-45811).
 - Ne commitez jamais de secrets. Utilisez `.env` (exemple: créer `.env.example`).
-- CI: un job `security` exécute `npm audit` (niveau moderate) et Dependabot ouvre des PRs d’update.
+- Qualité locale: Husky `pre-push` exécute `npm run typecheck && npm run test` pour éviter les pushes cassés.
+- CI: un job `security` exécute `npm audit --audit-level=high` et échoue si des vulnérabilités High/Critical sont détectées; Dependabot ouvre des PRs d’update.
 - CodeQL: si vous voyez “Code scanning is not enabled”, activez-le dans Settings → Code security and analysis → Code scanning. Le workflow CodeQL reste tolérant et publie le SARIF en artifact jusqu’à l’activation.
 
 Voir SECURITY.md pour le processus de signalement de vulnérabilités.
