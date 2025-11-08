@@ -1,4 +1,4 @@
-name: CI
+name: Pipeline
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
       - main
       - master
   pull_request:
+  schedule:
+    - cron: "0 0 * * 0" # weekly CodeQL
 
 jobs:
   build:
@@ -79,3 +81,69 @@ jobs:
 
       - name: npm audit (fail on high/critical)
         run: npm audit --audit-level=high
+
+  codeql:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        continue-on-error: true
+
+      - name: Upload SARIF artifact (if present)
+        if: ${{ always() && hashFiles('results/*.sarif') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-sarif
+          path: results/*.sarif
+
+  secrets-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lychee Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,206,429
+            README.md
+            **/*.md
+            public/**/*.html
+            src/**/*.tsx
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

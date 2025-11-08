@@ -1,8 +1,7 @@
 # Accès Rooftop – Template Vite + React + TypeScript + Tailwind
 
-[![CI](https://github.com/Soofmaax/accesrofftfop/actions/workflows/ci.yml/badge.svg)](https://github.com/Soofmaax/accesrofftfop/actions/workflows/ci.yml)
+[![Pipeline](https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml)
 [![Coverage Status](https://codecov.io/gh/Soofmaax/accesrofftfop/branch/main/graph/badge.svg)](https://codecov.io/gh/Soofmaax/accesrofftfop)
-[![CodeQL](https://github.com/Soofmaax/accesrofftfop/actions/workflows/codeql.yml/badge.svg)](https://github.com/Soofmaax/accesrofftfop/actions/workflows/codeql.yml)
 
 Template professionnel prêt à l’emploi pour une landing/SPA vitrine (artisan/PME) axée sur l’accès toiture et l’aménagement de terrasses. Sécurité, performances, DX et CI intégrées.
 
