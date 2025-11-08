@@ -40,7 +40,8 @@
     "jsdom": "^24.0.0",
     "prettier": "^3.3.3",
     "husky": "^9.1.6",
-    "lint-staged": "^15.2.10"
+    "lint-staged": "^15.2.10",
+    "@vitest/coverage-v8": "^1.6.1"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [

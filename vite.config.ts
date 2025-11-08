@@ -13,6 +13,7 @@ export default defineConfig({
     globals: true,
     css: true,
     coverage: {
+      provider: 'v8',
       reporter: ['text', 'lcov', 'html'],
       lines: 60,
       functions: 60,
