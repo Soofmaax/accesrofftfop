@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 import { projects } from '../data/mockData';
 
 const categories = [
@@ -10,7 +11,7 @@ const categories = [
   { id: 'normes', label: 'Mise aux normes' }
 ];
 
-const Gallery: React.FC = () => {
+const Gallery: FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredProjects = activeCategory === 'all' 

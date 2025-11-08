@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { services } from '../data/mockData';
 import { Square, Home, CheckCircle } from 'lucide-react';
 
@@ -8,7 +8,7 @@ const iconMap = {
   CheckCircle,
 };
 
-const Services: React.FC = () => {
+const Services: FC = () => {
   return (
     <section id="services" className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

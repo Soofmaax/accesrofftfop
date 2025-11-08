@@ -1,8 +1,8 @@
-import React from 'react';
+import type { FC } from 'react';
 import { Award, Clock, ArrowRight, Star, CheckCircle2, Phone } from 'lucide-react';
 import { site } from '../config/site';
 
-const Hero: React.FC = () => {
+const Hero: FC = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };

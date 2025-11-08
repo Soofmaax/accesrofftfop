@@ -24,5 +24,14 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
     },
+  },
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx', '**/__tests__/**/*'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+      },
+    },
   }
 );

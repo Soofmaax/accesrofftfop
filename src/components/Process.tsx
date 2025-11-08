@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { Phone, MapPin, FileText, Wrench } from 'lucide-react';
 import { processSteps } from '../data/mockData';
 
@@ -9,7 +9,7 @@ const iconMap = {
   Wrench
 };
 
-const Process: React.FC = () => {
+const Process: FC = () => {
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

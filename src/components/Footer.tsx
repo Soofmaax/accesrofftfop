@@ -1,8 +1,8 @@
-import React from 'react';
+import type { FC } from 'react';
 import { Facebook, Linkedin, Instagram, Phone, Mail } from 'lucide-react';
 import { site } from '../config/site';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };

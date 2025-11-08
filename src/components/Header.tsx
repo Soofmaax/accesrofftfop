@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { FC } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { site } from '../config/site';
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
