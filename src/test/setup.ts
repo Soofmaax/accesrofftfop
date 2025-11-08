@@ -10,6 +10,5 @@ if (!Element.prototype.scrollIntoView) {
 
 if (typeof window.scrollTo !== 'function') {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  // @ts-expect-error jsdom window type
   window.scrollTo = () => {};
 }
