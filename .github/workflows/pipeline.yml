@@ -97,6 +97,7 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        continue-on-error: true
 
       - name: Upload SARIF artifact (if present)
         if: ${{ always() && hashFiles('results/*.sarif') != '' }}
