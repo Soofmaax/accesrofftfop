@@ -10,16 +10,16 @@ const Hero: FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-white to-gray-50 pt-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-      <div className="absolute top-40 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob" aria-hidden="true"></div>
+      <div className="absolute top-40 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000" aria-hidden="true"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left animate-fade-in-up">
             {/* Badge */}
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6" aria-label="Badge d'expertise">
               <Star className="w-4 h-4 mr-2 fill-current" />
               #1 Expert Accès Toiture Île-de-France
             </div>
@@ -37,7 +37,7 @@ const Hero: FC = () => {
             </p>
 
             {/* Points de réassurance */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10" aria-label="Points de réassurance">
               <div className="flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-200">
                 <CheckCircle2 className="w-5 h-5 mr-2 fill-current" />
                 <span className="font-semibold">Normes respectées</span>
@@ -57,6 +57,7 @@ const Hero: FC = () => {
               <button 
                 onClick={scrollToContact}
                 className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-orange-500/25 flex items-center justify-center"
+                aria-label="Demander un devis gratuit"
               >
                 Demander un devis gratuit
                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
@@ -64,6 +65,7 @@ const Hero: FC = () => {
               <a 
                 href={site.phoneHref}
                 className="group border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 flex items-center justify-center hover:shadow-xl"
+                aria-label={`Appeler ${site.phone}`}
               >
                 <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse" />
                 {site.phone}
@@ -71,9 +73,9 @@ const Hero: FC = () => {
             </div>
 
             {/* Zone d'intervention */}
-            <div className="flex items-center justify-center lg:justify-start text-gray-600">
+            <div className="flex items-center justify-center lg:justify-start text-gray-600" aria-label="Zone d'intervention">
               <div className="bg-gray-100 p-3 rounded-full mr-4">
-                <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -86,14 +88,21 @@ const Hero: FC = () => {
 
           {/* Hero Image */}
           <div className="relative animate-fade-in-right">
-            <img 
-              src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" 
-              alt="Installation d'accès toit professionnel"
-              className="rounded-3xl shadow-2xl w-full h-[450px] lg:h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-            />
+            <picture>
+              <source
+                srcSet="/assets/hero-1200.jpg 1200w, /assets/hero-800.jpg 800w"
+                type="image/jpeg"
+              />
+              <img 
+                src="/assets/hero-800.jpg" 
+                alt="Installation d'accès toit professionnel"
+                className="rounded-3xl shadow-2xl w-full h-[450px] lg:h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
+              />
+            </picture>
             
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100">

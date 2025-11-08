@@ -49,10 +49,16 @@ Accès: http://localhost:5173
 
 ## Déploiement
 
+### Environnements & secrets
+
+- Variables d'environnement: utilisez un fichier `.env` en local et des Secrets GitHub en CI.
+- Ne commitez jamais de secrets. Fournissez `CODECOV_TOKEN` si vous souhaitez uploader la couverture sur PR/branches.
+- Activez “Code scanning” dans Settings → Code security and analysis pour rendre CodeQL bloquant en PR.
+
 ### Netlify
 
 - Le fichier `public/_headers` applique les headers de sécurité (CSP, HSTS, X-Frame-Options, etc.).
-- Placez les assets statiques dans `public/`.
+- Placez les assets statiques (ex: `/assets/hero-800.jpg`, `/assets/hero-1200.jpg`) dans `public/`.
 
 ### Vercel
 

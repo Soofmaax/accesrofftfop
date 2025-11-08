@@ -38,10 +38,11 @@ const Header: FC = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-1" aria-label="Navigation principale">
               <button 
                 onClick={() => scrollToSection('services')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
+                aria-label="Aller à la section Services"
               >
                 Services
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
@@ -49,6 +50,7 @@ const Header: FC = () => {
               <button 
                 onClick={() => scrollToSection('realisations')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
+                aria-label="Aller à la section Réalisations"
               >
                 Réalisations
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
@@ -56,6 +58,7 @@ const Header: FC = () => {
               <button 
                 onClick={() => scrollToSection('zone-intervention')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
+                aria-label="Aller à la section Zone d'intervention"
               >
                 Zone d'intervention
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
@@ -63,6 +66,7 @@ const Header: FC = () => {
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
+                aria-label="Aller à la section Contact"
               >
                 Contact
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
@@ -74,6 +78,7 @@ const Header: FC = () => {
               <a 
                 href={site.phoneHref} 
                 className="flex items-center text-gray-700 hover:text-blue-600 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50"
+                aria-label={`Appeler ${site.phone}`}
               >
                 <div className="bg-blue-100 p-2 rounded-full mr-3">
                   <Phone className="w-4 h-4 text-blue-600" />
@@ -86,6 +91,7 @@ const Header: FC = () => {
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                aria-label="Demander un devis gratuit"
               >
                 Devis gratuit
               </button>
@@ -95,6 +101,8 @@ const Header: FC = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Ouvrir ou fermer le menu mobile"
+              data-testid="menu-toggle"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -103,23 +111,26 @@ const Header: FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl">
+          <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl" data-testid="mobile-nav">
             <div className="px-4 pt-4 pb-6 space-y-2">
               <button 
                 onClick={() => scrollToSection('services')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                aria-label="Aller à la section Services"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('realisations')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                aria-label="Aller à la section Réalisations"
               >
                 Réalisations
               </button>
               <button 
                 onClick={() => scrollToSection('zone-intervention')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                aria-label="Aller à la section Zone d'intervention"
               >
                 Zone d'intervention
               </button>
@@ -127,6 +138,7 @@ const Header: FC = () => {
               <a 
                 href={site.phoneHref} 
                 className="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                aria-label={`Appeler ${site.phone}`}
               >
                 <div className="bg-blue-100 p-2 rounded-full mr-3">
                   <Phone className="w-4 h-4 text-blue-600" />
@@ -139,6 +151,7 @@ const Header: FC = () => {
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-4 py-3 rounded-xl transition-all duration-300 font-semibold shadow-lg"
+                aria-label="Demander un devis gratuit"
               >
                 Devis gratuit
               </button>
@@ -152,6 +165,7 @@ const Header: FC = () => {
         <button 
           onClick={() => scrollToSection('contact')}
           className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-4 rounded-full shadow-2xl transition-all duration-300 font-semibold transform hover:scale-105 animate-pulse"
+          aria-label="Demander un devis gratuit"
         >
           Devis gratuit
         </button>
