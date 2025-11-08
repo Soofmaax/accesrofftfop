@@ -135,6 +135,8 @@ jobs:
             --verbose
             --no-progress
             --accept 200,206,429
+            --exclude "http://localhost:.*"
+            --exclude "https://localhost:.*"
             README.md
             **/*.md
             public/**/*.html
@@ -163,7 +165,7 @@ jobs:
         run: npm run build
 
       - name: Lighthouse CI (tolerant)
-        run: npx @lhci/cli@0.11.0 autorun --collect.staticDistDir=dist --upload.target=temporary-public-storage
+        run: npx @lhci/cli@0.11.0 autorun --collect.staticDistDir=dist --upload.target=filesystem
         continue-on-error: true
 
       - name: Upload Lighthouse artifacts
