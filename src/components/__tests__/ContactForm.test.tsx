@@ -7,34 +7,20 @@ describe('ContactForm', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /Envoyer ma demande de devis/i }));
 
-    expect(
-      screen.getByText(/Prénom requis/i)
-    ).toBeInTheDocument();
-
-    expect(
-      screen.getByText(/Nom requis/i)
-    ).toBeInTheDocument();
-
-    expect(
-      screen.getByText(/Téléphone requis/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText('Prénom requis')).toBeInTheDocument();
+    expect(screen.getByText('Nom requis')).toBeInTheDocument();
+    expect(screen.getByText('Téléphone requis')).toBeInTheDocument();
 
     // Email peut être "requis" ou "invalide" selon l'ordre des validations
     const emailError =
-      screen.queryByText(/Email invalide/i) ??
-      screen.queryByText(/Email requis/i);
+      screen.queryByText('Email invalide') ??
+      screen.queryByText('Email requis');
     expect(emailError).toBeInTheDocument();
 
+    expect(screen.getByText('Code postal requis')).toBeInTheDocument();
+    expect(screen.getByText('Type de projet requis')).toBeInTheDocument();
     expect(
-      screen.getByText(/Code postal requis/i)
-    ).toBeInTheDocument();
-
-    expect(
-      screen.getByText(/Type de projet requis/i)
-    ).toBeInTheDocument();
-
-    expect(
-      screen.getByText(/Vous devez accepter le traitement des données/i)
+      screen.getByText('Vous devez accepter le traitement des données')
     ).toBeInTheDocument();
   });
 

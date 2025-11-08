@@ -4,10 +4,8 @@ import App from '../App';
 describe('App', () => {
   it('render un contenu principal sans crash', () => {
     render(<App />);
-    // Vérifie au moins une section clé
-    const heading =
-      screen.queryByText(/Nos Services/i) ??
-      screen.queryByText(/Demandez Votre Devis Gratuit/i);
-    expect(heading).toBeInTheDocument();
+    // Vérifie le titre de la section Services (H2), pour éviter les collisions avec le footer
+    const servicesHeading = screen.getByRole('heading', { name: /Nos Services/i, level: 2 });
+    expect(servicesHeading).toBeInTheDocument();
   });
 });
