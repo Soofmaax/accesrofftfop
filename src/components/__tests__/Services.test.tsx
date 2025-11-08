@@ -12,4 +12,10 @@ describe('Services', () => {
     const cardsHeadings = screen.getAllByRole('heading', { level: 3 });
     expect(cardsHeadings.length).toBe(services.length);
   });
+
+  it('affiche une icône par carte (fallback CheckCircle si non trouvée)', () => {
+    render(<Services />);
+    const svgs = screen.getAllByRole('img', { hidden: true });
+    expect(svgs.length).toBeGreaterThanOrEqual(services.length);
+  });
 });

@@ -12,4 +12,12 @@ describe('WhyChooseUs', () => {
     const cardsHeadings = screen.getAllByRole('heading', { level: 3 });
     expect(cardsHeadings.length).toBe(whyChooseUs.length);
   });
+
+  it('utilise une icône par carte (fallback possible)', () => {
+    render(<WhyChooseUs />);
+    // Toutes les cartes ont une icône (<svg> lucide-react)
+    const icons = screen.getAllByRole('img', { hidden: true });
+    // Il y a au moins autant d'icônes que de cartes
+    expect(icons.length).toBeGreaterThanOrEqual(whyChooseUs.length);
+  });
 });
