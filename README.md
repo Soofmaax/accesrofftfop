@@ -65,8 +65,12 @@ Accès: http://localhost:5173
 - Mettez Vite ≥ 5.4.6 (patch CVE-2024-45811).
 - Ne commitez jamais de secrets. Utilisez `.env` (exemple: créer `.env.example`).
 - Qualité locale: Husky `pre-push` exécute `npm run typecheck && npm run test` pour éviter les pushes cassés.
-- CI: un job `security` exécute `npm audit --audit-level=high` et échoue si des vulnérabilités High/Critical sont détectées; Dependabot ouvre des PRs d’update.
-- CodeQL: si vous voyez “Code scanning is not enabled”, activez-le dans Settings → Code security and analysis → Code scanning. Le workflow CodeQL reste tolérant et publie le SARIF en artifact jusqu’à l’activation.
+- CI:
+  - Coverage gate explicite via `scripts/check-coverage.mjs` (échoue si couverture < seuils).
+  - Job `security` exécute `npm audit --audit-level=high` et échoue si des vulnérabilités High/Critical sont détectées.
+  - Gitleaks scanne les secrets sur push/PR, avec rapport SARIF en artifact.
+  - Dependabot ouvre des PRs d’update.
+- CodeQL: activez Code scanning dans Settings → Code security and analysis → Code scanning pour que les alertes soient visibles et bloquantes en PR.
 
 Voir SECURITY.md pour le processus de signalement de vulnérabilités.
 
