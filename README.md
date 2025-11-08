@@ -65,6 +65,7 @@ Accès: http://localhost:5173
 - Mettez Vite ≥ 5.4.6 (patch CVE-2024-45811).
 - Ne commitez jamais de secrets. Utilisez `.env` (exemple: créer `.env.example`).
 - CI: un job `security` exécute `npm audit` (niveau moderate) et Dependabot ouvre des PRs d’update.
+- CodeQL: si vous voyez “Code scanning is not enabled”, activez-le dans Settings → Code security and analysis → Code scanning. Le workflow CodeQL reste tolérant et publie le SARIF en artifact jusqu’à l’activation.
 
 Voir SECURITY.md pour le processus de signalement de vulnérabilités.
 

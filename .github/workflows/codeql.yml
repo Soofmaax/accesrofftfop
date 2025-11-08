@@ -34,3 +34,11 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        continue-on-error: true
+
+      - name: Upload SARIF artifact (if present)
+        if: ${{ hashFiles('results/*.sarif') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-sarif
+          path: results/*.sarif
