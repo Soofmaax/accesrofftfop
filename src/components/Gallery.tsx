@@ -53,6 +53,7 @@ const Gallery: FC = () => {
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
+              data-testid="project-card"
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <img 

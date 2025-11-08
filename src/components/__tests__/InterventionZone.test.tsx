@@ -9,6 +9,9 @@ describe('InterventionZone', () => {
       screen.getByRole('heading', { name: /Notre Zone d'Intervention/i, level: 2 })
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/Île-de-France/i)).toBeInTheDocument();
+    // Cible précisément le sous-titre h3 pour éviter les multiples matches dans le paragraphe
+    expect(
+      screen.getByRole('heading', { name: /Île-de-France/i, level: 3 })
+    ).toBeInTheDocument();
   });
 });

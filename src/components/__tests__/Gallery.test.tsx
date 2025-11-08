@@ -9,9 +9,9 @@ describe('Gallery', () => {
     const heading = within(section).getByRole('heading', { name: /Nos Réalisations/i, level: 2 });
     expect(heading).toBeInTheDocument();
 
-    // Nombre de cartes correspond au nombre de projets
-    const cardsHeadings = within(section).getAllByRole('heading', { level: 3 });
-    expect(cardsHeadings.length).toBe(projects.length);
+    // Nombre de cartes correspond au nombre de projets (cards = project-card)
+    const cards = within(section).getAllByTestId('project-card');
+    expect(cards.length).toBe(projects.length);
   });
 
   it('filtre les projets par catégorie "Escaliers"', () => {
@@ -22,10 +22,10 @@ describe('Gallery', () => {
     const escaliersBtn = within(section).getByRole('button', { name: /Escaliers/i });
     fireEvent.click(escaliersBtn);
 
-    // Une seule carte de catégorie "escaliers"
-    const cardsHeadings = within(section).getAllByRole('heading', { level: 3 });
+    // Les cards reflètent le nombre de projets filtrés
+    const cards = within(section).getAllByTestId('project-card');
     const escaliersCount = projects.filter((p) => p.category === 'escaliers').length;
-    expect(cardsHeadings.length).toBe(escaliersCount);
+    expect(cards.length).toBe(escaliersCount);
   });
 
   it('CTA "Démarrer votre projet" est présent et cliquable', () => {
