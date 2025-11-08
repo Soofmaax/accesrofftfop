@@ -20,3 +20,7 @@ Tests, docs, performance, sécurité.
 - [ ] Tests ajoutés/actualisés
 - [ ] Docs mises à jour
 - [ ] CI verte
+
+---
+
+_Fait avec ❤️ par **SmarterLogicWeb** – https://smarterlogicweb.com_

@@ -1,28 +1,29 @@
-# Politique de Sécurité
+# Politique de Sécurité – SmarterLogicWeb
 
-Merci de contribuer à la sécurité de ce projet. Nous prenons la sécurité au sérieux et apprécions les signalements responsables.
+Nous prenons la sécurité très au sérieux. Merci de vos signalements responsables pour améliorer la qualité et la sûreté de ce projet.
 
-## Signalement de vulnérabilité
+## Versions supportées
+- Branche principale (main/master) et dernières releases taguées.
+- CI active avec CodeQL, Gitleaks, npm audit, Link‑Check et Lighthouse.
 
-- Envoyez un email à: contact@acces-rooftop.fr
-- Incluez: description, étapes de reproduction, impact, environnements affectés.
-- Chiffrez votre message si nécessaire (PGP recommandé).
+## Signalement de vulnérabilités
+- Email: [email] (remplacez par votre email professionnel)
+- Incluez: description, étapes de reproduction, impact, environnements affectés, et éventuelles mesures de mitigation.
+- Chiffrement: PGP recommandé si nécessaire.
 
 ## Pratiques recommandées
-
 - Ne divulguez pas publiquement avant qu’un correctif soit disponible.
-- Évitez d’inclure des données personnelles ou secrets dans les tickets.
-- Proposez des mesures de mitigation si possible.
+- N’incluez aucune donnée personnelle ni secrets dans les tickets publics.
+- Utilisez des environnements de test isolés pour vos PoC.
 
 ## Portée
-
-- Application frontend (Vite + React + TS).
-- Configurations d’en-têtes de sécurité (Netlify/Vercel).
-- Dépendances npm (supply chain).
+- Frontend (Vite + React + TypeScript)
+- Configurations d’en-têtes de sécurité (Netlify/Vercel)
+- Dépendances npm (supply chain)
+- CI/CD (GitHub Actions)
 
 ## SLA (indicatif)
+- Accusé de réception: sous 5 jours ouvrés
+- Correction: selon criticité, dépendances et disponibilité
 
-- Accusé de réception: sous 5 jours ouvrés.
-- Correction: selon criticité et disponibilité.
-
-Merci pour votre collaboration.
+Contact: https://smarterlogicweb.com

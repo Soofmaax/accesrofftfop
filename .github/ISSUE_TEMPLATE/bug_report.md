@@ -24,3 +24,7 @@ Version, environnement, navigateur, etc.
 ## Checklist
 - [ ] Le bug est reproductible
 - [ ] CI verte après correctif
+
+---
+
+_Fait avec ❤️ par **SmarterLogicWeb** – https://smarterlogicweb.com_

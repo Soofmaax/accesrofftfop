@@ -1,113 +1,96 @@
-# Accès Rooftop – Template Vite + React + TypeScript + Tailwind
+<div align="center">
+  <!-- Logo SmarterLogicWeb (à ajouter) -->
+  <h1>🚀 Accès Rooftop – Professional Web Template</h1>
+  <p><strong>Solutions web intelligentes, sécurisées et sur‑mesure</strong></p>
 
-[![Pipeline](https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml)
-[![Coverage Status](https://codecov.io/gh/Soofmaax/accesrofftfop/branch/main/graph/badge.svg)](https://codecov.io/gh/Soofmaax/accesrofftfop)
+  <a href="https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml">
+    <img alt="CI" src="https://github.com/Soofmaax/accesrofftfop/actions/workflows/pipeline.yml/badge.svg">
+  </a>
+  <a href="https://codecov.io/gh/Soofmaax/accesrofftfop">
+    <img alt="Coverage" src="https://codecov.io/gh/Soofmaax/accesrofftfop/branch/main/graph/badge.svg">
+  </a>
+  <a href="./LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg">
+  </a>
 
-Template professionnel prêt à l’emploi pour une landing/SPA vitrine (artisan/PME) axée sur l’accès toiture et l’aménagement de terrasses. Sécurité, performances, DX et CI intégrées.
+  <p>
+    <a href="#features">Features</a> •
+    <a href="#demo">Demo</a> •
+    <a href="#quick-start">Quick Start</a> •
+    <a href="#documentation">Docs</a> •
+    <a href="#support">Support</a>
+  </p>
+</div>
 
-## 30s Pitch
+---
 
-- Stack moderne: Vite 5, React 18, TypeScript, TailwindCSS.
-- Composants UI modulaires avec données mockées (src/data).
-- Sécurité renforcée (CSP + headers) via gabarits Netlify/Vercel.
-- CI GitHub Actions (lint → typecheck → test → coverage → build).
-- Config centralisée (src/config/site.ts).
-- Qualité continue: Prettier, Husky (pre-commit), lint-staged.
-- Maintenance: Dependabot pour npm & GitHub Actions.
+🎯 Pourquoi ce projet ?
+Ce dépôt est un template vitrine prêt à l’emploi (landing/SPA) conçu pour des artisans/PME. Il met l’accent sur la qualité perçue, la performance et les bonnes pratiques (sécurité, CI/CD, tests), afin d’être directement “showcase‑ready” pour des prospects et clients.
 
-## Prérequis
+✨ Features
+- ⚡ Stack moderne: Vite 5, React 18, TypeScript, TailwindCSS
+- 🧩 Composants modulaires, données mockées (src/data)
+- 🔐 Sécurité: CSP externalisé, headers (Vercel/Netlify)
+- 🧪 Tests: Vitest + React Testing Library, coverage gate
+- 🚦 CI: Lint → Typecheck → Test → Coverage → Build, CodeQL, Gitleaks, Link‑Check, Lighthouse
+- 🧰 DX: Prettier, Husky, lint‑staged
+- 🔧 Config centralisée: src/config/site.ts
+- 🔄 Maintenance: Dependabot (npm & Actions)
 
-- Node.js 20 LTS recommandé
-- npm ≥ 9
+🎥 Demo
+- Ajoutez vos captures d’écran / GIF (section à compléter)
+- Pages légales incluses (public/mentions‑legales.html, public/cgv.html, public/privacy.html)
+- Schéma JSON‑LD externalisé (public/schema.json)
 
-## Installation
+🚀 Quick Start
+1) Prérequis
+- Node.js ≥ 20, npm ≥ 9
 
+2) Installation
 ```bash
 npm install
-# (ou npm ci si package-lock.json est à jour)
+# (ou npm ci si package-lock.json est synchronisé)
 ```
 
-## Développement
-
+3) Développement
 ```bash
 npm run dev
 ```
-
 Accès: http://localhost:5173
 
-## Scripts
+📚 Documentation
+- Voir le dossier /docs (structure Getting Started, Architecture, Deployment, Troubleshooting)
+- SECURITY.md: politique et procédure de signalement
+- CONTRIBUTING.md: règles de contribution et CI gate
+- CHANGELOG.md: format Keep a Changelog
 
-- dev: lance le serveur Vite (développement).
-- build: build production.
-- preview: prévisualisation du build.
-- lint: ESLint (JS/TS + React Hooks).
-- typecheck: TypeScript sans émission.
-- test: Vitest + React Testing Library.
-- test:coverage: Vitest avec rapport coverage (text, lcov, html).
-- format: Prettier (code, styles, markdown).
-- prepare: installe Husky (pre-commit avec lint-staged).
+🛠️ Tech Stack
+- Frontend: Vite, React, TypeScript, TailwindCSS
+- Tests: Vitest, @testing-library/react, jsdom
+- CI: GitHub Actions (CodeQL, Gitleaks, Link‑Check, Lighthouse), Codecov
+- Qualité: ESLint 9, Prettier, Husky, lint‑staged
 
-## Déploiement
+🤝 Contributing
+Consultez CONTRIBUTING.md. Nous accueillons les PRs (petites, ciblées, testées).
 
-### Environnements & secrets
-
-- Variables d'environnement: utilisez un fichier `.env` en local et des Secrets GitHub en CI.
-- Ne commitez jamais de secrets. Fournissez `CODECOV_TOKEN` si vous souhaitez uploader la couverture sur PR/branches.
-- Activez “Code scanning” dans Settings → Code security and analysis pour rendre CodeQL bloquant en PR.
-
-### Netlify
-
-- Le fichier `public/_headers` applique les headers de sécurité (CSP, HSTS, X-Frame-Options, etc.).
-- Placez les assets statiques (ex: `/assets/hero-800.jpg`, `/assets/hero-1200.jpg`) dans `public/`.
-
-### Vercel
-
-- Le fichier `vercel.json` applique les headers de sécurité pour toutes les routes.
-
-## Sécurité
-
-- Headers de sécurité: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy.
-- Mettez Vite ≥ 5.4.6 (patch CVE-2024-45811).
-- Ne commitez jamais de secrets. Utilisez `.env` (exemple: créer `.env.example`).
-- Qualité locale: Husky `pre-push` exécute `npm run typecheck && npm run test` pour éviter les pushes cassés.
-- CI:
-  - Coverage gate explicite via `scripts/check-coverage.mjs` (échoue si couverture < seuils).
-  - Job `security` exécute `npm audit --audit-level=high` et échoue si des vulnérabilités High/Critical sont détectées.
-  - Gitleaks scanne les secrets sur push/PR, avec rapport SARIF en artifact.
-  - Dependabot ouvre des PRs d’update.
-- CodeQL: activez Code scanning dans Settings → Code security and analysis → Code scanning pour que les alertes soient visibles et bloquantes en PR.
-
-Voir SECURITY.md pour le processus de signalement de vulnérabilités.
-
-## Configuration
-
-Centralisez les constantes de site:
-
-```ts
-// src/config/site.ts
-export const site = {
-  name: 'Accès Rooftop',
-  phone: '01 23 45 67 89',
-  phoneHref: 'tel:0123456789',
-  email: 'contact@acces-rooftop.fr',
-  region: 'Île-de-France',
-  callLabel: 'Appel gratuit',
-  siret: '123 456 789 00012',
-};
-```
-
-## Conventions
-
-- TypeScript strict.
-- ESLint 9 + règles React Hooks.
-- Tailwind pour le style. Animations utilitaires dans `src/index.css`.
-
-## Roadmap (suggestion)
-
-- Playwright (E2E: parcours “Demande de devis”).
-- Page “Mentions légales” + “Politique de confidentialité” réelles.
-- Remplacer les images distantes par assets locaux/CDN contrôlé.
-
-## Licence
-
+📝 License
 MIT – voir LICENSE.
+
+📧 Support & Contact
+- Société: SmarterLogicWeb – https://smarterlogicweb.com
+- Mission/Tagline: Solutions web intelligentes et sur‑mesure
+- Contact: [email] (remplacer par votre email pro)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by <strong>SmarterLogicWeb</strong></p>
+  <p>
+    🌐 <a href="https://smarterlogicweb.com">Website</a> •
+    📧 <a href="mailto:[email]">Contact</a> •
+    💼 <a href="https://linkedin.com/company/smarterlogicweb">LinkedIn</a>
+  </p>
+  <p>
+    <sub>© 2025 SmarterLogicWeb. All rights reserved.</sub>
+  </p>
+</div>
