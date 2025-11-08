@@ -1,5 +1,8 @@
 # Accès Rooftop – Template Vite + React + TypeScript + Tailwind
 
+[![CI](https://github.com/Soofmaax/accesrofftfop/actions/workflows/ci.yml/badge.svg)](https://github.com/Soofmaax/accesrofftfop/actions/workflows/ci.yml)
+[![Coverage Status](https://codecov.io/gh/Soofmaax/accesrofftfop/branch/main/graph/badge.svg)](https://codecov.io/gh/Soofmaax/accesrofftfop)
+
 Template professionnel prêt à l’emploi pour une landing/SPA vitrine (artisan/PME) axée sur l’accès toiture et l’aménagement de terrasses. Sécurité, performances, DX et CI intégrées.
 
 ## 30s Pitch
@@ -7,8 +10,10 @@ Template professionnel prêt à l’emploi pour une landing/SPA vitrine (artisan
 - Stack moderne: Vite 5, React 18, TypeScript, TailwindCSS.
 - Composants UI modulaires avec données mockées (src/data).
 - Sécurité renforcée (CSP + headers) via gabarits Netlify/Vercel.
-- CI GitHub Actions (lint → typecheck → test → build).
+- CI GitHub Actions (lint → typecheck → test → coverage → build).
 - Config centralisée (src/config/site.ts).
+- Qualité continue: Prettier, Husky (pre-commit), lint-staged.
+- Maintenance: Dependabot pour npm & GitHub Actions.
 
 ## Prérequis
 
@@ -18,7 +23,8 @@ Template professionnel prêt à l’emploi pour une landing/SPA vitrine (artisan
 ## Installation
 
 ```bash
-npm ci
+npm install
+# (ou npm ci si package-lock.json est à jour)
 ```
 
 ## Développement
@@ -34,9 +40,12 @@ Accès: http://localhost:5173
 - dev: lance le serveur Vite (développement).
 - build: build production.
 - preview: prévisualisation du build.
-- lint: ESLint (base JS + TS + React hooks).
+- lint: ESLint (JS/TS + React Hooks).
 - typecheck: TypeScript sans émission.
-- test: placeholder (à remplacer par Vitest/Playwright).
+- test: Vitest + React Testing Library.
+- test:coverage: Vitest avec rapport coverage (text, lcov, html).
+- format: Prettier (code, styles, markdown).
+- prepare: installe Husky (pre-commit avec lint-staged).
 
 ## Déploiement
 
@@ -54,6 +63,7 @@ Accès: http://localhost:5173
 - Headers de sécurité: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy.
 - Mettez Vite ≥ 5.4.6 (patch CVE-2024-45811).
 - Ne commitez jamais de secrets. Utilisez `.env` (exemple: créer `.env.example`).
+- CI: un job `security` exécute `npm audit` (niveau moderate) et Dependabot ouvre des PRs d’update.
 
 Voir SECURITY.md pour le processus de signalement de vulnérabilités.
 
@@ -82,10 +92,9 @@ export const site = {
 
 ## Roadmap (suggestion)
 
-- Ajouter Vitest + React Testing Library (unitaire).
 - Playwright (E2E: parcours “Demande de devis”).
-- Ajout de Prettier, Husky, lint-staged.
-- Page “Mentions légales”, “Politiques” réelles.
+- Page “Mentions légales” + “Politique de confidentialité” réelles.
+- Remplacer les images distantes par assets locaux/CDN contrôlé.
 
 ## Licence
 

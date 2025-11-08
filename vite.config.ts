@@ -12,5 +12,13 @@ export default defineConfig({
     setupFiles: './src/test/setup.ts',
     globals: true,
     css: true,
+    coverage: {
+      reporter: ['text', 'lcov', 'html'],
+      lines: 60,
+      functions: 60,
+      statements: 60,
+      branches: 50,
+      exclude: ['src/test/**', 'src/**/__tests__/**'],
+    },
   },
 });
