@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { FC } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { site } from '../config/site';
+import { scrollToSection } from '../utils/scroll';
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +16,8 @@ const Header: FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollTo = (sectionId: string) => {
+    scrollToSection(sectionId);
     setIsMenuOpen(false);
   };
 
@@ -40,7 +41,7 @@ const Header: FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1" aria-label="Navigation principale">
               <button 
-                onClick={() => scrollToSection('services')}
+                onClick={() => handleScrollTo('services')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
                 aria-label="Aller à la section Services"
               >
@@ -48,7 +49,7 @@ const Header: FC = () => {
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
               </button>
               <button 
-                onClick={() => scrollToSection('realisations')}
+                onClick={() => handleScrollTo('realisations')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
                 aria-label="Aller à la section Réalisations"
               >
@@ -56,7 +57,7 @@ const Header: FC = () => {
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
               </button>
               <button 
-                onClick={() => scrollToSection('zone-intervention')}
+                onClick={() => handleScrollTo('zone-intervention')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
                 aria-label="Aller à la section Zone d'intervention"
               >
@@ -64,13 +65,13 @@ const Header: FC = () => {
                 <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => handleScrollTo('contact')}
                 className="relative px-4 py-2 text-gray-700 hover:text-blue-600 transition-all duration-300 rounded-lg hover:bg-blue-50 group"
                 aria-label="Aller à la section Contact"
               >
                 Contact
-                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></div>
-              </button>
+               < div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full group-hover:left"></><div>
+               </button>
             </nav>
 
             {/* Phone & CTA */}
@@ -89,7 +90,7 @@ const Header: FC = () => {
                 </div>
               </a>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => handleScrollTo('contact')}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 aria-label="Demander un devis gratuit"
               >
@@ -114,21 +115,21 @@ const Header: FC = () => {
           <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl" data-testid="mobile-nav">
             <div className="px-4 pt-4 pb-6 space-y-2">
               <button 
-                onClick={() => scrollToSection('services')}
+                onClick={() => handleScrollTo('services')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
                 aria-label="Aller à la section Services"
               >
                 Services
               </button>
               <button 
-                onClick={() => scrollToSection('realisations')}
+                onClick={() => handleScrollTo('realisations')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
                 aria-label="Aller à la section Réalisations"
               >
                 Réalisations
               </button>
               <button 
-                onClick={() => scrollToSection('zone-intervention')}
+                onClick={() => handleScrollTo('zone-intervention')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
                 aria-label="Aller à la section Zone d'intervention"
               >
@@ -149,7 +150,7 @@ const Header: FC = () => {
                 </div>
               </a>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => handleScrollTo('contact')}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-4 py-3 rounded-xl transition-all duration-300 font-semibold shadow-lg"
                 aria-label="Demander un devis gratuit"
               >
@@ -163,7 +164,7 @@ const Header: FC = () => {
       {/* Sticky CTA for mobile */}
       <div className="lg:hidden fixed bottom-6 right-6 z-40">
         <button 
-          onClick={() => scrollToSection('contact')}
+          onClick={() => handleScrollTo('contact')}
           className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-4 rounded-full shadow-2xl transition-all duration-300 font-semibold transform hover:scale-105 animate-pulse"
           aria-label="Demander un devis gratuit"
         >

@@ -23,6 +23,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      // Interdire console.log en production (autoriser seulement warn/error)
+      'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
   {
@@ -32,6 +34,9 @@ export default tseslint.config(
         ...globals.browser,
         ...globals.jest,
       },
+    },
+    rules: {
+      'no-console': 'off',
     },
   }
 );

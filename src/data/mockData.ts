@@ -67,7 +67,7 @@ export const projects: Project[] = [
     location: "Paris 16ème",
     year: "2024",
     category: "trappes",
-    image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+    image: "/assets/gallery/project-1.jpg"
   },
   {
     id: 2,
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     location: "Neuilly-sur-Seine",
     year: "2024",
     category: "escaliers",
-    image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg"
+    image: "/assets/gallery/project-2.jpg"
   },
   {
     id: 3,
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     location: "Boulogne-Billancourt",
     year: "2023",
     category: "echelles",
-    image: "https://images.pexels.com/photos/209208/pexels-photo-209208.jpeg"
+    image: "/assets/gallery/project-3.jpg"
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     location: "Levallois-Perret",
     year: "2024",
     category: "terrasses",
-    image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg"
+    image: "/assets/gallery/project-4.jpg"
   },
   {
     id: 5,
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     location: "Courbevoie",
     year: "2023",
     category: "terrasses",
-    image: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg"
+    image: "/assets/gallery/project-5.jpg"
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     location: "Saint-Cloud",
     year: "2024",
     category: "normes",
-    image: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg"
+    image: "/assets/gallery/project-6.jpg"
   }
 ];
 

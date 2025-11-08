@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 import { Facebook, Linkedin, Instagram, Phone, Mail } from 'lucide-react';
 import { site } from '../config/site';
+import { scrollToSection } from '../utils/scroll';
 
 const Footer: FC = () => {
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollTo = (sectionId: string) => {
+    scrollToSection(sectionId);
   };
 
   return (
@@ -57,7 +58,7 @@ const Footer: FC = () => {
             <ul className="space-y-3 text-gray-300">
               <li>
                 <button 
-                  onClick={() => scrollToSection('services')}
+                  onClick={() => handleScrollTo('services')}
                   className="hover:text-white transition-colors text-left"
                 >
                   Services
@@ -65,7 +66,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('realisations')}
+                  onClick={() => handleScrollTo('realisations')}
                   className="hover:text-white transition-colors text-left"
                 >
                   Réalisations
@@ -73,7 +74,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('zone-intervention')}
+                  onClick={() => handleScrollTo('zone-intervention')}
                   className="hover:text-white transition-colors text-left"
                 >
                   Zone d'intervention
@@ -81,7 +82,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => handleScrollTo('contact')}
                   className="hover:text-white transition-colors text-left"
                 >
                   Contact
@@ -122,9 +123,9 @@ const Footer: FC = () => {
               © 2025 Accès Rooftop. Tous droits réservés.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
-              <a href="#" className="hover:text-white transition-colors">CGV</a>
-              <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
+              <a href="/mentions-legales.html" className="hover:text-white transition-colors">Mentions légales</a>
+              <a href="/cgv.html" className="hover:text-white transition-colors">CGV</a>
+              <a href="/privacy.html" className="hover:text-white transition-colors">Politique de confidentialité</a>
             </div>
           </div>
         </div>

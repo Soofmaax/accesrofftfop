@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FC } from 'react';
 import { projects } from '../data/mockData';
+import { scrollToSection } from '../utils/scroll';
 
 const categories = [
   { id: 'all', label: 'Toutes' },
@@ -60,6 +61,11 @@ const Gallery: FC = () => {
                 src={project.image} 
                 alt={project.title}
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                width={1024}
+                height={768}
               />
               
               {/* Overlay */}
@@ -86,7 +92,7 @@ const Gallery: FC = () => {
             Plus de 200 projets réalisés avec succès en Île-de-France
           </p>
           <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contact')}
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
             Démarrer votre projet

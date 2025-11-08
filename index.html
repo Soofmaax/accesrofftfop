@@ -14,34 +14,8 @@
     <meta property="og:description" content="Solutions professionnelles d'accès toiture et aménagement terrasse. Devis gratuit, installation conforme aux normes." />
     <meta property="og:url" content="https://acces-rooftop.fr" />
     
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Accès Rooftop",
-      "description": "Expert en création d'accès toiture et aménagement de terrasses",
-      "url": "https://acces-rooftop.fr",
-      "telephone": "+33123456789",
-      "email": "contact@acces-rooftop.fr",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Île-de-France",
-        "addressCountry": "FR"
-      },
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "48.8566",
-          "longitude": "2.3522"
-        },
-        "geoRadius": "50000"
-      },
-      "priceRange": "€€",
-      "openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"]
-    }
-    </script>
+    <!-- Local Business Schema (externalized to comply with CSP) -->
+    <script type="application/ld+json" src="/schema.json"></script>
   </head>
   <body>
     <div id="root"></div>

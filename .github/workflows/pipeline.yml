@@ -23,7 +23,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install --no-audit --no-fund
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -72,7 +72,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install --no-audit --no-fund
+        run: npm ci
 
       - name: npm audit (fail on high/critical)
         run: npm audit --audit-level=high
@@ -97,7 +97,6 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-        continue-on-error: true
 
       - name: Upload SARIF artifact (if present)
         if: ${{ always() && hashFiles('results/*.sarif') != '' }}
@@ -139,6 +138,4 @@ jobs:
             **/*.md
             public/**/*.html
             src/**/*.tsx
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
+        env
