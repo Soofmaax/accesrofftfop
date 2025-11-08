@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, within } from '@testing-library/react';
+import { render, fireEvent, within } from '@testing-library/react';
 import Gallery from '../Gallery';
 
 describe('Gallery behavior', () => {
