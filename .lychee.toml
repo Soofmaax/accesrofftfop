@@ -1,0 +1,13 @@
+# Lychee Link Checker configuration
+# Ignore local development URLs that are expected to be unreachable in CI
+exclude = [
+  "http://localhost:.*",
+  "https://localhost:.*",
+]
+
+# Accept typical success and partial-content statuses, and rate limit too many requests
+accept = [200, 206, 429]
+
+# Optional quality of life settings
+verbose = true
+no_progress = true
