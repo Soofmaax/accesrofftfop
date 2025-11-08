@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -36,6 +38,18 @@
     "vitest": "^1.6.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^6.4.2",
-    "jsdom": "^24.0.0"
+    "jsdom": "^24.0.0",
+    "prettier": "^3.3.3",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,md,json}": [
+      "prettier --write"
+    ]
   }
 }
