@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { company } from '../../content/company';
 
 export const metadata: Metadata = {
-  title: 'Politique de confidentialité',
+  title: 'Politique de confidentialité – MAB SECURITE',
   description:
     "Politique de confidentialité de MAB SECURITE concernant les données personnelles collectées via le site et le formulaire de contact.",
 };

@@ -79,9 +79,9 @@ export const company: Company = {
     country: 'France',
   },
   description:
-    "MAB SECURITE est une société de sécurité privée basée à Nîmes. Elle accompagne les entreprises, collectivités et organisateurs d'événements dans la protection de leurs sites, collaborateurs et publics.",
+    "MAB SECURITE est une société de sécurité privée basée à Nîmes. Elle accompagne en priorité les entreprises du BTP, les maîtres d’ouvrage, les collectivités et les organisateurs d’événements dans la protection de leurs chantiers, sites, collaborateurs et publics, avec une présence structurée à Paris, Marseille et dans le Gard.",
   shortDescription:
-    'Sécurité privée professionnelle : gardiennage, rondes et sécurisation d’événements en région Occitanie.',
+    'Sécurité privée pour le BTP et les sites professionnels : gardiennage de chantiers, rondes de sûreté et sécurisation d’événements à Paris, Marseille, Nîmes et sur la côte sud.',
   contact: {
     // À personnaliser : coordonnées de contact définitives
     phone: {
@@ -95,7 +95,8 @@ export const company: Company = {
     baseline: 'Sécurité privée pour entreprises et événements',
     logoUrl: '/images/logo-mab-securite.svg', // À remplacer si un logo est disponible
   },
-  areaServed: 'Nîmes, département du Gard et régions limitrophes (Occitanie, France).',
+  areaServed:
+    'Paris et Île-de-France, Marseille et Bouches-du-Rhône, Nîmes et Gard (30), ainsi que la côte sud et régions limitrophes.',
 };
 
 export const services: Service[] = [

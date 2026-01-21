@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { company } from '../../content/company';
 
 export const metadata: Metadata = {
-  title: 'Mentions légales',
+  title: 'Mentions légales – MAB SECURITE',
   description:
-    'Mentions légales du site de MAB SECURITE : informations relatives à la société éditrice et au cadre juridique.',
+    'Mentions légales du site de MAB SECURITE : informations relatives à la société éditrice, à son activité de sécurité privée et au cadre juridique applicable.',
 };
 
 export default function MentionsLegalesPage() {

@@ -17,20 +17,17 @@ const siteUrl = company.contact.websiteUrl;
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
-    default: `${company.name} – Sécurité privée à Nîmes`,
+    default: `${company.name} – Sécurité privée & gardiennage BTP`,
     template: `%s | ${company.name}`,
   },
   description: company.shortDescription,
   openGraph: {
-    title: `${company.name} – Sécurité privée à Nîmes`,
+    title: `${company.name} – Sécurité privée & gardiennage BTP`,
     description: company.shortDescription,
     url: siteUrl || undefined,
     siteName: company.name,
     locale: 'fr_FR',
     type: 'website',
-  },
-  alternates: {
-    canonical: '/',
   },
 };
 

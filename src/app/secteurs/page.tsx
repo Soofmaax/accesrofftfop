@@ -3,9 +3,9 @@ import { Building2, Clapperboard, Landmark, Ticket } from 'lucide-react';
 import { company, sectors } from '../../content/company';
 
 export const metadata: Metadata = {
-  title: 'Secteurs d’intervention',
+  title: 'Secteurs d’intervention – BTP, entreprises et acteurs publics',
   description:
-    "Secteurs accompagnés par MAB SECURITE : entreprises, collectivités, acteurs publics et métiers de l'événementiel (y compris tournages et plateaux techniques).",
+    "Secteurs accompagnés par MAB SECURITE : entreprises du BTP, sièges sociaux, sites industriels et logistiques, collectivités, acteurs publics et métiers de l'événementiel (y compris tournages et plateaux techniques) à Paris, Marseille, Nîmes et dans leurs régions.",
 };
 
 const iconMap = {

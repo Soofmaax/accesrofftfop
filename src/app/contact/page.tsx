@@ -4,9 +4,9 @@ import { company } from '../../content/company';
 import { ContactForm } from '../../components/forms/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact & demande de devis',
+  title: 'Contact MAB SECURITE – Devis sécurité BTP & gardiennage de sites',
   description:
-    "Contactez MAB SECURITE pour toute demande de devis ou d'information concernant la sécurisation de vos sites, événements et environnements professionnels.",
+    "Contactez MAB SECURITE pour toute demande de devis ou d'information concernant le gardiennage de chantiers BTP, la surveillance de sites professionnels et la sécurisation d'événements à Paris, Marseille, Nîmes et sur la côte sud.",
 };
 
 export default function ContactPage() {
