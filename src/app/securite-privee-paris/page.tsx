@@ -109,23 +109,43 @@ export default function SecuritePriveeParisPage() {
           </div>
         </section>
 
-        <section className="card-muted p-5 text-xs text-slate-300">
-          <p className="font-medium text-slate-100">
-            Vous recherchez un partenaire de sécurité pour un site parisien ?
-          </p>
-          <p className="mt-2">
-            Que votre besoin concerne un siège social, un immeuble tertiaire, un site
-            technique ou un événement corporate, nous étudions votre contexte et vos
-            contraintes (horaires, flux, exigences d&apos;image, appels d&apos;offres
-            privés ou publics) avant de proposer un dispositif adapté.
-          </p>
-          <div className="mt-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 shadow-soft transition hover:bg-emerald-400"
-            >
-              Échanger sur un projet à Paris
-            </Link>
+        <section className="grid gap-4 text-xs text-slate-300 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+          <div className="card-muted p-5">
+            <p className="font-medium text-slate-100">
+              Vous recherchez un partenaire de sécurité pour un site parisien ?
+            </p>
+            <p className="mt-2">
+              Que votre besoin concerne un siège social, un immeuble tertiaire, un site
+              technique ou un événement corporate, nous étudions votre contexte et vos
+              contraintes (horaires, flux, exigences d&apos;image, appels d&apos;offres
+              privés ou publics) avant de proposer un dispositif adapté.
+            </p>
+            <div className="mt-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 shadow-soft transition hover:bg-emerald-400"
+              >
+                Échanger sur un projet à Paris
+              </Link>
+            </div>
+          </div>
+          <div className="card p-5">
+            <p className="font-medium text-slate-100">
+              Détail de notre offre de gardiennage de chantiers BTP à Paris
+            </p>
+            <p className="mt-2">
+              Pour les chantiers BTP en Île-de-France, {company.name} a structuré une
+              offre dédiée : gardiennage de nuit, rondes de sûreté, levées de doute et
+              protection des bases-vie, stockages de matériaux et périmètres sensibles.
+            </p>
+            <div className="mt-3">
+              <Link
+                href="/gardiennage-chantiers-btp-paris"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-500/70 bg-slate-950/60 px-4 py-2 text-[11px] font-semibold text-emerald-400 transition hover:bg-emerald-500 hover:text-slate-950"
+              >
+                Découvrir le gardiennage de chantiers BTP à Paris
+              </Link>
+            </div>
           </div>
         </section>
       </div>
