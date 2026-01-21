@@ -4,9 +4,9 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company, engagements, services } from '../content/company';
 
 export const metadata: Metadata = {
-  title: 'Sécurité privée pour entreprises et événements',
+  title: 'Sécurité privée pour entreprises, collectivités et événements',
   description:
-    "MAB SECURITE, société de sécurité privée basée à Nîmes : gardiennage, rondes, sécurisation d'événements et de sites pour les professionnels.",
+    "MAB SECURITE, société de sécurité privée basée à Nîmes, accompagne les organisations professionnelles dans la sécurisation de leurs sites, collaborateurs et publics.",
 };
 
 export default function HomePage() {
@@ -21,12 +21,13 @@ export default function HomePage() {
             </span>
             <div className="space-y-4">
               <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
-                Sécuriser vos sites et événements avec exigence et discrétion.
+                Une sécurité privée structurée pour vos sites et vos publics.
               </h1>
               <p className="max-w-xl text-sm text-slate-300 sm:text-base">
-                {company.name} accompagne les entreprises, collectivités et organisateurs
-                d&apos;événements dans la mise en place de dispositifs de sécurité fiables,
-                proportionnés et conformes au cadre réglementaire.
+                {company.name} conçoit et pilote des dispositifs de sécurité pour les
+                entreprises, acteurs publics et organisateurs d&apos;événements, avec une
+                approche centrée sur la continuité d&apos;activité, la maîtrise des risques
+                et le respect du cadre réglementaire.
               </p>
             </div>
 
@@ -52,7 +53,8 @@ export default function HomePage() {
                   Sécurité événementielle
                 </div>
                 <p className="mt-1 text-muted">
-                  Dispositifs dédiés pour salons, conventions, inaugurations, tournages.
+                  Dispositifs dimensionnés pour salons, conventions, événements
+                  institutionnels et tournages.
                 </p>
               </div>
               <div className="card-muted p-4">
@@ -60,7 +62,8 @@ export default function HomePage() {
                   Gardiennage &amp; rondes
                 </div>
                 <p className="mt-1 text-muted">
-                  Présence dissuasive, rondes, levées de doute et surveillance de sites.
+                  Présence sur site, rondes de sûreté et levées de doute pour vos locaux,
+                  chantiers et sites techniques.
                 </p>
               </div>
               <div className="card-muted p-4">
@@ -68,7 +71,8 @@ export default function HomePage() {
                   Interlocuteur unique
                 </div>
                 <p className="mt-1 text-muted">
-                  Un contact dédié pour piloter vos missions et assurer le suivi.
+                  Un référent dédié pour coordonner les missions, centraliser les échanges
+                  et assurer le suivi opérationnel.
                 </p>
               </div>
             </div>
@@ -119,11 +123,11 @@ export default function HomePage() {
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 className="text-lg font-semibold text-slate-50 sm:text-xl">
-                Prestations clés
+                Prestations clés pour les organisations professionnelles
               </h2>
               <p className="text-sm text-muted">
-                Des dispositifs adaptés à vos enjeux : sites, événements, chantiers ou
-                environnements sensibles.
+                Des solutions de sécurité structurées pour vos bâtiments, sites
+                opérationnels, événements et environnements sensibles.
               </p>
             </div>
             <Link

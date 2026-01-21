@@ -5,7 +5,7 @@ import { company, sectors } from '../../content/company';
 export const metadata: Metadata = {
   title: 'Secteurs d’intervention',
   description:
-    "Secteurs accompagnés par MAB SECURITE : entreprises, événementiel, collectivités, tournages et plateaux techniques.",
+    "Secteurs accompagnés par MAB SECURITE : entreprises, collectivités, acteurs publics et métiers de l'événementiel (y compris tournages et plateaux techniques).",
 };
 
 const iconMap = {
@@ -25,9 +25,10 @@ export default function SecteursPage() {
             Des dispositifs adaptés à vos environnements
           </h1>
           <p className="max-w-2xl text-sm text-muted">
-            {company.name} intervient dans différents secteurs d&apos;activité avec un
-            souci constant d&apos;adaptation aux contraintes de chaque métier&nbsp;:
-            flux, niveaux de risque, horaires, exigences d&apos;image et de confidentialité.
+            {company.name} intervient dans différents environnements professionnels avec
+            un souci constant d&apos;adaptation aux contraintes de chaque métier&nbsp;:
+            continuité de service, gestion des flux, exigences réglementaires, enjeux
+            d&apos;image et de confidentialité.
           </p>
         </header>
 

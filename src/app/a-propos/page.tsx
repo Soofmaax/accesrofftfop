@@ -5,7 +5,7 @@ import { company } from '../../content/company';
 export const metadata: Metadata = {
   title: 'À propos de MAB SECURITE',
   description:
-    "Présentation de MAB SECURITE, société de sécurité privée basée à Nîmes : positionnement, approche opérationnelle et cadre réglementaire d'intervention.",
+    "Présentation de MAB SECURITE, société de sécurité privée basée à Nîmes, dédiée à l'accompagnement des organisations professionnelles dans la sécurisation de leurs sites et événements.",
 };
 
 export default function AProposPage() {
@@ -18,9 +18,9 @@ export default function AProposPage() {
             Une société de sécurité privée engagée aux côtés des professionnels
           </h1>
           <p className="max-w-3xl text-sm text-muted">
-            {company.name} met à disposition des entreprises, collectivités et acteurs de
-            l&apos;événementiel une structure à taille humaine, réactive et orientée
-            service, pour des missions de sécurité privée pilotées avec sérieux.
+            {company.name} met à disposition des entreprises, collectivités et acteurs
+            publics une structure à taille humaine, réactive et orientée service, pour des
+            missions de sécurité privée pilotées de manière structurée et documentée.
           </p>
         </header>
 
@@ -45,17 +45,17 @@ export default function AProposPage() {
 
             <p>
               Chaque mission fait l&apos;objet d&apos;un cadrage précis : analyse du
-              contexte, définition du périmètre, consignes de poste, règles de reporting.
-              L&apos;objectif est d&apos;apporter un niveau de sécurité adapté, sans
-              surdimensionnement inutile, tout en préservant la fluidité de vos activités
-              et l&apos;image de votre organisation.
+              contexte et des enjeux, définition du périmètre, consignes de poste,
+              modalités de reporting. L&apos;objectif est d&apos;apporter un niveau de
+              sécurité adapté et justifié, en veillant à la continuité de vos activités et
+              au respect de vos contraintes opérationnelles.
             </p>
 
             <p>
-              MAB SECURITE privilégie une relation directe avec ses clients, basée sur la
-              transparence, la disponibilité et le suivi dans la durée. Un interlocuteur
-              unique accompagne votre dossier, de la qualification du besoin jusqu&apos;au
-              retour d&apos;expérience en fin de mission.
+              {company.name} privilégie une relation suivie avec ses clients, basée sur la
+              transparence, la disponibilité et la régularité des échanges. Un
+              interlocuteur unique accompagne votre dossier, de la qualification du besoin
+              jusqu&apos;au retour d&apos;expérience en fin de mission.
             </p>
           </article>
 

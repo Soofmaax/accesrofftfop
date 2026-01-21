@@ -153,11 +153,11 @@ export const ContactForm = () => {
     <form onSubmit={handleSubmit} className="card p-6 text-sm md:p-8" noValidate>
       <div className="mb-6 space-y-1">
         <h2 className="text-lg font-semibold text-slate-50 md:text-xl">
-          Demande de devis ou d&apos;information
+          Demande de devis ou d&apos;analyse de besoin
         </h2>
         <p className="text-muted">
-          Indiquez-nous le contexte de votre projet afin que nous puissions vous répondre
-          de manière précise et structurée.
+          Précisez le contexte de votre organisation et de la mission envisagée afin que
+          nous puissions évaluer votre demande et vous proposer un dispositif adapté.
         </p>
       </div>
 

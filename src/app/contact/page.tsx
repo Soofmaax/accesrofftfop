@@ -6,7 +6,7 @@ import { ContactForm } from '../../components/forms/ContactForm';
 export const metadata: Metadata = {
   title: 'Contact & demande de devis',
   description:
-    'Contactez MAB SECURITE pour toute demande de devis ou d’information concernant la sécurité de vos sites et événements.',
+    "Contactez MAB SECURITE pour toute demande de devis ou d'information concernant la sécurisation de vos sites, événements et environnements professionnels.",
 };
 
 export default function ContactPage() {
@@ -20,8 +20,9 @@ export default function ContactPage() {
           </h1>
           <p className="max-w-2xl text-sm text-muted">
             Pour toute question, étude ou demande de devis, complétez le formulaire ci-dessous
-            ou contactez-nous directement par téléphone ou par e-mail. Nous revenons vers vous
-            dans les meilleurs délais.
+            ou contactez-nous directement par téléphone ou par e-mail. Nous analysons chaque
+            demande de manière individualisée afin de proposer un dispositif cohérent avec
+            votre contexte et vos priorités.
           </p>
         </header>
 
