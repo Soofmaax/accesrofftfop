@@ -10,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/secteurs',
     '/a-propos',
     '/contact',
+    '/securite-privee-paris',
+    '/securite-privee-marseille',
+    '/securite-privee-nimes',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];
