@@ -156,8 +156,10 @@ export const ContactForm = () => {
           Demande de devis ou d&apos;analyse de besoin
         </h2>
         <p className="text-muted">
-          Précisez le contexte de votre organisation et de la mission envisagée afin que
-          nous puissions évaluer votre demande et vous proposer un dispositif adapté.
+          Précisez le contexte de votre organisation, la nature de la mission et, le cas
+          échéant, le cadre contractuel (appel d&apos;offres, marché public, convention),
+          afin que nous puissions évaluer votre demande et vous proposer un dispositif
+          adapté.
         </p>
       </div>
 

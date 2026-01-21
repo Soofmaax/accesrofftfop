@@ -25,9 +25,10 @@ export default function HomePage() {
               </h1>
               <p className="max-w-xl text-sm text-slate-300 sm:text-base">
                 {company.name} conçoit et pilote des dispositifs de sécurité pour les
-                entreprises, acteurs publics et organisateurs d&apos;événements, avec une
-                approche centrée sur la continuité d&apos;activité, la maîtrise des risques
-                et le respect du cadre réglementaire.
+                entreprises privées, les donneurs d&apos;ordre publics et les organisateurs
+                d&apos;événements, avec une approche compatible avec les exigences des
+                marchés publics&nbsp;: traçabilité, fiabilité opérationnelle et conformité
+                au cadre réglementaire.
               </p>
             </div>
 

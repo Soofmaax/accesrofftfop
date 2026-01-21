@@ -28,7 +28,8 @@ export default function SecteursPage() {
             {company.name} intervient dans différents environnements professionnels avec
             un souci constant d&apos;adaptation aux contraintes de chaque métier&nbsp;:
             continuité de service, gestion des flux, exigences réglementaires, enjeux
-            d&apos;image et de confidentialité.
+            d&apos;image et de confidentialité, y compris dans le cadre de marchés publics
+            ou de conventions pluriannuelles.
           </p>
         </header>
 

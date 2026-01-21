@@ -19,9 +19,10 @@ export default function PrestationsPage() {
           </h1>
           <p className="max-w-2xl text-sm text-muted">
             {company.name} conçoit et pilote des dispositifs de sécurité adaptés aux
-            contraintes des entreprises, collectivités et organisateurs d&apos;événements.
-            Chaque mission est cadrée en amont afin d&apos;assurer un niveau de sécurité
-            cohérent avec vos enjeux et vos obligations.
+            contraintes des entreprises privées, des collectivités et des établissements
+            publics. Chaque mission est cadrée en amont afin d&apos;assurer un niveau de
+            sécurité cohérent avec vos enjeux, vos obligations réglementaires et, le cas
+            échéant, les exigences de vos marchés publics ou cahiers des charges.
           </p>
         </header>
 

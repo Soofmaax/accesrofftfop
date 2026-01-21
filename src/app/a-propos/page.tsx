@@ -18,9 +18,11 @@ export default function AProposPage() {
             Une société de sécurité privée engagée aux côtés des professionnels
           </h1>
           <p className="max-w-3xl text-sm text-muted">
-            {company.name} met à disposition des entreprises, collectivités et acteurs
-            publics une structure à taille humaine, réactive et orientée service, pour des
-            missions de sécurité privée pilotées de manière structurée et documentée.
+            {company.name} met à disposition des entreprises privées, des collectivités et
+            des acteurs publics une structure à taille humaine, réactive et orientée
+            service. Les missions sont pilotées de manière structurée et documentée, dans
+            une logique de partenariat durable et de réponse aux exigences contractuelles
+            et réglementaires, notamment dans le cadre des appels d&apos;offres publics.
           </p>
         </header>
 
