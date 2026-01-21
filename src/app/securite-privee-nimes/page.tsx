@@ -47,6 +47,20 @@ export default function SecuritePriveeNimesPage() {
               dispositif global (plans de prévention, coordination de chantier, événements
               municipaux, etc.).
             </p>
+            <div className="mt-4 rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-xs text-slate-200">
+              <p className="font-semibold text-slate-50">
+                Responsable sécurité Sud (Nîmes &amp; côte méditerranéenne)
+              </p>
+              <p className="mt-1">
+                Beddredine Mohand –{' '}
+                <a
+                  href="tel:+33646005642"
+                  className="text-emerald-400 hover:text-emerald-300"
+                >
+                  +33 6 46 00 56 42
+                </a>
+              </p>
+            </div>
           </div>
 
           <aside className="card p-5 text-xs text-slate-200">
