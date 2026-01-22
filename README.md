@@ -291,7 +291,19 @@ Cela permet de travailler des **titres** et **descriptions** optimisés par typo
   - `allow: '/'`,
   - `sitemap` et `host` basés sur `websiteUrl`.
 
-Assurez-vous de renseigner **l’URL de production définitive** avant mise en ligne.
+### 7.4. Endpoint dédié aux IA et intégrations (`/ai.llm`)
+
+- `src/app/ai.llm/route.ts`  
+  Expose un endpoint JSON structuré à l’URL `/ai.llm` qui décrit :
+  - les informations légales et de contact de MAB SECURITE,
+  - les prestations (`services`), secteurs (`sectors`) et engagements (`engagements`),
+  - la zone d’intervention.  
+
+  Cet endpoint est pensé pour :
+  - les agents / LLM qui souhaitent consommer une vue consolidée de l’offre MAB SECURITE,
+  - des intégrations externes (RAG, assistants métier, etc.) qui ont besoin d’un format machine‑readable simple.
+
+Assurez-vous de renseigner **l’URL de production définitive** dans `company.contact.websiteUrl` avant mise en ligne.
 
 ---
 
