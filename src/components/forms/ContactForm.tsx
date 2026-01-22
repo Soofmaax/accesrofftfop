@@ -108,7 +108,7 @@ export const ContactForm = () => {
         date: '',
         consent: false,
       });
-    } catch (error) {
+    } catch {
       setSubmitError(
         "Une erreur est survenue lors de l'envoi de votre demande. Vous pouvez également nous contacter directement par téléphone ou par e-mail.",
       );
