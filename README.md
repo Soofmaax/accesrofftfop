@@ -374,6 +374,8 @@ L’ensemble vise un rendu **premium / institutionnel** tout en restant facileme
 
 ## 10. Qualité de code & standards
 
+### 10.1. Outils locaux
+
 - **ESLint** (`eslint.config.js`)  
   - Base `@eslint/js` + `typescript-eslint`.  
   - Plugins :
@@ -385,6 +387,40 @@ L’ensemble vise un rendu **premium / institutionnel** tout en restant facileme
   - `npm run typecheck` pour détecter les erreurs de types.
 
 > Recommandation : lancer `npm run lint && npm run typecheck` avant tout déploiement ou mise en production.
+
+### 10.2. Intégration continue (GitHub Actions)
+
+Un workflow GitHub Actions (`.github/workflows/ci.yml`) est configuré pour jouer le rôle de **garde-fou qualité** sur chaque `push` / `pull_request` vers `main` ou `master`.
+
+Il exécute, dans l’ordre :
+
+1. **Installation des dépendances**
+   - `npm ci` si le `package-lock.json` est en phase avec `package.json` ;
+   - sinon, repli sur `npm install` (permet de continuer à travailler même si le lockfile n’est pas encore régénéré).
+
+2. **Scan de secrets (gitleaks)**  
+   - Utilisation de `gitleaks/gitleaks-action@v2` pour détecter d’éventuelles fuites de secrets (tokens, clés d’API, etc.) dans l’historique du dépôt courant.  
+   - En cas de fuite détectée, le job est marqué en échec.
+
+3. **Lint Markdown**  
+   - `npx markdownlint-cli "**/*.md" --ignore node_modules` avec configuration dans `.markdownlint.json`.  
+   - Permet de garder des fichiers Markdown propres et homogènes (README, futures docs).
+
+4. **ESLint**  
+   - `npm run lint` sur l’ensemble du projet.
+
+5. **TypeScript (type checking)**  
+   - `npm run typecheck` pour s’assurer de l’absence d’erreurs de types dans le code applicatif.
+
+6. **Build Next.js**  
+   - `npm run build` pour vérifier que l’application se build correctement dans l’environnement CI.
+
+La variable d’environnement `CI=true` est activée pour aligner le comportement des outils avec un contexte d’intégration continue.
+
+En pratique, une PR ne doit être considérée comme “prête à merger” que si :
+
+- le workflow **CI** est entièrement vert ;
+- et les commandes locales `npm run lint`, `npm run typecheck`, `npm run build` passent également en environnement développeur.
 
 ---
 

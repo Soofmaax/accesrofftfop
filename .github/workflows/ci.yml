@@ -43,6 +43,14 @@ jobs:
         run: |
           npm ci || npm install
 
+      - name: Scan for secrets (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          fail-on-secrets: true
+
+      - name: Lint Markdown (markdownlint)
+        run: npx markdownlint-cli "**/*.md" --ignore node_modules
+
       - name: Lint
         run: npm run lint
 
