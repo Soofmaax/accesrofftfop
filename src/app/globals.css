@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(circle at bottom, rgba(34, 197, 94, 0.14), transparent 55%),
+    theme('colors.slate.950');
+}
+
+main {
+  @apply min-h-screen;
+}
+
+/* Layout & sections */
+
+.section {
+  @apply py-12 sm:py-16 lg:py-20;
+}
+
+.section-inner {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Cards & surfaces */
+
+.card {
+  @apply rounded-2xl border border-slate-800/80 bg-slate-900/70 shadow-soft backdrop-blur-sm;
+}
+
+.card-muted {
+  @apply rounded-2xl border border-slate-800/60 bg-slate-900/40;
+}
+
+/* Small UI primitives */
+
+.badge {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-slate-950/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-slate-200;
+}
+
+.badge::before {
+  content: '';
+  @apply h-1.5 w-1.5 rounded-full bg-emerald-400;
+}
+
+.text-muted {
+  @apply text-slate-400;
+}
+
+/* Links */
+
+a {
+  @apply transition-colors;
+}
+
+/* Premium-feel focus states */
+
+button,
+a,
+input,
+textarea,
+select {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950;
+}
+
+/* Micro-animations */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 480ms ease-out both;
+}
+
+.animate-fade-up-delayed {
+  animation: fade-up 520ms ease-out 80ms both;
+}
+
+.animate-fade-in-soft {
+  animation: fade-in 420ms ease-out both;
+}
