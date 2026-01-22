@@ -204,7 +204,7 @@ Les champs suivants sont à adapter en priorité :
   - `contact.phone.label` : format lisible pour les humains (`+33 (0)4 …`).  
   - `contact.phone.value` : format “machine” utilisé pour les liens `tel:` (`+334…`).  
   - `contact.email` : adresse de contact principale.  
-  - `contact.websiteUrl` : **URL finale du site en production** (ex. `https://www.mab-securite.fr`).
+  - `contact.websiteUrl` : **URL finale du site en production** (ex. `https://mab-securite.fr`).
 
   Ce champ `websiteUrl` est utilisé pour :
   - `metadataBase` et les URLs canoniques,

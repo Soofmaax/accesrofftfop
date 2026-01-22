@@ -89,7 +89,7 @@ export const company: Company = {
       value: '+33400000000',
     },
     email: 'contact@mab-securite.fr',
-    websiteUrl: 'https://www.mab-securite.fr',
+    websiteUrl: 'https://mab-securite.fr',
   },
   branding: {
     baseline: 'Sécurité privée pour entreprises et événements',
