@@ -442,61 +442,62 @@ Une fois ces points validés, le site est prêt à être utilisé comme **vitrin
 
 ## 14. Conventions de contribution & discipline documentaire
 
-Cette section est là pour **toi du futur** (et pour toute IA ou dev qui reprendra le projet).  
-Objectif : garder un niveau “pro” à chaque évolution.
+Cette section s’adresse à toute personne (ou outil automatisé) amenée à faire évoluer le projet.  
+L’objectif est de maintenir un niveau de qualité professionnelle et une documentation fiable dans la durée.
 
-### 14.1. Rituel au début de chaque session
+### 14.1. Routine en début de session
 
-Avant de toucher au code :
+Avant toute modification significative :
 
-1. **Lire (ou survoler) ce README**  
-   - vérifier que l’architecture et les conventions décrites ici sont toujours valables ;
-   - repérer les sections impactées par ce que tu vas faire (ex. nouvelle page, modification du formulaire, évolution SEO).
+1. **Consulter le présent README**  
+   - vérifier que l’architecture et les conventions décrites sont cohérentes avec l’état du code ;
+   - identifier les sections potentiellement impactées (architecture, contenu métier, SEO, API, scripts…).
 
-2. **Identifier où brancher la nouvelle logique**  
-   - contenu métier : `src/content/company.ts` (ajout de services, secteurs, engagements, coordonnées) ;
+2. **Identifier le point d’ancrage de la modification**  
+   - contenu métier : `src/content/company.ts` (ajout/modification de services, secteurs, engagements, coordonnées) ;
    - UI / pages : fichiers sous `src/app/...` ;
    - composants réutilisables : `src/components/...`.
 
-3. **Décider dès le départ si la doc doit bouger**  
-   - si tu ajoutes une nouvelle page clé, un nouveau script, un nouveau flux métier : **prévois la mise à jour du README**.
+3. **Déterminer les impacts sur la documentation**  
+   - toute création ou évolution d’une page clé, d’un script ou d’un flux métier doit, le cas échéant, s’accompagner d’une mise à jour de ce README.
 
-### 14.2. Rituel à la fin de chaque session
+### 14.2. Routine en fin de session
 
-Avant de considérer une feature “terminée” :
+Avant de considérer un développement comme terminé :
 
-1. **Mettre à jour la doc si nécessaire**
-   - ajouter / ajuster les sections pertinentes dans ce README (architecture, scripts, SEO, API, etc.) ;
-   - si une convention change, l’écrire noir sur blanc ici.
+1. **Mettre à jour la documentation**
+   - ajouter ou ajuster les sections pertinentes dans ce README (architecture, scripts, SEO, API, conventions, etc.) ;
+   - documenter explicitement toute nouvelle convention ou tout changement de comportement global.
 
-2. **Passer les commandes de qualité**
+2. **Exécuter les commandes de contrôle**
    - `npm run lint`  
    - `npm run typecheck`  
-   - `npm run build` (au moins avant un déploiement).
+   - `npm run build` (au minimum avant un déploiement).
 
-3. **Faire une mini‑revue mentale**
-   - ai‑je respecté les patterns actuels (structure des pages, composants, style Tailwind) ?
-   - ai‑je évité les duplications de logique ou de contenu ?
-   - ai‑je gardé le code compréhensible pour “moi dans 6 mois” ?
+3. **Vérifier la cohérence globale**
+   - confirmer le respect des patterns existants (structure des pages, organisation des composants, style Tailwind, conventions de typage) ;
+   - s’assurer que la logique métier reste centralisée dans les fichiers prévus à cet effet (notamment `src/content`) ;
+   - évaluer la lisibilité du code pour un développeur ou un outil qui reprendrait le projet ultérieurement.
 
 ### 14.3. Principes à respecter en continu
 
-- **Centraliser le métier**  
-  - tout ce qui relève du contenu “configurable” (texte institutionnel, liste de prestations, secteurs, engagements, coordonnées) doit autant que possible rester dans `src/content/company.ts` ou un fichier de contenu dédié ;
+- **Centralisation du contenu métier**  
+  - les éléments configurables (texte institutionnel, listes de prestations et de secteurs, engagements, coordonnées) doivent, autant que possible, rester dans `src/content/company.ts` ou dans des fichiers de contenu dédiés ;
   - les pages consomment ces données, elles ne les dupliquent pas.
 
-- **Réutiliser le design system**  
-  - utiliser les classes utilitaires globales (`.section`, `.section-inner`, `.card`, `.badge`, etc.) plutôt que réinventer des variantes locales ;
-  - respecter la palette définie dans `tailwind.config.js` (couleurs `brand` et `accent`).
+- **Respect du design system existant**  
+  - utiliser en priorité les primitives définies dans `globals.css` (`.section`, `.section-inner`, `.card`, `.card-muted`, `.badge`, `.text-muted`, etc.) plutôt que créer de nouvelles variantes locales ;
+  - s’appuyer sur la palette définie dans `tailwind.config.js` (`brand`, `accent`) pour les couleurs principales et les états.
 
-- **Penser SEO & accessibilité**  
-  - toujours définir `metadata` pour les nouvelles pages importantes ;
-  - soigner la hiérarchie de titres (`h1`, `h2`, `h3`…) ;
-  - garder des textes explicites pour les liens, CTA et labels de formulaire.
+- **SEO et accessibilité**  
+  - définir systématiquement des métadonnées (`metadata`) pour toute nouvelle page de contenu stratégique ;
+  - respecter une hiérarchie de titres logique (`h1`, `h2`, `h3`, …) ;
+  - utiliser des libellés explicites pour les liens, boutons d’appel à l’action et champs de formulaire.
 
-- **Code propre, sans sur‑ingénierie**  
-  - pas de logique cachée, pas de “magie” difficile à suivre ;
-  - éviter les grosses abstractions inutiles ;
-  - préférer des composants simples et bien nommés.
+- **Qualité de code**  
+  - privilégier des composants simples, clairement nommés et facilement testables ;
+  - éviter les abstractions excessives et les comportements implicites difficiles à suivre ;
+  - limiter l’introduction de nouvelles dépendances à ce qui est strictement nécessaire.
 
-En appliquant ces quelques règles, chaque nouvelle mise à jour restera alignée avec un niveau “prod” et ce README restera la **source de vérité** à lire en début et fin de session.
+Le présent README doit être considéré comme la **référence documentaire** du projet.  
+Toute évolution structurelle, fonctionnelle ou technique significative doit y être répercutée afin de garantir une prise en main rapide et fiable du code, maintenant et à l’avenir.
