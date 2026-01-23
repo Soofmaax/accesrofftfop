@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE propose des agents de sécurité à Nice et sur la Côte d'Azur pour le gardiennage de sites professionnels, chantiers, commerces et événements : surveillance, rondes, contrôle d'accès et gestion des incidents.",
   canonicalPath: '/solutions/securite-humaine/agent-securite-nice',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Agents de sécurité à Nice',
+    path: '/solutions/securite-humaine/agent-securite-nice',
+  },
+]);
 
 function getAgentSecuriteNiceServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -89,6 +100,21 @@ export default function AgentSecuriteNicePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getAgentSecuriteNiceFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/agent-securite-nice',
+            label: 'Agents de sécurité à Nice',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Agent de sécurité à Nice : tarifs et prestations"

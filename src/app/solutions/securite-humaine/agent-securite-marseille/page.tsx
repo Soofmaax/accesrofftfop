@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE met à disposition des agents de sécurité à Marseille et dans les Bouches-du-Rhône pour le gardiennage de chantiers BTP, sites industriels, plateformes logistiques, commerces et événements : présence sur site, rondes de sûreté, contrôles d'accès.",
   canonicalPath: '/solutions/securite-humaine/agent-securite-marseille',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Agents de sécurité à Marseille',
+    path: '/solutions/securite-humaine/agent-securite-marseille',
+  },
+]);
 
 function getAgentSecuriteMarseilleServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -89,6 +100,21 @@ export default function AgentSecuriteMarseillePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getAgentSecuriteMarseilleFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/agent-securite-marseille',
+            label: 'Agents de sécurité à Marseille',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Agent de sécurité à Marseille : gardiennage et surveillance de sites"

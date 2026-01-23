@@ -14,6 +14,15 @@ export const metadata: Metadata = buildMetadata({
   canonicalPath: '/solutions/securite-electronique/videosurveillance-entreprise-paris',
 });
 
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: "Vidéosurveillance entreprise à Paris",
+    path: '/solutions/securite-electronique/videosurveillance-entreprise-paris',
+  },
+]);
+
 function getVideoSurveillanceServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
 
@@ -88,6 +97,21 @@ export default function VideoSurveillanceEntrepriseParisPage() {
         type="application/ld+json"
         // JSON-LD pour la FAQ vidéosurveillance
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getVideoSurveillanceFaqJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-electronique/videosurveillance-entreprise-paris',
+            label: "Vidéosurveillance entreprise à Paris",
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Vidéosurveillance entreprise à Paris : installation et maintenance"

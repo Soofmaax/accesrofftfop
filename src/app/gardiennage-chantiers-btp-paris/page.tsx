@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2, ClipboardList, HardHat, MapPinned } from 'lucide-react';
 import { company } from '../../content/company';
 import { ServicePageTemplate } from '../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../lib/breadcrumbs';
 import { buildMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE est spécialisée dans le gardiennage de chantiers BTP à Paris et en Île-de-France (75, 92, 93, 94, 95, 77, 78, 91) : sécurité de nuit, levées de doute, rondes de sûreté, protection des bases-vie, dépôts de matériaux et périmètres sensibles.",
   canonicalPath: '/gardiennage-chantiers-btp-paris',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Prestations', path: '/prestations' },
+  {
+    name: 'Gardiennage de chantiers BTP à Paris',
+    path: '/gardiennage-chantiers-btp-paris',
+  },
+]);
 
 function getGardiennageChantierServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -41,6 +52,21 @@ export default function GardiennageChantiersBtpParisPage() {
         type="application/ld+json"
         // JSON-LD pour le service de gardiennage de chantier
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getGardiennageChantierServiceJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/prestations', label: 'Prestations' },
+          {
+            href: '/gardiennage-chantiers-btp-paris',
+            label: 'Gardiennage de chantiers BTP à Paris',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Gardiennage de chantiers BTP à Paris et en Île-de-France"

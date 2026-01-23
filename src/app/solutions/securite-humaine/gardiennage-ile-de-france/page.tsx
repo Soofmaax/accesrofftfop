@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE propose des dispositifs de gardiennage en Île-de-France (Paris, 92, 93, 94, 95, 77, 78, 91) : agents de sécurité, rondes de sûreté et surveillance de chantiers, sites tertiaires, entrepôts et sites sensibles.",
   canonicalPath: '/solutions/securite-humaine/gardiennage-ile-de-france',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Gardiennage en Île-de-France',
+    path: '/solutions/securite-humaine/gardiennage-ile-de-france',
+  },
+]);
 
 function getGardiennageIdfServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -85,6 +96,21 @@ export default function GardiennageIdfPage() {
         type="application/ld+json"
         // JSON-LD pour la FAQ Gardiennage Île-de-France
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getGardiennageIdfFaqJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/gardiennage-ile-de-france',
+            label: 'Gardiennage en Île-de-France',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Gardiennage en Île-de-France : agents de sécurité et surveillance de sites"

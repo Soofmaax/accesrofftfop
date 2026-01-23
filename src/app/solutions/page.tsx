@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../lib/breadcrumbs';
 import { buildMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -9,6 +11,11 @@ export const metadata: Metadata = buildMetadata({
     "Vue d'ensemble des solutions de sécurité proposées par MAB SECURITE : sécurité incendie SSIAP, vidéosurveillance entreprise à Paris, audits de sûreté, gardiennage en Île-de-France et agents de sécurité à Marseille, Montpellier, Nice, sécurité événementielle à Cannes.",
   canonicalPath: '/solutions',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+]);
 
 const solutionSections = [
   {
@@ -108,21 +115,33 @@ const solutionSections = [
 
 export default function SolutionsPage() {
   return (
-    <div className="section">
-      <div className="section-inner space-y-8">
-        <header className="space-y-3">
-          <p className="badge">Solutions</p>
-          <h1 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-            Solutions de sécurité pour vos sites et vos événements
-          </h1>
-          <p className="max-w-2xl text-sm text-muted">
-            Retrouvez ici les principales solutions de sécurité proposées par MAB SECURITE,
-            organisées par thématique : sécurité incendie, vidéosurveillance, audits de
-            sûreté, gardiennage et sécurité événementielle. Chaque page détaille les enjeux,
-            les prestations et les modalités de mise en œuvre, avec la possibilité de
-            demander un devis en ligne.
-          </p>
-        </header>
+    <>
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList) des solutions
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <div className="section">
+        <div className="section-inner space-y-8">
+          <header className="space-y-3">
+            <Breadcrumbs
+              items={[
+                { href: '/', label: 'Accueil' },
+                { href: '/solutions', label: 'Solutions' },
+              ]}
+            />
+            <p className="badge">Solutions</p>
+            <h1 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+              Solutions de sécurité pour vos sites et vos événements
+            </h1>
+            <p className="max-w-2xl text-sm text-muted">
+              Retrouvez ici les principales solutions de sécurité proposées par MAB SECURITE,
+              organisées par thématique : sécurité incendie, vidéosurveillance, audits de
+              sûreté, gardiennage et sécurité événementielle. Chaque page détaille les enjeux,
+              les prestations et les modalités de mise en œuvre, avec la possibilité de
+              demander un devis en ligne.
+            </p>
+          </header>
 
         <section className="grid gap-6 lg:grid-cols-3">
           {solutionSections.map((section) => (
@@ -151,7 +170,8 @@ export default function SolutionsPage() {
             </article>
           ))}
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

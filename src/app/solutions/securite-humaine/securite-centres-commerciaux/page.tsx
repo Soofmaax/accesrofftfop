@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE accompagne les centres commerciaux, galeries marchandes et enseignes retail pour sécuriser leurs sites : agents de sécurité, prévention des vols et démarque inconnue, contrôle d'accès, gestion des flux et coordination avec vos équipes internes.",
   canonicalPath: '/solutions/securite-humaine/securite-centres-commerciaux',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Sécurité centres commerciaux & retail',
+    path: '/solutions/securite-humaine/securite-centres-commerciaux',
+  },
+]);
 
 function getSecuriteCentresCommerciauxServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -91,6 +102,21 @@ export default function SecuriteCentresCommerciauxPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getSecuriteCentresCommerciauxFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/securite-centres-commerciaux',
+            label: 'Sécurité centres commerciaux & retail',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Sécurité centres commerciaux & retail : réduire les risques et la démarque inconnue"

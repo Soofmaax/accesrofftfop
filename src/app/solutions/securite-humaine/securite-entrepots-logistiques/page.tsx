@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE sécurise vos entrepôts et plateformes logistiques : agents de sécurité, gardiennage 24/7, rondes de sûreté, contrôle d'accès, surveillance des quais et des zones de stockage pour réduire les vols et incidents.",
   canonicalPath: '/solutions/securite-humaine/securite-entrepots-logistiques',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Sécurité entrepôts & plateformes logistiques',
+    path: '/solutions/securite-humaine/securite-entrepots-logistiques',
+  },
+]);
 
 function getSecuriteEntrepotsLogistiquesServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -91,6 +102,21 @@ export default function SecuriteEntrepotsLogistiquesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getSecuriteEntrepotsLogistiquesFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/securite-entrepots-logistiques',
+            label: 'Sécurité entrepôts & plateformes logistiques',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Sécurité entrepôts & plateformes logistiques : gardiennage et surveillance"

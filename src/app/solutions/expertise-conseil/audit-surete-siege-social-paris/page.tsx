@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE accompagne les directions générales et directions de la sûreté dans l'audit de sûreté de leur siège social à Paris et en Île-de-France : cartographie des risques, analyse des accès, procédures, dispositifs humains et électroniques.",
   canonicalPath: '/solutions/expertise-conseil/audit-surete-siege-social-paris',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Audit de sûreté de siège social à Paris',
+    path: '/solutions/expertise-conseil/audit-surete-siege-social-paris',
+  },
+]);
 
 function getAuditSiegeSocialServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -84,6 +95,21 @@ export default function AuditSureteSiegeSocialParisPage() {
         type="application/ld+json"
         // JSON-LD pour la FAQ audit de sûreté de siège social
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getAuditSiegeSocialFaqJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/expertise-conseil/audit-surete-siege-social-paris',
+            label: 'Audit de sûreté de siège social à Paris',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Audit de sûreté de siège social à Paris : évaluer votre niveau de sécurité"

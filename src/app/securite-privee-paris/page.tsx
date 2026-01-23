@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company, services } from '../../content/company';
 import { AgencyPageTemplate } from '../../components/templates/AgencyPageTemplate';
+import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../lib/breadcrumbs';
 import { buildMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,14 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE, prestataire de sécurité privée à Paris, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics en Île-de-France : gardiennage de chantiers, surveillance humaine, rondes de sûreté et protection de sites sensibles.",
   canonicalPath: '/securite-privee-paris',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  {
+    name: 'Sécurité BTP à Paris',
+    path: '/securite-privee-paris',
+  },
+]);
 
 function getParisLocalBusinessJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -62,6 +72,17 @@ export default function SecuritePriveeParisPage() {
         type="application/ld+json"
         // JSON-LD pour le référencement local (LocalBusiness)
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getParisLocalBusinessJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/securite-privee-paris', label: 'Sécurité BTP à Paris' },
+        ]}
       />
       <AgencyPageTemplate
         h1="Sécurité BTP à Paris : gardiennage de chantiers et sites sensibles"

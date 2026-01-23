@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company, services } from '../../content/company';
 import { AgencyPageTemplate } from '../../components/templates/AgencyPageTemplate';
+import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../lib/breadcrumbs';
 import { buildMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,14 @@ export const metadata: Metadata = buildMetadata({
     'MAB SECURITE, société de sécurité privée à Marseille, sécurise vos chantiers BTP, sites industriels, portuaires, logistiques, commerciaux et événements dans les Bouches-du-Rhône : gardiennage, surveillance humaine, rondes de sûreté et sécurité événementielle.',
   canonicalPath: '/securite-privee-marseille',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  {
+    name: 'Sécurité privée à Marseille',
+    path: '/securite-privee-marseille',
+  },
+]);
 
 function getMarseilleLocalBusinessJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -63,6 +73,17 @@ export default function SecuritePriveeMarseillePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getMarseilleLocalBusinessJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/securite-privee-marseille', label: 'Sécurité privée à Marseille' },
+        ]}
       />
       <AgencyPageTemplate
         h1="Société de sécurité privée à Marseille pour sites BTP, industriels et événements"

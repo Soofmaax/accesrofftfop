@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE accompagne les organisateurs d'événements à Cannes et sur la Côte d'Azur : festivals, salons, événements corporate, soirées privées. Dispositifs d'agents de sécurité, contrôle d'accès, filtrage, rondes et gestion des incidents.",
   canonicalPath: '/solutions/securite-evenementielle/securite-evenementielle-cannes',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Sécurité événementielle à Cannes',
+    path: '/solutions/securite-evenementielle/securite-evenementielle-cannes',
+  },
+]);
 
 function getSecuriteEvenementielleCannesServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -89,6 +100,21 @@ export default function SecuriteEvenementielleCannesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getSecuriteEvenementielleCannesFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-evenementielle/securite-evenementielle-cannes',
+            label: 'Sécurité événementielle à Cannes',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Sécurité événementielle à Cannes : festivals, salons et événements corporate"

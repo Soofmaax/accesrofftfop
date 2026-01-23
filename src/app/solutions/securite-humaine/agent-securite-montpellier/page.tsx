@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,15 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE met à disposition des agents de sécurité à Montpellier et dans l'Hérault (34) pour le gardiennage de chantiers BTP, de sites tertiaires, de dépôts et d'événements : présence sur site, rondes de sûreté, contrôles d'accès.",
   canonicalPath: '/solutions/securite-humaine/agent-securite-montpellier',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  {
+    name: 'Agents de sécurité à Montpellier',
+    path: '/solutions/securite-humaine/agent-securite-montpellier',
+  },
+]);
 
 function getAgentSecuriteMontpellierServiceJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -89,6 +100,21 @@ export default function AgentSecuriteMontpellierPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getAgentSecuriteMontpellierFaqJsonLd()),
         }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-humaine/agent-securite-montpellier',
+            label: 'Agents de sécurité à Montpellier',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Agent de sécurité à Montpellier : gardiennage et surveillance de sites"

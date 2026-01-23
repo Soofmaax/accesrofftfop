@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company, services } from '../../content/company';
 import { AgencyPageTemplate } from '../../components/templates/AgencyPageTemplate';
+import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../lib/breadcrumbs';
 import { buildMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -11,6 +13,14 @@ export const metadata: Metadata = buildMetadata({
     "MAB SECURITE, agence de sécurité privée basée à Nîmes, est spécialisée dans le gardiennage de chantiers BTP, la surveillance de sites commerciaux et la sécurité d’événements dans le Gard (30) : rondes, levées de doute et sécurisation de périmètres.",
   canonicalPath: '/securite-privee-nimes',
 });
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  {
+    name: 'Sécurité privée à Nîmes',
+    path: '/securite-privee-nimes',
+  },
+]);
 
 function getNimesLocalBusinessJsonLd() {
   const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
@@ -59,6 +69,17 @@ export default function SecuritePriveeNimesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getNimesLocalBusinessJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/securite-privee-nimes', label: 'Sécurité privée à Nîmes' },
+        ]}
       />
       <AgencyPageTemplate
         h1="Agence de sécurité privée à Nîmes et dans le Gard (30)"
