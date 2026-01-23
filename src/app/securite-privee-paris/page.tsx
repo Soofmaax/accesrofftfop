@@ -125,7 +125,14 @@ export default function SecuritePriveeParisPage() {
           </Link>
           , l&apos;évaluation du niveau
           de sécurité de vos sites sensibles et la définition de mesures adaptées pour vos
-          bureaux et locaux techniques.
+          bureaux et locaux techniques, ainsi que la mise en place de dispositifs dédiés de{' '}
+          <Link
+            href="/solutions/securite-humaine/gardiennage-ile-de-france"
+            className="underline-offset-2 hover:underline"
+          >
+            gardiennage en Île-de-France
+          </Link>
+          .
         </p>
         <p>
           {company.name} travaille aussi bien dans le cadre de contrats récurrents que

@@ -120,8 +120,14 @@ export default function SecuritePriveeMarseillePage() {
           place combinent présence humaine, rondes de sûreté et contrôle des accès,
           avec un reporting adapté à vos besoins internes (main courante, synthèses
           périodiques, remontée des incidents). En pratique, cela se traduit par la
-          mobilisation d&apos;<strong>agents de sécurité à Marseille</strong> pour des
-          missions de <strong>gardiennage à Marseille</strong> sur vos sites sensibles.
+          mobilisation d&apos;
+          <Link
+            href="/solutions/securite-humaine/agent-securite-marseille"
+            className="underline-offset-2 hover:underline"
+          >
+            agents de sécurité à Marseille
+          </Link>{' '}
+          pour des missions de <strong>gardiennage à Marseille</strong> sur vos sites sensibles.
         </p>
         <p>
           {company.name} peut être mobilisée dans le cadre de contrats de site, de

@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/securite-incendie/agent-ssiap-igh-paris',
     '/solutions/securite-electronique/videosurveillance-entreprise-paris',
     '/solutions/expertise-conseil/audit-surete-siege-social-paris',
+    '/solutions/securite-humaine/agent-securite-marseille',
+    '/solutions/securite-humaine/agent-securite-montpellier',
+    '/solutions/securite-humaine/agent-securite-nice',
+    '/solutions/securite-humaine/gardiennage-ile-de-france',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];
