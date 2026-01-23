@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/securite-privee-montpellier',
     '/securite-privee-nimes',
     '/gardiennage-chantiers-btp-paris',
+    '/solutions/securite-incendie/agent-ssiap-igh-paris',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];
