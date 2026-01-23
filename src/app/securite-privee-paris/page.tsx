@@ -71,16 +71,22 @@ export default function SecuritePriveeParisPage() {
         </h2>
         <p>
           Nous intervenons en renfort des directions générales, directions immobilières,
-          directions de la sûreté et services généraux pour sécuriser les bâtiments,
-          les équipes et les flux de visiteurs. Les missions sont cadrées en amont
-          (périmètre, consignes, reporting) afin d&apos;assurer une continuité
-          d&apos;activité sans rupture et une traçabilité complète des interventions.
+          directions de la sûreté et services généraux pour sécuriser les bâtiments
+          (sièges sociaux, immeubles tertiaires, centres de services), les équipes et les
+          flux de visiteurs. Selon les enjeux, cela peut intégrer un{' '}
+          <strong>audit sûreté de votre siège social</strong>, l&apos;évaluation du niveau
+          de sécurité de vos sites sensibles et la définition de mesures adaptées pour vos
+          bureaux et locaux techniques.
         </p>
         <p>
           {company.name} travaille aussi bien dans le cadre de contrats récurrents que
-          d&apos;appels d&apos;offres privés ou publics. Notre structure à taille
-          humaine permet de proposer une gestion opérationnelle réactive, en lien
-          direct avec un interlocuteur identifié.
+          d&apos;appels d&apos;offres privés ou publics. Notre structure à taille humaine
+          permet de proposer une gestion opérationnelle réactive, en lien direct avec un
+          interlocuteur identifié, tout en intégrant des volets à forte valeur ajoutée&nbsp;:
+          vidéosurveillance d&apos;entreprise à Paris, accompagnement à la mise en œuvre
+          d&apos;un <strong>plan de continuité d&apos;activité (PCA)</strong> et prise en
+          compte des obligations de <strong>sécurité incendie et SSIAP pour les IGH</strong>
+          ou sites recevant du public.
         </p>
       </section>
 
@@ -116,10 +122,13 @@ export default function SecuritePriveeParisPage() {
               Caméras de surveillance &amp; détecteurs de mouvement
             </h3>
             <p className="mt-1.5 text-muted">
-              Dimensionnement et positionnement de dispositifs de vidéosurveillance (caméras
-              de surveillance, détecteurs de mouvement, contrôle d’accès) adaptés aux
-              contraintes des chantiers et immeubles parisiens, en coordination avec vos
-              prestataires techniques et intégrés au dispositif global de sûreté.
+              Dimensionnement et positionnement de dispositifs de{' '}
+              <strong>vidéosurveillance d&apos;entreprise à Paris</strong> (caméras de
+              surveillance, détecteurs de mouvement, contrôle d’accès) adaptés aux
+              contraintes des chantiers, immeubles tertiaires et sièges sociaux parisiens.
+              Nous coordonnons l&apos;installation et la maintenance de ces systèmes avec
+              vos prestataires techniques afin de les intégrer au dispositif global de
+              sûreté.
             </p>
           </article>
           <article className="card-muted p-4">
@@ -141,7 +150,10 @@ export default function SecuritePriveeParisPage() {
               Intégration de la sécurité incendie au dispositif de sûreté : rondes de
               sécurité incendie, prise en compte des points sensibles et recours, le cas
               échéant, à des agents SSIAP via un pilotage et une coordination adaptés à la
-              configuration de vos bâtiments.
+              configuration de vos bâtiments. Nous pouvons vous accompagner sur les{' '}
+              <strong>obligations SSIAP pour les IGH</strong> et immeubles de grande
+              hauteur, notamment pour dimensionner le nombre d&apos;agents SSIAP à prévoir
+              en permanence.
             </p>
           </article>
         </div>

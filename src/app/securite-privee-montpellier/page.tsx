@@ -70,7 +70,11 @@ export default function SecuritePriveeMontpellierPage() {
           La zone de Montpellier concentre des chantiers BTP, des parcs d&apos;activités,
           des immeubles tertiaires et des équipements recevant du public. Les missions de
           sécurité doivent tenir compte de la coactivité, des flux de salariés et de
-          visiteurs, ainsi que des contraintes réglementaires propres à chaque site.
+          visiteurs, ainsi que des contraintes réglementaires propres à chaque site. MAB
+          SECURITE se positionne comme entreprise de sécurité et de{' '}
+          <strong>gardiennage à Montpellier</strong>, en mettant à disposition des{' '}
+          <strong>agents de sécurité à Montpellier</strong> pour vos chantiers et sites
+          tertiaires.
         </p>
         <p>
           {company.name} met en place des dispositifs combinant agents de sécurité,

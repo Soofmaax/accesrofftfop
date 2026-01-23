@@ -23,8 +23,8 @@ export default function SecuritePriveeMarseillePage() {
     <AgencyPageTemplate
       h1="Société de sécurité privée à Marseille pour sites BTP, industriels et événements"
       badge="Marseille · Bouches-du-Rhône"
-      intro={`${company.name} accompagne les acteurs du BTP, les sites industriels et logistiques, les exploitants de sites commerciaux ainsi que les organisateurs d'événements à Marseille et dans les Bouches-du-Rhône. Nos dispositifs de sécurité privée s'adaptent aux contraintes des sites à forte activité : flux de personnes et de véhicules, zones sensibles, accès multiples et exigences réglementaires renforcées.`}
-      zoneLabel="France Sud – Marseille, Montpellier & côte méditerranéenne"
+      intro={`${company.name} accompagne les acteurs du BTP, les sites industriels et logistiques, les exploitants de sites commerciaux ainsi que les organisateurs d'événements à Marseille et dans les Bouches-du-Rhône. Nos dispositifs de sécurité privée s'adaptent aux contraintes des sites à forte activité : flux de personnes et de véhicules, zones sensibles, accès multiples et exigences réglementaires renforcées. MAB SECURITE se positionne comme entreprise de sécurité et de gardiennage à Marseille, en mettant à votre disposition des agents de sécurité pour le gardiennage de nuit, la surveillance de sites et la sécurité événementielle.`}
+      zoneLabel="France Sud – Marseille, Montpellier, Nice, Cannes & côte méditerranéenne"
       responsable="Sofiane"
       zonePhoneLabel={
         <>
@@ -75,14 +75,19 @@ export default function SecuritePriveeMarseillePage() {
           chantiers de grande envergure ou zones portuaires. Les dispositifs mis en
           place combinent présence humaine, rondes de sûreté et contrôle des accès,
           avec un reporting adapté à vos besoins internes (main courante, synthèses
-          périodiques, remontée des incidents).
+          périodiques, remontée des incidents). En pratique, cela se traduit par la
+          mobilisation d&apos;<strong>agents de sécurité à Marseille</strong> pour des
+          missions de <strong>gardiennage à Marseille</strong> sur vos sites sensibles.
         </p>
         <p>
           {company.name} peut être mobilisée dans le cadre de contrats de site, de
           besoins ponctuels (chantier, évènement) ou d&apos;appels d&apos;offres
           privés et publics. Nous travaillons en lien avec vos équipes HSE, QSE ou
           sûreté, ainsi qu&apos;avec vos autres prestataires (télésurveillance,
-          maintenance, gardiennage interne).
+          maintenance, gardiennage interne). Dans la zone Sud, nous assurons également
+          des dispositifs de <strong>sécurité événementielle à Cannes</strong> (festivals,
+          salons, événements professionnels) avec agents de sécurité, contrôle d&apos;accès
+          et gardiennage de salons.
         </p>
       </section>
 

@@ -167,36 +167,46 @@ export default function GardiennageChantiersBtpParisPage() {
         </h2>
         <div className="card-muted space-y-2 p-4">
           <p className="font-medium text-slate-100">
-            Quel est l&apos;intérêt de mettre en place un gardiennage sur un chantier
-            BTP ?
+            Comment éviter les vols sur mon chantier la nuit ?
           </p>
           <p>
-            Le gardiennage réduit significativement les risques de vols, dégradations
-            et intrusions sur le chantier, particulièrement en horaires de nuit et
-            week-end. Il contribue aussi à sécuriser les périmètres pour les riverains et
-            à préserver l&apos;image du maître d&apos;ouvrage et des entreprises
-            intervenantes.
+            La première réponse consiste à mettre en place un dispositif de{' '}
+            <strong>gardiennage de chantier de nuit</strong> dimensionné au profil de
+            risque&nbsp;: présence d&apos;un <strong>agent de sécurité chantier</strong>
+            , rondes de sûreté à horaires variables, levées de doute sur alarme et
+            contrôle des accès. Sur les chantiers BTP urbains, la combinaison d&apos;une{' '}
+            <strong>sécurité chantier BTP</strong> humaine et de moyens techniques
+            (éclairage, clôtures, vidéosurveillance) limite fortement les intrusions et
+            les vols de matériaux.
           </p>
         </div>
         <div className="card-muted space-y-2 p-4">
           <p className="font-medium text-slate-100">
-            À quel moment prévoir le gardiennage dans la planification du chantier ?
+            Quel est le coût d&apos;un agent de sécurité pour un chantier ?
           </p>
           <p>
-            Il est recommandé d&apos;anticiper le besoin dès la préparation du chantier,
-            afin d&apos;intégrer le dispositif de sécurité au planning global et aux
-            éventuels appels d&apos;offres. Nous pouvons vous accompagner en amont pour
-            cadrer ce besoin.
+            Le <strong>tarif de gardiennage de chantier</strong> dépend de plusieurs
+            paramètres&nbsp;: amplitude horaire (nuit, week-end, 24/7), nombre de postes à
+            couvrir, complexité des accès, niveau de risque et durée de la mission. Plutôt
+            qu&apos;un prix unique, {company.name} établit un{' '}
+            <strong>devis de sécurité BTP</strong> sur mesure pour chaque site, en
+            détaillant le coût d&apos;un <strong>agent de sécurité chantier</strong> ou
+            d&apos;une équipe, ainsi que les éventuelles rondes de sûreté complémentaires.
           </p>
         </div>
         <div className="card-muted space-y-2 p-4">
           <p className="font-medium text-slate-100">
-            Intervenez-vous uniquement à Paris intra-muros ?
+            Comment sécuriser un chantier accessible avec plusieurs points d&apos;entrée ?
           </p>
           <p>
-            Nous intervenons sur Paris intra-muros et sur l&apos;ensemble de
-            l&apos;Île-de-France, en particulier sur les chantiers situés dans les zones
-            à forte densité urbaine ou à proximité de sites sensibles.
+            La <strong>sécurisation d&apos;un chantier</strong> avec plusieurs accès
+            passe par une cartographie précise des zones sensibles et la définition de
+            périmètres de contrôle&nbsp;: clôtures, portails, badges ou clés, points de
+            contrôle pour les livraisons. Nous dimensionnons une{' '}
+            <strong>surveillance de chantier multi-accès</strong> mêlant gardiennage
+            humain, rondes de sûreté et, si besoin, vidéosurveillance autonome sur les
+            secteurs les plus exposés afin de limiter les intrusions par des accès
+            secondaires.
           </p>
         </div>
       </section>
