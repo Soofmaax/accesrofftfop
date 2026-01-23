@@ -13,6 +13,25 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function HomePage() {
+  const galleryItems = [
+    {
+      label: 'Exemple de dispositif de sécurité déployé sur un chantier BTP',
+      src: 'https://images.unsplash.com/photo-1642781100314-f1ac6fb42296?auto=format&fit=crop&w=1200&q=80',
+    },
+    {
+      label: 'Exemple de dispositif de sécurité pour un site industriel ou logistique',
+      src: 'https://images.unsplash.com/photo-1642285709726-f9eb035b034b?auto=format&fit=crop&w=1200&q=80',
+    },
+    {
+      label: 'Exemple de dispositif de sécurité pour un événement professionnel',
+      src: 'https://images.unsplash.com/photo-1642781100314-f1ac6fb42296?auto=format&fit=crop&w=1200&q=80',
+    },
+    {
+      label: 'Exemple de dispositif de sécurité pour un site tertiaire ou administratif',
+      src: 'https://images.unsplash.com/photo-1642285709726-f9eb035b034b?auto=format&fit=crop&w=1200&q=80',
+    },
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -210,42 +229,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Galerie photo (structure prête) */}
+      {/* Galerie photo */}
       <section className="section pt-0">
         <div className="section-inner space-y-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-lg font-semibold text-slate-50 sm:text-xl">
-                Galerie photo (prochainement)
+                Galerie photo
               </h2>
               <p className="text-xs text-muted sm:text-sm">
                 Exemples de dispositifs de sécurité déployés sur des chantiers BTP, sites
-                industriels, sites tertiaires et événements sécurisés par {company.name}. La
-                structure ci-dessous est prête à accueillir, à terme, des visuels illustrant
-                ces contextes (photos libres de droit à intégrer).
+                industriels, sites tertiaires et événements sécurisés par {company.name}.
+                Les visuels ci-dessous sont issus de banques d&apos;images libres de droit
+                (type Unsplash) et illustrent les contextes d&apos;intervention.
               </p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              'Exemple de dispositif de sécurité déployé sur un chantier BTP',
-              'Exemple de dispositif de sécurité pour un site industriel ou logistique',
-              'Exemple de dispositif de sécurité pour un événement professionnel',
-              'Exemple de dispositif de sécurité pour un site tertiaire ou administratif',
-            ].map((ariaLabel) => (
+            {galleryItems.map((item) => (
               <figure
-                key={ariaLabel}
-                className="card-muted flex h-32 items-center justify-center border border-dashed border-slate-700 bg-slate-900/40"
+                key={item.label}
+                className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40"
               >
-                <div
-                  role="img"
-                  aria-label={ariaLabel}
-                  className="flex h-full w-full items-center justify-center"
-                >
-                  <span className="text-[11px] text-slate-500">
-                    Emplacement visuel – futur visuel illustrant&nbsp;: {ariaLabel.toLowerCase()}
-                  </span>
-                </div>
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  loading="lazy"
+                  className="h-32 w-full object-cover opacity-90"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-slate-950/75 px-2 py-1">
+                  <span className="text-[10px] text-slate-200">{item.label}</span>
+                </figcaption>
               </figure>
             ))}
           </div>

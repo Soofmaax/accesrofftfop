@@ -88,10 +88,10 @@ Une fois ces informations complétées, le site sera prêt à être utilisé com
 
 ## Images et photos (libres de droit)
 
-Aucune photo n’est embarquée directement dans le dépôt afin d’éviter tout risque lié aux droits d’auteur.  
-Une section de **galerie photo** est déjà prévue sur la page d’accueil (grille de vignettes placeholder) afin de pouvoir intégrer facilement, à terme, des visuels de chantiers, sites et événements sécurisés par MAB SECURITE.
+Les photos illustrant la **galerie de la page d’accueil** sont issues de banques d’images libres de droit (par exemple Unsplash) et sont chargées via leurs URL externes.  
+Aucune image n’est stockée directement dans le dépôt, ce qui limite les risques liés aux droits d’auteur et permet de les remplacer facilement par des visuels spécifiques à MAB SECURITE si besoin.
 
-Pour ajouter des visuels en adéquation avec le sujet (sécurité privée, BTP, sites industriels, événements), vous pouvez utiliser des banques d’images **libres de droits** comme :
+Pour ajouter ou remplacer des visuels en adéquation avec le sujet (sécurité privée, BTP, sites industriels, événements), vous pouvez utiliser des banques d’images **libres de droits** comme :
 
 - [Unsplash](https://unsplash.com/) – collections “construction”, “security”, “industrial” ;
 - [Pexels](https://www.pexels.com/fr-fr/) – mots-clés “chantier BTP”, “gardiennage”, “security guard” ;

@@ -40,8 +40,17 @@ export function SiteHeader() {
       <div className="section-inner flex h-16 items-center justify-between gap-4 lg:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/40">
-            <Shield className="h-5 w-5" aria-hidden="true" />
+          <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/40">
+            {company.branding.logoUrl ? (
+              // Logo image (à condition que le fichier soit présent au chemin indiqué dans company.branding.logoUrl)
+              <img
+                src={company.branding.logoUrl}
+                alt={`${company.name} logo`}
+                className="h-7 w-7 object-contain"
+              />
+            ) : (
+              <Shield className="h-5 w-5" aria-hidden="true" />
+            )}
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-semibold tracking-wide text-slate-200">
