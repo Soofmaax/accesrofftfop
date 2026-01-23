@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/gardiennage-chantiers-btp-paris',
     '/solutions/securite-incendie/agent-ssiap-igh-paris',
     '/solutions/securite-electronique/videosurveillance-entreprise-paris',
+    '/solutions/expertise-conseil/audit-surete-siege-social-paris',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];

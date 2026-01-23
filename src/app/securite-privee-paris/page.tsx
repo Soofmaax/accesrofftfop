@@ -117,7 +117,13 @@ export default function SecuritePriveeParisPage() {
           directions de la sûreté et services généraux pour sécuriser les bâtiments
           (sièges sociaux, immeubles tertiaires, centres de services), les équipes et les
           flux de visiteurs. Selon les enjeux, cela peut intégrer un{' '}
-          <strong>audit sûreté de votre siège social</strong>, l&apos;évaluation du niveau
+          <Link
+            href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
+            className="underline-offset-2 hover:underline"
+          >
+            audit de sûreté de votre siège social à Paris
+          </Link>
+          , l&apos;évaluation du niveau
           de sécurité de vos sites sensibles et la définition de mesures adaptées pour vos
           bureaux et locaux techniques.
         </p>
