@@ -20,92 +20,92 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 
 const allImages = [
   {
-    src: '/images/home-gallery-chantier-btp.png',
+    src: '/images/securite-chantier-btp-nuit.png',
     label: 'Illustration de gardiennage de chantier BTP de nuit',
   },
   {
-    src: '/images/home-gallery-entrepot-logistique.png',
+    src: '/images/securite-entrepot-plateforme-logistique.png',
     label: 'Illustration de sécurité pour entrepôt ou plateforme logistique',
   },
   {
-    src: '/images/home-gallery-evenement-professionnel.png',
+    src: '/images/securite-evenementiel-salon-professionnel.png',
     label: 'Illustration de sécurité événementielle pour salon ou convention',
   },
   {
-    src: '/images/home-gallery-site-tertiaire.png',
+    src: '/images/securite-siege-social-site-tertiaire.png',
     label: 'Illustration de sécurité pour un site tertiaire ou administratif',
   },
   {
-    src: '/images/gallery-01.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 1)',
+    src: '/images/securite-privee-btp-01.png',
+    label: 'Illustration de sécurité privée pour chantier BTP (vue 1)',
   },
   {
-    src: '/images/gallery-02.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 2)',
+    src: '/images/securite-privee-btp-02.png',
+    label: 'Illustration de sécurité privée pour chantier BTP (vue 2)',
   },
   {
-    src: '/images/gallery-03.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 3)',
+    src: '/images/securite-privee-entrepot-logistique-01.png',
+    label: 'Illustration de sécurité privée pour entrepôt logistique (vue 1)',
   },
   {
-    src: '/images/gallery-04.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 4)',
+    src: '/images/securite-privee-entrepot-logistique-02.png',
+    label: 'Illustration de sécurité privée pour entrepôt logistique (vue 2)',
   },
   {
-    src: '/images/gallery-05.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 5)',
+    src: '/images/securite-privee-centre-commercial-retail-01.png',
+    label: 'Illustration de sécurité pour centre commercial et retail (vue 1)',
   },
   {
-    src: '/images/gallery-06.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 6)',
+    src: '/images/securite-privee-centre-commercial-retail-02.png',
+    label: 'Illustration de sécurité pour centre commercial et retail (vue 2)',
   },
   {
-    src: '/images/gallery-07.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 7)',
+    src: '/images/securite-evenementiel-exterieur-01.png',
+    label: 'Illustration de sécurité événementielle en extérieur (vue 1)',
   },
   {
-    src: '/images/gallery-08.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 8)',
+    src: '/images/securite-evenementiel-exterieur-02.png',
+    label: 'Illustration de sécurité événementielle en extérieur (vue 2)',
   },
   {
-    src: '/images/gallery-09.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 9)',
+    src: '/images/securite-siege-social-accueil-01.png',
+    label: 'Illustration de sécurité à l’accueil d’un siège social (vue 1)',
   },
   {
-    src: '/images/gallery-10.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 10)',
+    src: '/images/securite-siege-social-accueil-02.png',
+    label: 'Illustration de sécurité à l’accueil d’un siège social (vue 2)',
   },
   {
-    src: '/images/gallery-11.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 11)',
+    src: '/images/securite-rondes-nuit-01.png',
+    label: 'Illustration de rondes de sécurité de nuit sur site professionnel (vue 1)',
   },
   {
-    src: '/images/gallery-12.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 12)',
+    src: '/images/securite-rondes-nuit-02.png',
+    label: 'Illustration de rondes de sécurité de nuit sur site professionnel (vue 2)',
   },
   {
-    src: '/images/gallery-13.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 13)',
+    src: '/images/securite-videosurveillance-pc-01.png',
+    label: 'Illustration de PC de vidéosurveillance et écrans de contrôle (vue 1)',
   },
   {
-    src: '/images/gallery-14.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 14)',
+    src: '/images/securite-videosurveillance-pc-02.png',
+    label: 'Illustration de PC de vidéosurveillance et écrans de contrôle (vue 2)',
   },
   {
-    src: '/images/gallery-15.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 15)',
+    src: '/images/securite-agent-securite-01.png',
+    label: 'Illustration d’agent de sécurité en tenue professionnelle (vue 1)',
   },
   {
-    src: '/images/gallery-16.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 16)',
+    src: '/images/securite-agent-securite-02.png',
+    label: 'Illustration d’agent de sécurité en tenue professionnelle (vue 2)',
   },
   {
-    src: '/images/gallery-17.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 17)',
+    src: '/images/securite-poste-controle-01.png',
+    label: 'Illustration de poste de contrôle et supervision de site (vue 1)',
   },
   {
-    src: '/images/gallery-18.png',
-    label: 'Illustration générique de dispositif de sécurité professionnelle (image 18)',
+    src: '/images/securite-poste-controle-02.png',
+    label: 'Illustration de poste de contrôle et supervision de site (vue 2)',
   },
 ];
 
