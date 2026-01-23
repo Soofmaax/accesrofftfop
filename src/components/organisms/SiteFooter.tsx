@@ -70,41 +70,46 @@ export function SiteFooter() {
 
           {/* Links */}
           <div className="space-y-4 text-sm">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Navigation
+            <nav aria-label="Navigation en pied de page">
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Navigation
+                </div>
+                <div className="mt-3 flex flex-col gap-1 text-slate-300">
+                  <Link href="/prestations" className="hover:text-emerald-300">
+                    Prestations
+                  </Link>
+                  <Link href="/solutions" className="hover:text-emerald-300">
+                    Solutions
+                  </Link>
+                  <Link href="/secteurs" className="hover:text-emerald-300">
+                    Secteurs
+                  </Link>
+                  <Link href="/a-propos" className="hover:text-emerald-300">
+                    À propos
+                  </Link>
+                  <Link href="/contact" className="hover:text-emerald-300">
+                    Contact
+                  </Link>
+                </div>
               </div>
-              <div className="mt-3 flex flex-col gap-1 text-slate-300">
-                <Link href="/prestations" className="hover:text-emerald-300">
-                  Prestations
-                </Link>
-                <Link href="/secteurs" className="hover:text-emerald-300">
-                  Secteurs
-                </Link>
-                <Link href="/a-propos" className="hover:text-emerald-300">
-                  À propos
-                </Link>
-                <Link href="/contact" className="hover:text-emerald-300">
-                  Contact
-                </Link>
+              <div className="mt-4">
+                <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                  Informations légales
+                </div>
+                <div className="mt-3 flex flex-col gap-1 text-slate-300">
+                  <Link href="/mentions-legales" className="hover:text-emerald-300">
+                    Mentions légales
+                  </Link>
+                  <Link
+                    href="/politique-de-confidentialite"
+                    className="hover:text-emerald-300"
+                  >
+                    Politique de confidentialité
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Informations légales
-              </div>
-              <div className="mt-3 flex flex-col gap-1 text-slate-300">
-                <Link href="/mentions-legales" className="hover:text-emerald-300">
-                  Mentions légales
-                </Link>
-                <Link
-                  href="/politique-de-confidentialite"
-                  className="hover:text-emerald-300"
-                >
-                  Politique de confidentialité
-                </Link>
-              </div>
-            </div>
+            </nav>
           </div>
         </div>
 
