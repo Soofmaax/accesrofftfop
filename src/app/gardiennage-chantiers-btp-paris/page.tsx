@@ -98,7 +98,7 @@ export default function GardiennageChantiersBtpParisPage() {
           </>
         }
       >
-      <section className="space-y-4 text-sm text-slate-300">
+        <section className="space-y-4 text-sm text-slate-300">
         <h2 className="text-base font-semibold text-slate-50">
           Une approche conçue pour les chantiers BTP parisiens
         </h2>
@@ -314,6 +314,7 @@ export default function GardiennageChantiersBtpParisPage() {
           }}
         />
       </section>
-    </ServicePageTemplate>
+      </ServicePageTemplate>
+    </>
   );
 }
