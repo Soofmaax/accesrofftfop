@@ -17,19 +17,19 @@ export default function HomePage() {
   const galleryItems = [
     {
       label: 'Exemple de dispositif de sécurité déployé sur un chantier BTP',
-      src: 'https://images.unsplash.com/photo-1642781100314-f1ac6fb42296?auto=format&fit=crop&w=1200&q=80',
+      src: '/images/home-gallery-chantier-btp.png',
     },
     {
       label: 'Exemple de dispositif de sécurité pour un site industriel ou logistique',
-      src: 'https://images.unsplash.com/photo-1642285709726-f9eb035b034b?auto=format&fit=crop&w=1200&q=80',
+      src: '/images/home-gallery-entrepot-logistique.png',
     },
     {
       label: 'Exemple de dispositif de sécurité pour un événement professionnel',
-      src: 'https://images.unsplash.com/photo-1642781100314-f1ac6fb42296?auto=format&fit=crop&w=1200&q=80',
+      src: '/images/home-gallery-evenement-professionnel.png',
     },
     {
       label: 'Exemple de dispositif de sécurité pour un site tertiaire ou administratif',
-      src: 'https://images.unsplash.com/photo-1642285709726-f9eb035b034b?auto=format&fit=crop&w=1200&q=80',
+      src: '/images/home-gallery-site-tertiaire.png',
     },
   ];
 
