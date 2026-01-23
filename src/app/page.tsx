@@ -51,7 +51,12 @@ export default function HomePage() {
                 d&apos;ordre publics et les organisateurs d&apos;événements. Notre
                 expérience de terrain et notre connaissance des appels d&apos;offres privés
                 et publics garantissent des interventions traçables, fiables et conformes
-                au cadre réglementaire.
+                au cadre réglementaire. Nous intervenons notamment pour le{' '}
+                <strong>gardiennage de chantiers BTP en Île-de-France</strong>, la mise à
+                disposition d&apos;
+                <strong>agents de sécurité à Marseille, Montpellier et Nice</strong>, la{' '}
+                <strong>vidéosurveillance d&apos;entreprise à Paris</strong> et la{' '}
+                <strong>sécurité événementielle à Cannes</strong>.
               </p>
             </div>
 
@@ -198,7 +203,10 @@ export default function HomePage() {
               </h2>
               <p className="text-sm text-muted">
                 Des solutions de sécurité structurées pour vos bâtiments, sites
-                opérationnels, événements et environnements sensibles.
+                opérationnels, événements et environnements sensibles, qu&apos;il s&apos;agisse
+                de <strong>gardiennage en Île-de-France</strong>, de sécurité BTP à Paris,
+                d&apos;<strong>agents de sécurité à Marseille ou Montpellier</strong>, ou de{' '}
+                <strong>sécurité événementielle à Cannes</strong>.
               </p>
             </div>
             <Link
@@ -226,6 +234,67 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+
+          <p className="text-[11px] text-slate-400">
+            Pour des besoins très ciblés, vous pouvez également consulter nos pages
+            dédiées&nbsp;:&nbsp;
+            <Link
+              href="/solutions/securite-incendie/agent-ssiap-igh-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              obligations SSIAP en IGH à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              vidéosurveillance d&apos;entreprise à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              audit de sûreté de siège social à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/gardiennage-ile-de-france"
+              className="underline-offset-2 hover:underline"
+            >
+              gardiennage en Île-de-France
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-marseille"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Marseille
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-montpellier"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Montpellier
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-nice"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Nice
+            </Link>
+            &nbsp;et&nbsp;
+            <Link
+              href="/solutions/securite-evenementielle/securite-evenementielle-cannes"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité événementielle à Cannes
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

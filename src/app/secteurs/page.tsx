@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Building2, Clapperboard, Landmark, Ticket } from 'lucide-react';
 import { company, sectors } from '../../content/company';
 import { buildMetadata } from '../../lib/seo';
@@ -70,6 +71,38 @@ export default function SecteursPage() {
             Les besoins en sécurité privée peuvent concerner de nombreux environnements
             spécifiques (santé, enseignement, sites culturels, etc.). N&apos;hésitez pas à
             nous contacter pour étudier la faisabilité d&apos;un dispositif adapté.
+          </p>
+          <p className="mt-2 text-[11px] text-slate-400">
+            Pour des besoins plus ciblés, vous pouvez aussi consulter nos solutions
+            dédiées&nbsp;:&nbsp;
+            <Link
+              href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              audit de sûreté de siège social à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              vidéosurveillance d&apos;entreprise à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/gardiennage-ile-de-france"
+              className="underline-offset-2 hover:underline"
+            >
+              gardiennage en Île-de-France
+            </Link>
+            &nbsp;ou&nbsp;
+            <Link
+              href="/solutions/securite-evenementielle/securite-evenementielle-cannes"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité événementielle à Cannes
+            </Link>
+            .
           </p>
         </section>
       </div>

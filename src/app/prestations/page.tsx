@@ -76,6 +76,72 @@ export default function PrestationsPage() {
             </div>
           </div>
         </div>
+
+        <section className="card-muted mt-6 p-5 text-xs text-slate-300">
+          <p className="font-medium text-slate-100">
+            Besoins très ciblés : nos solutions dédiées
+          </p>
+          <p className="mt-2">
+            Pour des sujets précis (conformité incendie, vidéosurveillance, audit ou
+            dispositifs locaux), vous pouvez vous appuyer sur nos pages solutions&nbsp;:&nbsp;
+            <Link
+              href="/solutions/securite-incendie/agent-ssiap-igh-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              obligations SSIAP en IGH à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              vidéosurveillance d&apos;entreprise à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              audit de sûreté de siège social à Paris
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/gardiennage-ile-de-france"
+              className="underline-offset-2 hover:underline"
+            >
+              gardiennage en Île-de-France
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-marseille"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Marseille
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-montpellier"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Montpellier
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/agent-securite-nice"
+              className="underline-offset-2 hover:underline"
+            >
+              agents de sécurité à Nice
+            </Link>
+            &nbsp;et&nbsp;
+            <Link
+              href="/solutions/securite-evenementielle/securite-evenementielle-cannes"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité événementielle à Cannes
+            </Link>
+            .
+          </p>
+        </section>
       </section>
     </ServicePageTemplate>
   );
