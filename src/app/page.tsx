@@ -2,12 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company, engagements, services } from '../content/company';
+import { buildMetadata } from '../lib/seo';
 
-export const metadata: Metadata = {
-  title: 'MAB SECURITE – Sécurité privée & gardiennage BTP à Paris, Marseille, Montpellier, Nîmes',
+export const metadata: Metadata = buildMetadata({
+  title:
+    'MAB SECURITE – Sécurité privée & gardiennage BTP à Paris, Marseille, Montpellier, Nîmes',
   description:
-    "MAB SECURITE, société de sécurité privée, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics à Paris, Marseille, Montpellier, Nîmes et sur la côte sud : gardiennage de chantiers, surveillance humaine, rondes de sûreté, vidéosurveillance et sécurisation de sites.",
-};
+    'MAB SECURITE, société de sécurité privée, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics à Paris, Marseille, Montpellier, Nîmes et sur la côte sud : gardiennage de chantiers, surveillance humaine, rondes de sûreté, vidéosurveillance et sécurisation de sites.',
+  canonicalPath: '/',
+});
 
 export default function HomePage() {
   return (
