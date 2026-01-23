@@ -12,38 +12,66 @@ export const metadata: Metadata = buildMetadata({
   canonicalPath: '/gardiennage-chantiers-btp-paris',
 });
 
+function getGardiennageChantierServiceJsonLd() {
+  const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Gardiennage de chantier',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: company.name,
+      url: baseUrl.replace(/\/$/, ''),
+    },
+    description:
+      'Protection 24/7 de vos chantiers BTP contre le vol, le vandalisme et les intrusions en Île-de-France.',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      areaServed: 'Paris et Île-de-France',
+    },
+  };
+}
+
 export default function GardiennageChantiersBtpParisPage() {
   return (
-    <ServicePageTemplate
-      h1="Gardiennage de chantiers BTP à Paris et en Île-de-France"
-      badge="Paris · BTP · Chantiers"
-      intro={`${company.name} accompagne les entreprises du BTP et les maîtres d'ouvrage dans la sécurisation de leurs chantiers en Île-de-France. Nos dispositifs de gardiennage de chantiers BTP combinent présence humaine, rondes de sûreté et levées de doute pour protéger vos matériels, vos installations et vos équipes, notamment en horaires de nuit et week-end.`}
-      sidebar={
-        <>
-          <h2 className="text-sm font-semibold text-slate-50">
-            Exemples de chantiers pris en charge
-          </h2>
-          <ul className="mt-3 space-y-2">
-            <li className="flex gap-2">
-              <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-              <span>Opérations immobilières (logements, tertiaire, réhabilitation)</span>
-            </li>
-            <li className="flex gap-2">
-              <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-              <span>Chantiers d&apos;infrastructure et de VRD</span>
-            </li>
-            <li className="flex gap-2">
-              <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-              <span>Bases-vie et dépôts de matériaux en périphérie de Paris</span>
-            </li>
-            <li className="flex gap-2">
-              <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-              <span>Sites occupés en travaux (bureaux, commerces, équipements publics)</span>
-            </li>
-          </ul>
-        </>
-      }
-    >
+    <>
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le service de gardiennage de chantier
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getGardiennageChantierServiceJsonLd()) }}
+      />
+      <ServicePageTemplate
+        h1="Gardiennage de chantiers BTP à Paris et en Île-de-France"
+        badge="Paris · BTP · Chantiers"
+        intro={`${company.name} accompagne les entreprises du BTP et les maîtres d'ouvrage dans la sécurisation de leurs chantiers en Île-de-France. Nos dispositifs de gardiennage de chantiers BTP combinent présence humaine, rondes de sûreté et levées de doute pour protéger vos matériels, vos installations et vos équipes, notamment en horaires de nuit et week-end.`}
+        sidebar={
+          <>
+            <h2 className="text-sm font-semibold text-slate-50">
+              Exemples de chantiers pris en charge
+            </h2>
+            <ul className="mt-3 space-y-2">
+              <li className="flex gap-2">
+                <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+                <span>Opérations immobilières (logements, tertiaire, réhabilitation)</span>
+              </li>
+              <li className="flex gap-2">
+                <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+                <span>Chantiers d&apos;infrastructure et de VRD</span>
+              </li>
+              <li className="flex gap-2">
+                <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+                <span>Bases-vie et dépôts de matériaux en périphérie de Paris</span>
+              </li>
+              <li className="flex gap-2">
+                <HardHat className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+                <span>Sites occupés en travaux (bureaux, commerces, équipements publics)</span>
+              </li>
+            </ul>
+          </>
+        }
+      >
       <section className="space-y-4 text-sm text-slate-300">
         <h2 className="text-base font-semibold text-slate-50">
           Une approche conçue pour les chantiers BTP parisiens
@@ -209,6 +237,46 @@ export default function GardiennageChantiersBtpParisPage() {
             secondaires.
           </p>
         </div>
+        <script
+          type="application/ld+json"
+          // JSON-LD pour la FAQ (FAQPage)
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'Comment éviter les vols sur mon chantier la nuit ?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text:
+                      "La mise en place d'un dispositif de gardiennage de chantier de nuit, combinant présence d'un agent de sécurité, rondes de sûreté à horaires variables, levées de doute sur alarme et contrôle des accès, permet de limiter fortement les intrusions et les vols de matériaux sur les chantiers BTP urbains.",
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: "Quel est le coût d'un agent de sécurité pour un chantier ?",
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text:
+                      "Le tarif d'un agent de sécurité pour un chantier dépend de l'amplitude horaire, du nombre de postes à couvrir, de la complexité des accès, du niveau de risque et de la durée de la mission. MAB SECURITE établit un devis de sécurité BTP sur mesure pour chaque site.",
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name:
+                    "Comment sécuriser un chantier accessible avec plusieurs points d'entrée ?",
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text:
+                      "La sécurisation d'un chantier multi-accès passe par une cartographie précise des zones sensibles, la définition de périmètres de contrôle (clôtures, portails, badges ou clés) et la mise en place d'une surveillance de chantier multi-accès combinant gardiennage humain, rondes de sûreté et vidéosurveillance autonome sur les secteurs les plus exposés.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </section>
     </ServicePageTemplate>
   );

@@ -12,6 +12,43 @@ export const metadata: Metadata = buildMetadata({
   canonicalPath: '/securite-privee-paris',
 });
 
+function getParisLocalBusinessJsonLd() {
+  const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `${company.name} Paris`,
+    description:
+      'Services de sécurité privée, gardiennage de chantiers BTP et sécurité incendie à Paris et en Île-de-France.',
+    url: `${baseUrl.replace(/\/$/, '')}/securite-privee-paris`,
+    telephone: company.contact.phone.value,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: company.address.line1 + (company.address.line2 ? `, ${company.address.line2}` : ''),
+      addressLocality: 'Paris',
+      postalCode: '75000',
+      addressCountry: 'FR',
+    },
+    openingHours: 'Mo-Su 00:00-23:59',
+    areaServed: 'Paris et Île-de-France',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Services de Sécurité',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Gardiennage de chantier' },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Sécurité Incendie SSIAP' },
+        },
+      ],
+    },
+  };
+}
+
 export default function SecuritePriveeParisPage() {
   const keyServices = services.filter((service) =>
     ['gardiennage-surveillance', 'rondes-prevention', 'securisation-sites-perimetres'].includes(
@@ -20,51 +57,57 @@ export default function SecuritePriveeParisPage() {
   );
 
   return (
-    <AgencyPageTemplate
-      h1="Sécurité BTP à Paris : gardiennage de chantiers et sites sensibles"
-      badge="Paris · Île-de-France"
-      intro={`${company.name} accompagne en priorité les entreprises du BTP, les maîtres d'ouvrage et les donneurs d'ordre publics implantés à Paris et en Île-de-France (75, 92, 93, 94, 95, 77, 78, 91). Nos dispositifs de gardiennage, de surveillance et de rondes de sûreté sont dimensionnés pour les environnements à enjeux : chantiers urbains, bases-vie, bâtiments en construction, mais aussi sièges sociaux, immeubles tertiaires et sites techniques.`}
-      zoneLabel="France Nord – Paris & Île-de-France"
-      responsable="Béna"
-      zonePhoneLabel={
-        <>
-          <p>
-            Les coordonnées directes de la zone Nord sont communiquées dans le cadre des
-            échanges avec les clients implantés à Paris et en Île-de-France.
-          </p>
-          <p className="mt-2 text-xs text-muted">
-            Pour toute première prise de contact, vous pouvez utiliser le numéro principal
-            indiqué sur le site ou le formulaire de contact.
-          </p>
-        </>
-      }
-      situationsAside={
-        <ul className="space-y-2">
-          <li className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-            <span>Gardiennage de chantiers BTP et bases-vie en milieu urbain</span>
-          </li>
-          <li className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-            <span>
-              Surveillance de sites techniques, dépôts de matériaux et zones à accès restreint
-            </span>
-          </li>
-          <li className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-            <span>
-              Rondes de sûreté, levées de doute et contrôles d&apos;accès hors horaires ouvrés
-            </span>
-          </li>
-          <li className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
-            <span>
-              Dispositifs de sécurité pour opérations et événements corporate à Paris
-            </span>
-          </li>
-        </ul>
-      }
-    >
+    <>
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le référencement local (LocalBusiness)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getParisLocalBusinessJsonLd()) }}
+      />
+      <AgencyPageTemplate
+        h1="Sécurité BTP à Paris : gardiennage de chantiers et sites sensibles"
+        badge="Paris · Île-de-France"
+        intro={`${company.name} accompagne en priorité les entreprises du BTP, les maîtres d'ouvrage et les donneurs d'ordre publics implantés à Paris et en Île-de-France (75, 92, 93, 94, 95, 77, 78, 91). Nos dispositifs de gardiennage, de surveillance et de rondes de sûreté sont dimensionnés pour les environnements à enjeux : chantiers urbains, bases-vie, bâtiments en construction, mais aussi sièges sociaux, immeubles tertiaires et sites techniques.`}
+        zoneLabel="France Nord – Paris & Île-de-France"
+        responsable="Béna"
+        zonePhoneLabel={
+          <>
+            <p>
+              Les coordonnées directes de la zone Nord sont communiquées dans le cadre des
+              échanges avec les clients implantés à Paris et en Île-de-France.
+            </p>
+            <p className="mt-2 text-xs text-muted">
+              Pour toute première prise de contact, vous pouvez utiliser le numéro principal
+              indiqué sur le site ou le formulaire de contact.
+            </p>
+          </>
+        }
+        situationsAside={
+          <ul className="space-y-2">
+            <li className="flex gap-2">
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+              <span>Gardiennage de chantiers BTP et bases-vie en milieu urbain</span>
+            </li>
+            <li className="flex gap-2">
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+              <span>
+                Surveillance de sites techniques, dépôts de matériaux et zones à accès restreint
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+              <span>
+                Rondes de sûreté, levées de doute et contrôles d&apos;accès hors horaires ouvrés
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
+              <span>
+                Dispositifs de sécurité pour opérations et événements corporate à Paris
+              </span>
+            </li>
+          </ul>
+        }
+      >
       <section className="space-y-4 text-sm text-slate-300">
         <h2 className="text-base font-semibold text-slate-50">
           Sécurité privée pour les organisations basées à Paris
