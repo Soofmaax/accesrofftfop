@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { company } from '../../content/company';
+import { CookiePreferencesLink } from '../molecules/CookiePreferencesLink';
 
 /**
  * Footer organism built on top of existing layout/footer content.
@@ -118,7 +119,10 @@ export function SiteFooter() {
           <p>
             © {year} {company.name}. Tous droits réservés.
           </p>
-          <p>Site vitrine institutionnel – Sécurité privée B2B.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p>Site vitrine institutionnel – Sécurité privée B2B.</p>
+            <CookiePreferencesLink className="text-[11px] text-slate-400 underline-offset-2 hover:text-slate-200 hover:underline" />
+          </div>
         </div>
       </div>
     </footer>
