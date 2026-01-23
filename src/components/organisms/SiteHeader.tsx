@@ -104,6 +104,7 @@ export function SiteHeader() {
             {[
               { href: '/', label: 'Accueil' },
               { href: '/prestations', label: 'Prestations' },
+              { href: '/solutions', label: 'Solutions' },
               { href: '/securite-privee-paris', label: 'Paris / IDF' },
               { href: '/securite-privee-marseille', label: 'Marseille' },
               { href: '/securite-privee-montpellier', label: 'Montpellier' },
