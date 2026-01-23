@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { company } from '../../../../../content/company';
 import { ServicePageTemplate } from '../../../../../components/templates/ServicePageTemplate';
+import { Breadcrumbs } from '../../../../../components/molecules/Breadcrumbs';
+import { buildBreadcrumbJsonLd } from '../../../../../lib/breadcrumbs';
 import { buildMetadata } from '../../../../../lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -72,6 +74,12 @@ function getSsiapIghFaqJsonLd() {
   };
 }
 
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: 'Accueil', path: '/' },
+  { name: 'Solutions', path: '/solutions' },
+  { name: 'Obligations SSIAP en IGH à Paris', path: '/solutions/securite-incendie/agent-ssiap-igh-paris' },
+]);
+
 export default function SsiapIghParisPage() {
   return (
     <>
@@ -84,6 +92,21 @@ export default function SsiapIghParisPage() {
         type="application/ld+json"
         // JSON-LD pour la FAQ SSIAP IGH
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getSsiapIghFaqJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        // JSON-LD pour le fil d'Ariane (BreadcrumbList)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { href: '/', label: 'Accueil' },
+          { href: '/solutions', label: 'Solutions' },
+          {
+            href: '/solutions/securite-incendie/agent-ssiap-igh-paris',
+            label: 'Obligations SSIAP en IGH à Paris',
+          },
+        ]}
       />
       <ServicePageTemplate
         h1="Obligations SSIAP en IGH à Paris : le guide complet 2026"
