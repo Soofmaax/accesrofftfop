@@ -8,7 +8,7 @@ interface AgencyPageTemplateProps {
   intro: string;
   zoneLabel: string;
   responsable: string;
-  zonePhoneLabel?: string;
+  zonePhoneLabel?: ReactNode;
   children: ReactNode;
   situationsAside: ReactNode;
 }
@@ -46,7 +46,7 @@ export function AgencyPageTemplate({
                 Responsable opérationnel : <span className="font-semibold">{responsable}</span>
               </p>
               {zonePhoneLabel && (
-                <p className="mt-1 text-xs text-slate-400">{zonePhoneLabel}</p>
+                <div className="mt-1 text-xs text-slate-400">{zonePhoneLabel}</div>
               )}
             </div>
           </div>
