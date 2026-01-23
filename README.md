@@ -88,24 +88,15 @@ Dans `src/content/company.ts` :
 
 Une fois ces informations complétées, le site sera prêt à être utilisé comme vitrine B2B pour MAB SECURITE, avec un positionnement clair sur le **gardiennage de chantiers BTP à Paris / IDF**, la **sécurité de sites professionnels** sur Marseille, Montpellier et Nîmes, ainsi que la structuration opérationnelle **France Nord / France Sud** (responsables par zone).
 
-## Images et photos (libres de droit)
+## Images et photos
 
-Les photos illustrant la **galerie de la page d’accueil** sont issues de banques d’images libres de droit (par exemple Unsplash) et sont chargées via leurs URL externes.  
-Aucune image n’est stockée directement dans le dépôt, ce qui limite les risques liés aux droits d’auteur et permet de les remplacer facilement par des visuels spécifiques à MAB SECURITE si besoin.
+Les photos utilisées sur le site sont stockées dans `public/images/` et intégrées via le composant `next/image` de Next.js.
 
-Pour ajouter ou remplacer des visuels en adéquation avec le sujet (sécurité privée, BTP, sites industriels, événements), vous pouvez utiliser des banques d’images **libres de droits** comme :
+- La **page d’accueil** affiche une mini-galerie de 4 visuels illustrant les principaux contextes d’intervention (chantier BTP, entrepôt / logistique, événement professionnel, site tertiaire / siège social).  
+- Une page dédiée **`/galerie`** présente l’ensemble des visuels disponibles, avec des noms de fichiers et des textes alternatifs descriptifs en français (ex. `securite-chantier-btp-nuit.png`, `securite-entrepot-plateforme-logistique.png`, `securite-evenementiel-salon-professionnel.png`, etc.).
+- Le **logo** est stocké dans `public/images/logo-mab-securite.svg` et référencé via `company.branding.logoUrl`.
 
-- [Unsplash](https://unsplash.com/) – collections “construction”, “security”, “industrial” ;
-- [Pexels](https://www.pexels.com/fr-fr/) – mots-clés “chantier BTP”, “gardiennage”, “security guard” ;
-- [Pixabay](https://pixabay.com/fr/) – photos et illustrations libres de droit.
-
-Recommandations :
-
-1. Placer les images dans `public/images/` (par exemple `public/images/chantier-btp-paris.jpg`).  
-2. Utiliser ces images dans les pages via le composant `next/image` ou des balises `<img />` classiques.  
-3. Mettre à jour `branding.logoUrl` si vous ajoutez un logo dans `public/images/`.
-
-De cette façon, le site reste simple à maintenir, tout en permettant d’ajouter des visuels professionnels en totale adéquation avec le thème de la sécurité privée et du BTP.
+Les visuels peuvent être remplacés par des photos propres à MAB SECURITE (chantiers, sites clients, événements), en conservant les mêmes noms de fichiers ou en adaptant les chemins dans le code. Il reste possible d’utiliser des banques d’images **libres de droits** pour compléter la galerie si nécessaire (Unsplash, Pexels, Pixabay), en respectant les licences associées.
 
 ## Débogage & vérifications avant livraison
 
