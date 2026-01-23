@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/securite-privee-nimes',
     '/gardiennage-chantiers-btp-paris',
     '/solutions/securite-incendie/agent-ssiap-igh-paris',
+    '/solutions/securite-electronique/videosurveillance-entreprise-paris',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];

@@ -126,7 +126,13 @@ export default function SecuritePriveeParisPage() {
           d&apos;appels d&apos;offres privés ou publics. Notre structure à taille humaine
           permet de proposer une gestion opérationnelle réactive, en lien direct avec un
           interlocuteur identifié, tout en intégrant des volets à forte valeur ajoutée&nbsp;:
-          vidéosurveillance d&apos;entreprise à Paris, accompagnement à la mise en œuvre
+          <Link
+            href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+            className="underline-offset-2 hover:underline"
+          >
+            vidéosurveillance d&apos;entreprise à Paris
+          </Link>
+          , accompagnement à la mise en œuvre
           d&apos;un <strong>plan de continuité d&apos;activité (PCA)</strong> et prise en
           compte des obligations de <strong>sécurité incendie et SSIAP pour les IGH</strong>
           ou sites recevant du public.
