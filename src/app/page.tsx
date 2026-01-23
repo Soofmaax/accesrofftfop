@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company, engagements, services } from '../content/company';
 import { buildMetadata } from '../lib/seo';
-import { TrackedLink } from '../components/molecules/TrackedLink';
 
 export const metadata: Metadata = buildMetadata({
   title:
@@ -63,39 +62,19 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <TrackedLink
+              <Link
                 href="/contact#formulaire-devis"
                 className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-soft transition hover:bg-emerald-400"
-                event={{
-                  event: 'cta_click',
-                  category: 'contact',
-                  action: 'click_devis_home_hero',
-                  label: 'Demander un devis',
-                  location: 'home_hero',
-                  destination: 'contact_form',
-                }}
               >
-                <>
-                  Demander un devis
-                  <ArrowRight className="h-4 w-4" />
-                </>
-              </TrackedLink>
-              <TrackedLink
+                Demander un devis
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
                 href="/prestations"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-4 py-2.5 text-sm font-medium text-slate-100 transition hover:border-emerald-500"
-                event={{
-                  event: 'cta_click',
-                  category: 'navigation',
-                  action: 'click_prestations_home_hero',
-                  label: 'Découvrir nos prestations',
-                  location: 'home_hero',
-                  destination: 'prestations_page',
-                }}
               >
-                <>
-                  Découvrir nos prestations
-                </>
-              </TrackedLink>
+                Découvrir nos prestations
+              </Link>
             </div>
 
             <div className="grid gap-4 text-xs text-slate-300 sm:grid-cols-3">
