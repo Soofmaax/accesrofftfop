@@ -83,8 +83,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} bg-slate-950 text-slate-50 antialiased`}
       >
+        <a href="#contenu-principal" className="skip-link">
+          Aller au contenu principal
+        </a>
         <SiteHeader />
-        <main className="pt-16 md:pt-20">{children}</main>
+        <main id="contenu-principal" className="pt-16 md:pt-20">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>
