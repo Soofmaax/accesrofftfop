@@ -25,7 +25,8 @@ export default function AProposPage() {
             service. Les missions sont pilotées de manière structurée et documentée, dans
             une logique de partenariat durable et de réponse aux exigences contractuelles
             et réglementaires, notamment dans le cadre des appels d&apos;offres privés et
-            publics.
+            publics. {company.name} n&apos;intervient pas pour des prestations de sécurité
+            destinées aux particuliers ou aux habitations privées.
           </p>
         </header>
 

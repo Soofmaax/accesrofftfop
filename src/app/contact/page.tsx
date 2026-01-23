@@ -31,7 +31,9 @@ export default function ContactPage() {
             <strong>sécurité centres commerciaux &amp; retail</strong>, de{' '}
             <strong>sécurité événementielle à Cannes</strong>, de{' '}
             <strong>vidéosurveillance d&apos;entreprise à Paris</strong> ou d&apos;un{' '}
-            <strong>audit SSIAP pour IGH</strong>.
+            <strong>audit SSIAP pour IGH</strong>. {company.name} intervient exclusivement
+            pour des clients professionnels et ne propose pas de prestations de sécurité
+            pour des particuliers ou des habitations privées.
           </p>
         </header>
 
