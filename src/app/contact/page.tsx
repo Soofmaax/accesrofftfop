@@ -51,7 +51,8 @@ export default function ContactPage() {
               Zone couverte&nbsp;: Paris et Île-de-France (75, 92, 93, 94, 95, 77, 78, 91).
             </p>
             <p className="text-[11px] text-slate-500">
-              Téléphone direct zone Nord&nbsp;: à compléter (numéro dédié Paris / IDF).
+              Les coordonnées directes de la zone Nord sont communiquées aux interlocuteurs
+              en charge de sites situés à Paris et en Île-de-France.
             </p>
           </div>
           <div className="space-y-1.5">
@@ -66,7 +67,8 @@ export default function ContactPage() {
               méditerranéenne.
             </p>
             <p className="text-[11px] text-slate-500">
-              Téléphone direct zone Sud&nbsp;: à compléter (numéro dédié Sud).
+              Les coordonnées directes de la zone Sud sont partagées avec les clients qui
+              exploitent des sites dans le Sud (Marseille, Montpellier, Nîmes / Gard).
             </p>
           </div>
         </section>

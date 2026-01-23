@@ -216,22 +216,34 @@ export default function HomePage() {
                 Galerie photo (prochainement)
               </h2>
               <p className="text-xs text-muted sm:text-sm">
-                Une sélection de photos viendra illustrer, à terme, les chantiers BTP, sites
-                industriels, événements et environnements sécurisés par {company.name}. La
-                structure ci-dessous est prête à accueillir vos visuels.
+                Exemples de dispositifs de sécurité déployés sur des chantiers BTP, sites
+                industriels, sites tertiaires et événements sécurisés par {company.name}. La
+                structure ci-dessous est prête à accueillir, à terme, des visuels illustrant
+                ces contextes (photos libres de droit à intégrer).
               </p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[1, 2, 3, 4].map((index) => (
-              <div
-                key={index}
+            {[
+              'Exemple de dispositif de sécurité déployé sur un chantier BTP',
+              'Exemple de dispositif de sécurité pour un site industriel ou logistique',
+              'Exemple de dispositif de sécurité pour un événement professionnel',
+              'Exemple de dispositif de sécurité pour un site tertiaire ou administratif',
+            ].map((ariaLabel) => (
+              <figure
+                key={ariaLabel}
                 className="card-muted flex h-32 items-center justify-center border border-dashed border-slate-700 bg-slate-900/40"
               >
-                <span className="text-[11px] text-slate-500">
-                  Emplacement visuel – à remplacer par une photo libre de droit
-                </span>
-              </div>
+                <div
+                  role="img"
+                  aria-label={ariaLabel}
+                  className="flex h-full w-full items-center justify-center"
+                >
+                  <span className="text-[11px] text-slate-500">
+                    Emplacement visuel – futur visuel illustrant&nbsp;: {ariaLabel.toLowerCase()}
+                  </span>
+                </div>
+              </figure>
             ))}
           </div>
         </div>

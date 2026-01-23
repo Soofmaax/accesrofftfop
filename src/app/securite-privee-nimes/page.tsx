@@ -55,11 +55,12 @@ export default function SecuritePriveeNimesPage() {
                 Responsable opérationnel : <span className="font-semibold">Sofiane</span>
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                Téléphone direct zone Sud : à compléter (numéro dédié Nîmes / Gard).
+                Les coordonnées directes de la zone Sud sont communiquées aux clients dont les
+                sites sont situés à Nîmes, dans le Gard ou sur la côte méditerranéenne.
               </p>
               <p className="mt-2 text-xs text-muted">
-                Pour toute première demande, vous pouvez également utiliser le numéro
-                principal mentionné sur le site ou le formulaire de contact.
+                Pour toute première demande, vous pouvez utiliser le numéro principal mentionné
+                sur le site ou le formulaire de contact.
               </p>
             </div>
           </div>

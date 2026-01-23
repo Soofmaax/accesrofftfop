@@ -6,7 +6,7 @@ import { company, services } from '../../content/company';
 export const metadata: Metadata = {
   title: 'Société de sécurité privée à Marseille – BTP, sites industriels & événements',
   description:
-    'MAB SECURITE sécurise vos chantiers BTP, sites industriels, portuaires, logistiques, commerciaux et événements à Marseille et dans les Bouches-du-Rhône : gardiennage, surveillance humaine, rondes de sûreté et sécurité événementielle.',
+    'MAB SECURITE, société de sécurité privée à Marseille, sécurise vos chantiers BTP, sites industriels, portuaires, logistiques, commerciaux et événements dans les Bouches-du-Rhône : gardiennage, surveillance humaine, rondes de sûreté et sécurité événementielle.',
 };
 
 export default function SecuritePriveeMarseillePage() {
@@ -61,11 +61,12 @@ export default function SecuritePriveeMarseillePage() {
                 Responsable opérationnel : <span className="font-semibold">Sofiane</span>
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                Téléphone direct zone Sud : à compléter (numéro dédié Marseille / Montpellier).
+                Les coordonnées directes de la zone Sud sont partagées avec les interlocuteurs
+                en charge de sites situés à Marseille, Montpellier et sur la côte méditerranéenne.
               </p>
               <p className="mt-2 text-xs text-muted">
-                Pour une première prise de contact, vous pouvez également passer par le numéro
-                principal affiché sur le site ou par le formulaire de contact.
+                Pour une première prise de contact, vous pouvez utiliser le numéro principal
+                affiché sur le site ou le formulaire de contact.
               </p>
             </div>
           </div>
@@ -131,9 +132,10 @@ export default function SecuritePriveeMarseillePage() {
                 Caméras de surveillance &amp; détecteurs de mouvement
               </h3>
               <p className="mt-1.5 text-muted">
-                Déploiement de caméras de surveillance, détecteurs de mouvement et contrôle
-                d’accès pour sécuriser entrepôts, sites industriels, plateformes
-                logistiques et chantiers marseillais à forte activité.
+                Déploiement et pilotage, avec vos prestataires de vidéosurveillance, de caméras
+                de surveillance, détecteurs de mouvement et contrôle d’accès pour renforcer la
+                sécurité de vos entrepôts, sites industriels, plateformes logistiques et
+                chantiers marseillais à forte activité.
               </p>
             </article>
             <article className="card-muted p-4">
@@ -142,18 +144,19 @@ export default function SecuritePriveeMarseillePage() {
               </h3>
               <p className="mt-1.5 text-muted">
                 Agents de sécurité habitués aux environnements industriels, portuaires et
-                commerciaux, avec possibilité d’engager des maîtres-chiens pour renforcer
-                la dissuasion et la surveillance de zones sensibles.
+                commerciaux, avec possibilité de mobiliser des maîtres-chiens pour renforcer
+                la dissuasion et la surveillance de zones sensibles, notamment en périphérie
+                de sites étendus ou isolés.
               </p>
             </article>
             <article className="card-muted p-4">
               <h3 className="text-sm font-semibold text-slate-50">
-                Protection incendie &amp; agents SIAP/SSIAP
+                Protection incendie &amp; agents SSIAP
               </h3>
               <p className="mt-1.5 text-muted">
-                Intégration de la dimension incendie dans vos dispositifs de sûreté&nbsp;:
-                rondes de sécurité incendie, surveillance de zones ATEX et mobilisation
-                d’agents SIAP/SSIAP selon la nature de vos installations.
+                Intégration de la dimension sécurité incendie dans vos dispositifs de sûreté&nbsp;:
+                rondes de sécurité incendie, prise en compte des zones ATEX et coordination
+                éventuelle avec des agents SSIAP selon la nature de vos installations.
               </p>
             </article>
           </div>
@@ -177,6 +180,22 @@ export default function SecuritePriveeMarseillePage() {
               Échanger sur un projet à Marseille
             </Link>
           </div>
+          <p className="mt-3 text-[11px] text-slate-400">
+            Vous gérez également des sites à{' '}
+            <Link href="/securite-privee-paris" className="underline-offset-2 hover:underline">
+              Paris
+            </Link>
+            ,{' '}
+            <Link href="/securite-privee-montpellier" className="underline-offset-2 hover:underline">
+              Montpellier
+            </Link>{' '}
+            ou{' '}
+            <Link href="/securite-privee-nimes" className="underline-offset-2 hover:underline">
+              Nîmes / Gard
+            </Link>
+            &nbsp;? Les équipes France Nord et France Sud de MAB SECURITE peuvent coordonner un
+            dispositif de sécurité cohérent sur l&apos;ensemble de votre parc.
+          </p>
         </section>
       </div>
     </div>

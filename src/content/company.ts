@@ -152,8 +152,8 @@ export const services: Service[] = [
       'Surveillance de chantiers et zones de stockage',
       'Protection des accès et des abords immédiats',
       'Coordination avec les autres acteurs de la sûreté',
-      'Intégration de solutions de vidéosurveillance (caméras de surveillance, détecteurs de mouvement)',
-      'Prise en compte des dispositifs de sécurité incendie (agents SIAP/SSIAP, plans de prévention incendie)',
+      'Intégration de solutions de vidéosurveillance (caméras de surveillance, détecteurs de mouvement) en coordination avec vos prestataires spécialisés',
+      'Prise en compte des dispositifs de sécurité incendie (agents SSIAP, plans de prévention incendie) dans le dispositif global de sûreté',
     ],
   },
 ];

@@ -6,7 +6,7 @@ import { company, services } from '../../content/company';
 export const metadata: Metadata = {
   title: 'Sécurité privée à Montpellier – BTP, sites tertiaires & événements',
   description:
-    "MAB SECURITE, société de sécurité privée, sécurise vos chantiers BTP, sites tertiaires et événements à Montpellier, dans l'Hérault (34) et sur le littoral méditerranéen : gardiennage, agents de sécurité, maîtres-chiens, vidéosurveillance et dispositifs de sécurité incendie.",
+    "MAB SECURITE, société de sécurité privée à Montpellier, sécurise vos chantiers BTP, sites tertiaires et événements dans l'Hérault (34) et sur le littoral méditerranéen : gardiennage, agents de sécurité, maîtres-chiens, vidéosurveillance et dispositifs de sécurité incendie.",
 };
 
 export default function SecuritePriveeMontpellierPage() {
@@ -47,9 +47,10 @@ export default function SecuritePriveeMontpellierPage() {
             <p>
               {company.name} met en place des dispositifs combinant agents de sécurité,
               maîtres-chiens, rondes de sûreté et moyens techniques (caméras de surveillance,
-              détecteurs de mouvement, contrôle d&apos;accès). La dimension sécurité
-              incendie est intégrée dès la conception du dispositif, avec la possibilité de
-              mobiliser des agents SIAP/SSIAP selon le profil de risque.
+              détecteurs de mouvement, contrôle d&apos;accès), en coordination avec vos
+              prestataires spécialisés. La dimension sécurité incendie est intégrée dès la
+              conception du dispositif, avec la possibilité d&apos;articuler l&apos;action
+              d&apos;agents SSIAP au profil de risque de vos sites.
             </p>
             <div className="mt-4 rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-xs text-slate-200">
               <p className="font-semibold text-slate-50">
@@ -59,11 +60,12 @@ export default function SecuritePriveeMontpellierPage() {
                 Responsable opérationnel : <span className="font-semibold">Sofiane</span>
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                Téléphone direct zone Sud : à compléter (numéro dédié Montpellier / Hérault).
+                Les coordonnées directes de la zone Sud sont transmises aux interlocuteurs
+                responsables de sites situés à Montpellier et dans l&apos;Hérault.
               </p>
               <p className="mt-2 text-xs text-muted">
-                Pour toute première prise de contact, vous pouvez également utiliser le
-                numéro principal indiqué sur le site ou le formulaire de contact.
+                Pour toute première prise de contact, vous pouvez utiliser le numéro principal
+                indiqué sur le site ou le formulaire de contact.
               </p>
             </div>
           </div>
@@ -125,9 +127,10 @@ export default function SecuritePriveeMontpellierPage() {
                 Caméras de surveillance &amp; détecteurs de mouvement
               </h3>
               <p className="mt-1.5 text-muted">
-                Installation et supervision de caméras de surveillance, détecteurs de
-                mouvement et contrôle d&apos;accès pour sécuriser chantiers, parkings,
-                halls et zones de stockage autour de Montpellier.
+                Déploiement et supervision, en lien avec vos prestataires de vidéosurveillance,
+                de caméras de surveillance, détecteurs de mouvement et contrôle d&apos;accès
+                pour sécuriser chantiers, parkings, halls et zones de stockage autour de
+                Montpellier.
               </p>
             </article>
             <article className="card-muted p-4">
@@ -135,19 +138,20 @@ export default function SecuritePriveeMontpellierPage() {
                 Agents de sécurité &amp; maîtres-chiens
               </h3>
               <p className="mt-1.5 text-muted">
-                Agents de sécurité présents sur site et possibilité d&apos;engager des
+                Agents de sécurité présents sur site et possibilité de mobiliser des
                 maîtres-chiens pour les zones les plus exposées (sites isolés, grandes
-                emprises, chantiers sensibles).
+                emprises, chantiers sensibles), notamment en horaires de nuit.
               </p>
             </article>
             <article className="card-muted p-4">
               <h3 className="text-sm font-semibold text-slate-50">
-                Protection incendie &amp; agents SIAP/SSIAP
+                Protection incendie &amp; agents SSIAP
               </h3>
               <p className="mt-1.5 text-muted">
                 Prise en compte de la sécurité incendie dans vos dispositifs&nbsp;: rondes
-                de sécurité incendie, surveillance des issues de secours et mobilisation
-                d&apos;agents SIAP/SSIAP lorsque la réglementation le requiert.
+                de sécurité incendie, surveillance des issues de secours et coordination
+                avec des agents SSIAP lorsque la réglementation ou le profil de site le
+                nécessite.
               </p>
             </article>
           </div>
@@ -170,6 +174,22 @@ export default function SecuritePriveeMontpellierPage() {
               Échanger sur un projet à Montpellier
             </Link>
           </div>
+          <p className="mt-3 text-[11px] text-slate-400">
+            Pour les entreprises présentes à la fois à{' '}
+            <Link href="/securite-privee-marseille" className="underline-offset-2 hover:underline">
+              Marseille
+            </Link>
+            ,{' '}
+            <Link href="/securite-privee-paris" className="underline-offset-2 hover:underline">
+              Paris
+            </Link>
+            ,{' '}
+            <Link href="/securite-privee-nimes" className="underline-offset-2 hover:underline">
+              Nîmes / Gard
+            </Link>{' '}
+            ou en Île-de-France, MAB SECURITE peut coordonner un dispositif de sécurité unifié
+            avec ses équipes France Nord et France Sud.
+          </p>
         </section>
       </div>
     </div>

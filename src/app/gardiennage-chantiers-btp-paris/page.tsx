@@ -86,7 +86,7 @@ export default function GardiennageChantiersBtpParisPage() {
                     Présence de gardiens de nuit et week-end
                   </h3>
                   <p className="mt-1.5 text-muted">
-                    Agents de sécurité en poste sur site, contrôle des accès, gestion des
+                    Agents de sécurité BTP en poste sur site, contrôle des accès, gestion des
                     entrées-sorties, surveillance des zones sensibles et des stockages
                     critiques (matériels, matériels de chantier, câbles, métaux, etc.).
                   </p>

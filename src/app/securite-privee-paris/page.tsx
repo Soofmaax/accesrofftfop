@@ -6,7 +6,7 @@ import { company, services } from '../../content/company';
 export const metadata: Metadata = {
   title: 'Sécurité BTP à Paris – Gardiennage de chantiers & sites sensibles',
   description:
-    "MAB SECURITE, agence de sécurité privée, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics à Paris et en Île-de-France : gardiennage de chantiers, surveillance humaine, rondes de sûreté et protection de sites sensibles.",
+    "MAB SECURITE, prestataire de sécurité privée à Paris, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics en Île-de-France : gardiennage de chantiers, surveillance humaine, rondes de sûreté et protection de sites sensibles.",
 };
 
 export default function SecuritePriveeParisPage() {
@@ -60,11 +60,12 @@ export default function SecuritePriveeParisPage() {
                 Responsable opérationnel : <span className=\"font-semibold\">Béna</span>
               </p>
               <p className=\"mt-1 text-xs text-slate-400\">
-                Téléphone direct zone Nord : à compléter (numéro dédié Paris / Île-de-France).
+                Les coordonnées directes de la zone Nord sont communiquées dans le cadre des
+                échanges avec les clients implantés à Paris et en Île-de-France.
               </p>
               <p className=\"mt-2 text-xs text-muted\">
-                Pour toute première prise de contact, vous pouvez également utiliser le numéro
-                principal indiqué sur le site ou le formulaire de contact.
+                Pour toute première prise de contact, vous pouvez utiliser le numéro principal
+                indiqué sur le site ou le formulaire de contact.
               </p>
             </div>
           </div>
@@ -128,7 +129,8 @@ export default function SecuritePriveeParisPage() {
               <p className="mt-1.5 text-muted">
                 Dimensionnement et positionnement de dispositifs de vidéosurveillance (caméras
                 de surveillance, détecteurs de mouvement, contrôle d’accès) adaptés aux
-                contraintes des chantiers et immeubles parisiens.
+                contraintes des chantiers et immeubles parisiens, en coordination avec vos
+                prestataires techniques et intégrés au dispositif global de sûreté.
               </p>
             </article>
             <article className="card-muted p-4">
@@ -138,17 +140,19 @@ export default function SecuritePriveeParisPage() {
               <p className="mt-1.5 text-muted">
                 Mobilisation d&apos;agents de sécurité expérimentés et, lorsque le profil de
                 risque l&apos;exige, de maîtres-chiens pour renforcer la dissuasion et la
-                capacité de réaction sur vos chantiers et sites sensibles.
+                capacité de réaction sur vos chantiers et sites sensibles, dans le respect
+                du cadre réglementaire de la sécurité privée.
               </p>
             </article>
             <article className="card-muted p-4">
               <h3 className="text-sm font-semibold text-slate-50">
-                Protection incendie &amp; agents SIAP/SSIAP
+                Protection incendie &amp; agents SSIAP
               </h3>
               <p className="mt-1.5 text-muted">
-                Intégration de la protection incendie aux dispositifs de sécurité : rondes de
-                sécurité incendie, prise en compte des points sensibles et recours à des
-                agents SIAP/SSIAP selon la configuration des bâtiments.
+                Intégration de la sécurité incendie au dispositif de sûreté : rondes de
+                sécurité incendie, prise en compte des points sensibles et recours, le cas
+                échéant, à des agents SSIAP via un pilotage et une coordination adaptés à la
+                configuration de vos bâtiments.
               </p>
             </article>
           </div>
@@ -163,7 +167,20 @@ export default function SecuritePriveeParisPage() {
               Que votre besoin concerne un siège social, un immeuble tertiaire, un site
               technique ou un événement corporate, nous étudions votre contexte et vos
               contraintes (horaires, flux, exigences d&apos;image, appels d&apos;offres
-              privés ou publics) avant de proposer un dispositif adapté.
+              privés ou publics) avant de proposer un dispositif adapté. MAB SECURITE peut
+              également accompagner vos sites situés à{' '}
+              <Link href="/securite-privee-marseille" className="underline-offset-2 hover:underline">
+                Marseille
+              </Link>
+              ,{' '}
+              <Link href="/securite-privee-montpellier" className="underline-offset-2 hover:underline">
+                Montpellier
+              </Link>{' '}
+              ou{' '}
+              <Link href="/securite-privee-nimes" className="underline-offset-2 hover:underline">
+                Nîmes / Gard
+              </Link>
+              , via ses équipes France Sud.
             </p>
             <div className="mt-3">
               <Link
