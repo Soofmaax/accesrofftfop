@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guides',
     '/guides/securiser-chantier-btp-nuit',
     '/guides/preparer-audit-surete-siege-social',
+    '/galerie',
     '/mentions-legales',
     '/politique-de-confidentialite',
   ];

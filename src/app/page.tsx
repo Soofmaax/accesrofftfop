@@ -324,10 +324,15 @@ export default function HomePage() {
               <p className="text-xs text-muted sm:text-sm">
                 Exemples de dispositifs de sécurité déployés sur des chantiers BTP, sites
                 industriels, sites tertiaires et événements sécurisés par {company.name}.
-                Les visuels ci-dessous sont issus de banques d&apos;images libres de droit
-                (type Unsplash) et illustrent les contextes d&apos;intervention.
               </p>
             </div>
+            <Link
+              href="/galerie"
+              className="mt-2 inline-flex items-center text-[11px] font-medium text-emerald-400 hover:text-emerald-300"
+            >
+              Voir la galerie complète
+              <ArrowRight className="ml-1 h-3 w-3" />
+            </Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {galleryItems.map((item) => (

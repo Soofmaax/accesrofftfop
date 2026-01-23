@@ -86,6 +86,9 @@ export function SiteFooter() {
                   <Link href="/secteurs" className="hover:text-emerald-300">
                     Secteurs
                   </Link>
+                  <Link href="/galerie" className="hover:text-emerald-300">
+                    Galerie photo
+                  </Link>
                   <Link href="/a-propos" className="hover:text-emerald-300">
                     À propos
                   </Link>
