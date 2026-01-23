@@ -67,8 +67,11 @@ export default function ContactPage() {
               méditerranéenne.
             </p>
             <p className="text-[11px] text-slate-500">
-              Les coordonnées directes de la zone Sud sont partagées avec les clients qui
-              exploitent des sites dans le Sud (Marseille, Montpellier, Nîmes / Gard).
+              Téléphone direct zone Sud&nbsp;:{' '}
+              <a href="tel:+33759585023" className="hover:text-emerald-300">
+                +33 7 59 58 50 23
+              </a>{' '}
+              (Sofiane).
             </p>
           </div>
         </section>

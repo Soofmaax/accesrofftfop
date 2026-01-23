@@ -55,8 +55,11 @@ export default function SecuritePriveeNimesPage() {
                 Responsable opérationnel : <span className="font-semibold">Sofiane</span>
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                Les coordonnées directes de la zone Sud sont communiquées aux clients dont les
-                sites sont situés à Nîmes, dans le Gard ou sur la côte méditerranéenne.
+                Téléphone direct zone Sud&nbsp;:{' '}
+                <a href="tel:+33759585023" className="hover:text-emerald-300">
+                  +33 7 59 58 50 23
+                </a>{' '}
+                (Sofiane – Nîmes, Gard, côte méditerranéenne).
               </p>
               <p className="mt-2 text-xs text-muted">
                 Pour toute première demande, vous pouvez utiliser le numéro principal mentionné

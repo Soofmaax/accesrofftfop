@@ -61,8 +61,11 @@ export default function SecuritePriveeMarseillePage() {
                 Responsable opérationnel : <span className="font-semibold">Sofiane</span>
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                Les coordonnées directes de la zone Sud sont partagées avec les interlocuteurs
-                en charge de sites situés à Marseille, Montpellier et sur la côte méditerranéenne.
+                Téléphone direct zone Sud&nbsp;:{' '}
+                <a href="tel:+33759585023" className="hover:text-emerald-300">
+                  +33 7 59 58 50 23
+                </a>{' '}
+                (Sofiane – Marseille, Montpellier, côte méditerranéenne).
               </p>
               <p className="mt-2 text-xs text-muted">
                 Pour une première prise de contact, vous pouvez utiliser le numéro principal
