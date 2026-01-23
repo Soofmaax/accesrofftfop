@@ -267,6 +267,20 @@ export default function HomePage() {
             </Link>
             ,&nbsp;
             <Link
+              href="/solutions/securite-humaine/securite-entrepots-logistiques"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité des entrepôts et plateformes logistiques
+            </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/securite-centres-commerciaux"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité centres commerciaux &amp; retail
+            </Link>
+            ,&nbsp;
+            <Link
               href="/solutions/securite-humaine/agent-securite-marseille"
               className="underline-offset-2 hover:underline"
             >

@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/securite-electronique/videosurveillance-entreprise-paris',
     '/solutions/expertise-conseil/audit-surete-siege-social-paris',
     '/solutions/securite-humaine/gardiennage-ile-de-france',
+    '/solutions/securite-humaine/securite-entrepots-logistiques',
     '/solutions/securite-humaine/securite-centres-commerciaux',
     '/solutions/securite-humaine/agent-securite-marseille',
     '/solutions/securite-humaine/agent-securite-montpellier',

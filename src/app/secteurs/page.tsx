@@ -95,6 +95,13 @@ export default function SecteursPage() {
             >
               gardiennage en Île-de-France
             </Link>
+            ,&nbsp;
+            <Link
+              href="/solutions/securite-humaine/securite-entrepots-logistiques"
+              className="underline-offset-2 hover:underline"
+            >
+              sécurité des entrepôts et plateformes logistiques
+            </Link>
             &nbsp;ou&nbsp;
             <Link
               href="/solutions/securite-evenementielle/securite-evenementielle-cannes"

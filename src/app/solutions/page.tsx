@@ -60,6 +60,12 @@ const solutionSections = [
           'Agents de sécurité, rondes et levées de doute pour vos chantiers, sites tertiaires et entrepôts franciliens.',
       },
       {
+        href: '/solutions/securite-humaine/securite-entrepots-logistiques',
+        label: 'Sécurité entrepôts & plateformes logistiques',
+        description:
+          'Gardiennage et surveillance d’entrepôts, plateformes logistiques et zones de stockage.',
+      },
+      {
         href: '/solutions/securite-humaine/securite-centres-commerciaux',
         label: 'Sécurité centres commerciaux & retail',
         description:

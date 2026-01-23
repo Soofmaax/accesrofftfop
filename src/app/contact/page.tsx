@@ -27,7 +27,9 @@ export default function ContactPage() {
             votre contexte et vos priorités, qu&apos;il s&apos;agisse d&apos;un{' '}
             <strong>devis d&apos;agent de sécurité à Marseille, Montpellier ou Nice</strong>,
             d&apos;un <strong>dispositif de gardiennage en Île-de-France</strong>, d&apos;un
-            besoin de <strong>sécurité événementielle à Cannes</strong>, d&apos;une{' '}
+            besoin de <strong>sécurité des entrepôts et plateformes logistiques</strong>, de{' '}
+            <strong>sécurité centres commerciaux &amp; retail</strong>, de{' '}
+            <strong>sécurité événementielle à Cannes</strong>, de{' '}
             <strong>vidéosurveillance d&apos;entreprise à Paris</strong> ou d&apos;un{' '}
             <strong>audit SSIAP pour IGH</strong>.
           </p>

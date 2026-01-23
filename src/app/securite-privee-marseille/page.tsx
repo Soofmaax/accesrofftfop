@@ -115,8 +115,14 @@ export default function SecuritePriveeMarseillePage() {
           Sécurisation de vos sites à Marseille et dans le 13
         </h2>
         <p>
-          Nous intervenons sur des sites industriels, plateformes logistiques, dépôts,
-          chantiers de grande envergure ou zones portuaires. Les dispositifs mis en
+          Nous intervenons sur des sites industriels,{' '}
+          <Link
+            href="/solutions/securite-humaine/securite-entrepots-logistiques"
+            className="underline-offset-2 hover:underline"
+          >
+            plateformes logistiques et dépôts
+          </Link>
+          , chantiers de grande envergure ou zones portuaires. Les dispositifs mis en
           place combinent présence humaine, rondes de sûreté et contrôle des accès,
           avec un reporting adapté à vos besoins internes (main courante, synthèses
           périodiques, remontée des incidents). En pratique, cela se traduit par la
