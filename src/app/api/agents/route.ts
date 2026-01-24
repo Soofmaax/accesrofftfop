@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { supabaseServer } from '../../../lib/supabase';
 
 export async function POST(request: Request) {
   let data: unknown;
@@ -37,18 +38,44 @@ export async function POST(request: Request) {
     );
   }
 
-  // À ce stade, les données peuvent être transmises à un outil RH ou à un pipeline de recrutement.
-  // Dans cette version, nous nous limitons à accuser réception côté serveur sans stocker ni exposer les détails.
-  console.info('[agents] Nouvelle candidature agent reçue', {
-    fullName,
+  if (!supabaseServer) {
+    // Si Supabase n'est pas configuré, on log simplement la candidature côté serveur.
+    console.info('[agents] Candidature agent reçue (Supabase non configuré)', {
+      fullName,
+      phone,
+      email,
+      city,
+      zone,
+      hasCnaps: Boolean(hasCnaps),
+      ssiapLevel: ssiapLevel || null,
+      hasExperience: Boolean(experience && experience.trim()),
+    });
+
+    return NextResponse.json({ success: true });
+  }
+
+  const { error } = await supabaseServer.from('agent_applications').insert({
+    full_name: fullName,
     phone,
     email,
     city,
     zone,
-    hasCnaps: Boolean(hasCnaps),
-    ssiapLevel: ssiapLevel || null,
-    hasExperience: Boolean(experience && experience.trim()),
+    has_cnaps: Boolean(hasCnaps),
+    ssiap_level: ssiapLevel || null,
+    experience: experience || null,
   });
+
+  if (error) {
+    console.error('[agents] Erreur lors de la sauvegarde Supabase', error);
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          'Une erreur est survenue lors de l’enregistrement de votre candidature. Vous pouvez également nous contacter par téléphone ou par e-mail.',
+      },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({ success: true });
 }
