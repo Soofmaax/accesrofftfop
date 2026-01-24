@@ -77,6 +77,9 @@ export const Footer = () => {
                 <Link href="/secteurs" className="hover:text-emerald-300">
                   Secteurs
                 </Link>
+                <Link href="/references" className="hover:text-emerald-300">
+                  Références
+                </Link>
                 <Link href="/a-propos" className="hover:text-emerald-300">
                   À propos
                 </Link>
