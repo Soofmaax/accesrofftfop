@@ -298,6 +298,49 @@ export default function AuditSureteSiegeSocialParisPage() {
             </Link>
           </div>
         </section>
+
+        <section className="mt-6 space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 text-xs text-slate-300">
+          <p className="font-medium text-slate-100">
+            Ressources complémentaires pour préparer votre audit de siège social
+          </p>
+          <p>
+            Pour structurer votre démarche en amont de la mission, vous pouvez vous appuyer sur&nbsp;:
+          </p>
+          <ul className="ml-4 list-disc space-y-1.5">
+            <li>
+              le guide{' '}
+              <Link
+                href="/guides/preparer-audit-surete-siege-social"
+                className="underline-offset-2 hover:underline"
+              >
+                préparer un audit de sûreté de siège social
+              </Link>
+              , qui détaille les étapes de cadrage, la mobilisation des parties prenantes et
+              l&apos;exploitation du rapport ;
+            </li>
+            <li>
+              notre page dédiée à la{' '}
+              <Link
+                href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+                className="underline-offset-2 hover:underline"
+              >
+                vidéosurveillance d&apos;entreprise à Paris
+              </Link>
+              , pour articuler l&apos;audit avec vos dispositifs techniques ;
+            </li>
+            <li>
+              les solutions de{' '}
+              <Link
+                href="/solutions/securite-humaine/gardiennage-ile-de-france"
+                className="underline-offset-2 hover:underline"
+              >
+                gardiennage en Île-de-France
+              </Link>
+              , lorsque vos enjeux portent aussi sur la présence d&apos;agents de sécurité
+              sur site.
+            </li>
+          </ul>
+        </section>
       </ServicePageTemplate>
     </>
   );

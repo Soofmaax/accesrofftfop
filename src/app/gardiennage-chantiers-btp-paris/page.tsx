@@ -309,6 +309,45 @@ export default function GardiennageChantiersBtpParisPage() {
           </p>
         </div>
       </section>
+
+      <section className="mt-6 space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 text-xs text-slate-300">
+        <p className="font-medium text-slate-100">Ressources utiles pour sécuriser vos chantiers</p>
+        <p>
+          Pour aller plus loin dans la sécurisation de vos opérations, vous pouvez consulter&nbsp;:
+        </p>
+        <ul className="ml-4 list-disc space-y-1.5">
+          <li>
+            le guide pratique{' '}
+            <Link
+              href="/guides/securiser-chantier-btp-nuit"
+              className="underline-offset-2 hover:underline"
+            >
+              sécuriser un chantier BTP la nuit
+            </Link>
+            , qui propose une checklist opérationnelle pour structurer votre dispositif nocturne ;
+          </li>
+          <li>
+            nos solutions de{' '}
+            <Link
+              href="/solutions/securite-humaine/gardiennage-ile-de-france"
+              className="underline-offset-2 hover:underline"
+            >
+              gardiennage en Île-de-France
+            </Link>
+            , pour sécuriser également vos bases-vie, dépôts et sites techniques en exploitation ;
+          </li>
+          <li>
+            la page dédiée à la{' '}
+            <Link
+              href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
+              className="underline-offset-2 hover:underline"
+            >
+              vidéosurveillance d&apos;entreprise à Paris
+            </Link>
+            , si vous souhaitez articuler gardiennage humain et moyens techniques.
+          </li>
+        </ul>
+      </section>
       </ServicePageTemplate>
     </>
   );

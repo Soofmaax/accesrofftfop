@@ -305,6 +305,47 @@ export default function VideoSurveillanceEntrepriseParisPage() {
             </Link>
           </div>
         </section>
+
+        <section className="mt-6 space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 text-xs text-slate-300">
+          <p className="font-medium text-slate-100">
+            Guides et ressources pour compléter votre projet de vidéosurveillance
+          </p>
+          <p>
+            Pour préparer ou compléter votre projet, vous pouvez également consulter&nbsp;:
+          </p>
+          <ul className="ml-4 list-disc space-y-1.5">
+            <li>
+              le guide{' '}
+              <Link
+                href="/guides/preparer-audit-surete-siege-social"
+                className="underline-offset-2 hover:underline"
+              >
+                préparer un audit de sûreté de siège social
+              </Link>
+              , utile si vos enjeux portent aussi sur la protection globale du siège ;
+            </li>
+            <li>
+              la page{' '}
+              <Link
+                href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
+                className="underline-offset-2 hover:underline"
+              >
+                audit de sûreté de siège social à Paris
+              </Link>
+              , lorsque vous souhaitez cadrer en amont la stratégie de sûreté de vos sites ;
+            </li>
+            <li>
+              nos offres de{' '}
+              <Link
+                href="/solutions/securite-humaine/gardiennage-ile-de-france"
+                className="underline-offset-2 hover:underline"
+              >
+                gardiennage en Île-de-France
+              </Link>
+              , pour articuler vidéosurveillance et présence d&apos;agents de sécurité.
+            </li>
+          </ul>
+        </section>
       </ServicePageTemplate>
     </>
   );
