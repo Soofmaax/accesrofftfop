@@ -152,6 +152,7 @@ export default function GaleriePage() {
                   width={1200}
                   height={720}
                   loading="lazy"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="h-40 w-full object-cover opacity-90"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-slate-950/75 px-2 py-1">
