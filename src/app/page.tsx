@@ -50,12 +50,9 @@ export default function HomePage() {
                 Sécuriser durablement vos sites, vos équipes et vos publics.
               </Heading>
               <Text className="max-w-xl sm:text-base">
-                {company.name}, société de sécurité privée basée à Nîmes, conçoit et pilote
-                des dispositifs de sécurité pour les entreprises privées, les donneurs
-                d&apos;ordre publics et les organisateurs d&apos;événements. Notre
-                expérience de terrain et notre connaissance des appels d&apos;offres privés
-                et publics garantissent des interventions traçables, fiables et conformes
-                au cadre réglementaire. Nous intervenons notamment pour le{' '}
+                {company.name}, société de sécurité privée basée à Nîmes, accompagne les
+                entreprises privées, les donneurs d&apos;ordre publics et les organisateurs
+                d&apos;événements. Nous intervenons notamment pour le{' '}
                 <strong>gardiennage de chantiers BTP en Île-de-France</strong>, la mise à
                 disposition d&apos;
                 <strong>agents de sécurité à Marseille, Montpellier et Nice</strong>, la{' '}
@@ -311,6 +308,23 @@ export default function HomePage() {
             </Link>
             .
           </p>
+
+          <div className="flex flex-wrap gap-3 pt-3">
+            <Link href="/contact#formulaire-devis">
+              <Button className="inline-flex items-center gap-2 text-xs sm:text-sm">
+                Parler de votre projet
+                <ArrowRight className="h-3 w-3" />
+              </Button>
+            </Link>
+            <Link href="/solutions">
+              <Button
+                variant="secondary"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm"
+              >
+                Voir toutes nos solutions
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -380,6 +394,18 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="pt-2">
+            <Link href="/contact#formulaire-devis">
+              <Button
+                variant="secondary"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm"
+              >
+                Demander un devis sécurité
+                <ArrowRight className="h-3 w-3" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
