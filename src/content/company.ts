@@ -1,4 +1,10 @@
 export type ServiceSlug =
+  | 'verandas-sur-mesure'
+  | 'verrieres-aluminium'
+  | 'toitures-escamotables'
+  | 'stores-protection-solaire'
+  | 'fenetres-portes'
+  | 'volets-roulants'
   | 'securite-evenementielle'
   | 'gardiennage-surveillance'
   | 'rondes-prevention'
@@ -36,13 +42,13 @@ export interface Address {
 export interface Company {
   name: string;
   legalName: string;
-  legalForm: string;
-  nafApe: string;
-  siren: string;
-  siret: string;
-  vatNumber: string;
-  shareCapital: string;
-  creationDate: string;
+  legalForm?: string;
+  nafApe?: string;
+  siren?: string;
+  siret?: string;
+  vatNumber?: string;
+  shareCapital?: string;
+  creationDate?: string;
   address: Address;
   description: string;
   shortDescription: string;
@@ -56,171 +62,167 @@ export interface Company {
   };
   branding: {
     baseline: string;
-    logoUrl: string;
+    logoUrl?: string;
   };
   areaServed: string;
 }
 
 export const company: Company = {
-  name: 'MAB SECURITE',
-  legalName: 'MAB SECURITE',
-  legalForm: 'SASU, société par actions simplifiée unipersonnelle',
-  nafApe: '80.10Z',
-  siren: '951 084 078',
-  siret: '951 084 078 00017',
-  vatNumber: 'FR59 951 084 078',
-  shareCapital: '1 000 €',
-  creationDate: '2023-03-29',
+  name: 'Art et Maison',
+  legalName: 'ART ET MAISON',
   address: {
-    line1: 'PAVILLON 45',
-    line2: '186 RUE JACQUES RIVIERE',
-    postalCode: '30900',
-    city: 'NIMES',
+    line1: 'Boulogne-Billancourt',
+    postalCode: '92100',
+    city: 'Boulogne-Billancourt',
     country: 'France',
   },
   description:
-    "MAB SECURITE est une société de sécurité privée basée à Nîmes. Elle accompagne en priorité les entreprises du BTP, les maîtres d’ouvrage, les collectivités et les organisateurs d’événements dans la protection de leurs chantiers, sites, collaborateurs et publics, avec une présence structurée à Paris (France Nord), Marseille, Montpellier et dans le Gard (France Sud).",
+    'Art et Maison conçoit, fabrique et installe des vérandas, verrières et menuiseries en aluminium, dans des styles contemporains comme classiques. Nos solutions sont pensées pour améliorer le confort de l’habitat : isolation, aération, protection solaire et qualité de pose.',
   shortDescription:
-    'Sécurité privée pour le BTP et les sites professionnels : gardiennage de chantiers, rondes de sûreté, dispositifs de vidéosurveillance et sécurité incendie à Paris, Marseille, Montpellier, Nîmes et sur la côte sud.',
+    'Créateur de vérandas et verrières en aluminium (classiques ou contemporaines), toitures escamotables et stores. Paris & Île-de-France.',
   contact: {
-    // À personnaliser : coordonnées de contact définitives
     phone: {
-      label: '+33 (0)4 00 00 00 00',
-      value: '+33400000000',
+      label: '01 48 89 47 11',
+      value: '+33148894711',
     },
-    email: 'contact@mab-securite.fr',
-    websiteUrl: 'https://www.mab-securite.fr',
+    email: 'info@art-et-maison.com',
+    websiteUrl: 'https://www.art-et-maison.com',
   },
   branding: {
-    baseline: 'Sécurité privée pour entreprises et événements',
-    logoUrl: '/images/logo-mab-securite.svg', // À remplacer si un logo est disponible
+    baseline: 'Créateur de vérandas à vivre',
   },
   areaServed:
-    'Paris et Île-de-France (France Nord), Marseille et Bouches-du-Rhône, Montpellier et Hérault (34), Nîmes et Gard (30), ainsi que la côte sud et régions limitrophes.',
+    'Paris et Île-de-France (75, 92, 93, 94, 91, 77, 78) – pose en région parisienne.',
 };
 
 export const services: Service[] = [
   {
-    slug: 'securite-evenementielle',
-    name: 'Sécurité événementielle',
-    shortDescription: 'Protection des publics et des équipes sur vos événements professionnels.',
+    slug: 'verandas-sur-mesure',
+    name: 'Vérandas sur mesure',
+    shortDescription:
+      'Vérandas en aluminium conçues pour agrandir votre maison et créer une pièce à vivre confortable.',
     description:
-      "MAB SECURITE sécurise vos événements professionnels et grand public : salons, conventions, inaugurations, manifestations culturelles ou sportives. Nous mettons en place des dispositifs adaptés au profil de risque et au public attendu.",
+      'De l’étude de faisabilité à la pose, nous concevons une véranda adaptée à votre maison (exposition, contraintes techniques, isolation) et à votre style : moderne, traditionnel ou mixte.',
     highlights: [
-      "Analyse des risques et définition du dispositif de sécurité",
-      'Contrôle d’accès et filtrage des entrées',
-      'Gestion des flux de personnes et files d’attente',
-      'Protection des zones sensibles (backstage, régie, loges)',
+      'Conception 100% sur mesure (dimensions, ouvertures, finitions)',
+      'Isolation thermique et apports lumineux optimisés',
+      'Fabrication aluminium, vitrages performants',
+      'Pose soignée en Île-de-France',
     ],
   },
   {
-    slug: 'gardiennage-surveillance',
-    name: 'Gardiennage / surveillance',
-    shortDescription: 'Surveillance continue de vos sites, locaux et équipements sensibles.',
+    slug: 'verrieres-aluminium',
+    name: 'Verrières & extensions vitrées',
+    shortDescription:
+      'Verrières, sas d’entrée et solutions vitrées pour structurer les espaces sans perdre la lumière.',
     description:
-      'Nos agents de sécurité assurent une présence dissuasive et professionnelle sur vos sites tertiaires, industriels ou logistiques, de jour comme de nuit.',
+      'Les verrières et volumes vitrés apportent une esthétique forte et un confort d’usage au quotidien : séparation de pièces, sas d’entrée, verrière type atelier ou extension vitrée.',
     highlights: [
-      'Postes de garde et gestion des accès',
-      'Accueil et contrôle des visiteurs et prestataires',
-      'Rondes préventives à horaires fixes ou variables',
-      'Main courante et reporting réguliers',
-      'Mise en place d’agents de sécurité et de maîtres-chiens sur les sites à risque',
-      'Articulation avec les dispositifs techniques (caméras de surveillance, détecteurs de mouvement, contrôle d’accès)',
+      'Verrière intérieure / extérieure',
+      'Sas d’entrée et protections contre les intempéries',
+      'Aluminium et vitrage sur mesure',
     ],
   },
   {
-    slug: 'rondes-prevention',
-    name: 'Rondes et prévention',
-    shortDescription: 'Rondes de sûreté, levées de doute et sécurisation ponctuelle.',
+    slug: 'toitures-escamotables',
+    name: 'Toitures escamotables (coulissantes)',
+    shortDescription:
+      'Toitures coulissantes et ouvrantes pour moduler l’aération et la lumière selon la saison.',
     description:
-      "Les rondes de sécurité permettent d'assurer un passage régulier sur vos sites fermés, en complément d'un dispositif de gardiennage ou en solution autonome.",
+      'La toiture escamotable permet de transformer votre véranda en espace plus ouvert dès que la météo le permet. Une solution idéale pour profiter d’une ventilation naturelle et d’une sensation “dedans-dehors”.',
     highlights: [
-      'Rondes d’ouverture et de fermeture de sites',
-      'Levées de doute sur alarme',
-      'Vérification des accès, clôtures et éclairages',
-      'Compte-rendu systématique après intervention',
+      'Toiture coulissante / ouvrante',
+      'Gestion de l’aération et de l’occultation',
+      'Intégration avec stores et protections solaires',
     ],
   },
   {
-    slug: 'securisation-sites-perimetres',
-    name: 'Sécurisation de sites et périmètres',
-    shortDescription: 'Dispositifs de sûreté pour vos chantiers, sites sensibles et zones temporaires.',
+    slug: 'stores-protection-solaire',
+    name: 'Stores & protection solaire',
+    shortDescription:
+      'Stores de véranda, occultation et gestion des apports solaires pour un confort optimal.',
     description:
-      'MAB SECURITE accompagne les entreprises et maîtres d’ouvrage dans la sécurisation de sites permanents ou temporaires, en coordination avec vos autres prestataires.',
+      'Protection solaire, occultation, gestion de la chaleur : nous proposons des solutions adaptées aux contraintes de votre véranda (exposition, toiture, surfaces vitrées) pour gagner en confort.',
     highlights: [
-      'Étude de vulnérabilité et recommandations',
-      'Surveillance de chantiers et zones de stockage',
-      'Protection des accès et des abords immédiats',
-      'Coordination avec les autres acteurs de la sûreté',
-      'Intégration de solutions de vidéosurveillance (caméras de surveillance, détecteurs de mouvement) en coordination avec vos prestataires spécialisés',
-      'Prise en compte des dispositifs de sécurité incendie (agents SSIAP, plans de prévention incendie) dans le dispositif global de sûreté',
+      'Stores de toiture et stores verticaux',
+      'Occultation et confort d’été',
+      'Solutions esthétiques et durables',
+    ],
+  },
+  {
+    slug: 'fenetres-portes',
+    name: 'Fenêtres & portes-fenêtres',
+    shortDescription:
+      'Menuiseries aluminium ou PVC : amélioration thermique, acoustique et sécurité.',
+    description:
+      'Fenêtres, portes-fenêtres et coulissants : nous vous accompagnons dans vos projets de rénovation ou de construction, avec un focus sur l’isolation, la durabilité et la qualité de pose.',
+    highlights: [
+      'Rénovation et remplacement de menuiseries',
+      'Double vitrage et performances énergétiques',
+      'Finitions adaptées à votre façade',
+    ],
+  },
+  {
+    slug: 'volets-roulants',
+    name: 'Volets roulants',
+    shortDescription:
+      'Volets roulants pour la sécurité, l’isolation et le confort au quotidien.',
+    description:
+      'Volets roulants manuels ou motorisés, intégrés à vos menuiseries ou installés en rénovation. Une solution simple pour gagner en confort, en sécurité et en occultation.',
+    highlights: [
+      'Motorisation et automatisation possibles',
+      'Occultation et protection de l’habitat',
+      'Installation en rénovation ou neuf',
     ],
   },
 ];
 
 export const sectors: Sector[] = [
   {
-    slug: 'entreprises',
-    name: 'Entreprises',
-    shortDescription: 'Sécurisation des sièges sociaux, bureaux, sites industriels et logistiques.',
+    slug: 'particuliers',
+    name: 'Particuliers',
+    shortDescription: 'Vérandas et menuiseries pour maisons et appartements.',
     description:
-      'Nous accompagnons les PME, ETI et grands comptes dans la protection de leurs collaborateurs, visiteurs et actifs matériels, en cohérence avec leurs procédures internes.',
-    examples: [
-      'Sièges sociaux et bureaux',
-      'Sites industriels',
-      'Entrepôts et plateformes logistiques',
-      'Centres commerciaux et galeries marchandes',
-    ],
+      'Nous vous accompagnons pour agrandir votre espace de vie et améliorer le confort thermique, avec une approche sur mesure et une pose soignée.',
+    examples: ['Véranda à vivre', 'Verrière intérieure', 'Remplacement de fenêtres', 'Volets roulants'],
   },
   {
-    slug: 'evenementiel',
-    name: 'Événementiel',
-    shortDescription: 'Sécurité des événements professionnels et grand public.',
+    slug: 'professionnels',
+    name: 'Professionnels',
+    shortDescription: 'Solutions vitrées et menuiseries pour locaux professionnels.',
     description:
-      "De la réception d’entreprise au salon professionnel en passant par les manifestations ouvertes au public, MAB SECURITE adapte ses dispositifs à la nature et à la taille de vos événements.",
-    examples: ['Salons et conventions', "Lancements de produits", 'Événements culturels ou sportifs'],
+      'Pour les commerces, bureaux et établissements recevant du public, nous proposons des solutions adaptées (verrières, sas d’entrée, protections solaires).',
+    examples: ['Sas d’entrée', 'Verrière atelier', 'Stores de protection solaire'],
   },
   {
-    slug: 'collectivites',
-    name: 'Collectivités',
-    shortDescription: 'Protection des sites et événements des acteurs publics.',
+    slug: 'architectes',
+    name: 'Architectes & maîtres d’œuvre',
+    shortDescription: 'Partenaire technique pour projets sur mesure.',
     description:
-      "Nous intervenons aux côtés des collectivités et organismes publics pour sécuriser les bâtiments, accueils du public et événements institutionnels.",
-    examples: [
-      'Bâtiments administratifs',
-      'Équipements culturels et sportifs',
-      'Cérémonies et événements institutionnels',
-    ],
-  },
-  {
-    slug: 'tournages-plateaux',
-    name: 'Tournages / plateaux',
-    shortDescription: 'Sécurisation des lieux de tournage et dispositifs techniques.',
-    description:
-      'Les tournages nécessitent une sécurisation fine des accès, des matériels et des équipes. MAB SECURITE met en place des dispositifs adaptés aux contraintes opérationnelles du plateau.',
-    examples: ['Tournages cinéma et télévision', 'Captations live', 'Studios et plateaux temporaires'],
+      'Nous travaillons en coordination avec vos plans et contraintes techniques : intégration, détails d’exécution, finitions et planning de pose.',
+    examples: ['Études techniques', 'Fabrication sur mesure', 'Pose en site occupé'],
   },
 ];
 
 export const engagements: Engagement[] = [
   {
-    title: 'Réactivité opérationnelle',
+    title: 'Sur-mesure & conseil',
     description:
-      "Réponse rapide à vos demandes et mise en place de dispositifs adaptés à vos contraintes horaires et opérationnelles.",
+      'Un accompagnement de l’étude à la pose : prise de cotes, conseils matériaux, options et finitions.',
   },
   {
-    title: 'Conformité réglementaire',
+    title: 'Qualité des matériaux',
     description:
-      "Prestations réalisées dans le respect du cadre légal français de la sécurité privée (Code de la sécurité intérieure, livre VI).",
+      'Aluminium et vitrages performants pour un confort durable : isolation, luminosité et sécurité.',
   },
   {
-    title: 'Interlocuteur unique',
+    title: 'Pose soignée',
     description:
-      "Un contact dédié qui suit votre dossier de l’étude du besoin jusqu’au retour d’expérience en fin de mission.",
+      'Une installation propre et maîtrisée, avec une attention particulière aux détails et aux finitions.',
   },
   {
-    title: 'Proximité et connaissance du terrain',
+    title: 'Confort au quotidien',
     description:
-      'Une entreprise implantée à Nîmes, au plus près de vos sites et de vos réalités opérationnelles.',
+      'Protection solaire, aération, occultation : des solutions pensées pour rendre la véranda agréable toute l’année.',
   },
 ];

@@ -18,12 +18,12 @@ const siteUrl = company.contact.websiteUrl;
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: {
-    default: `${company.name} – Sécurité privée & gardiennage BTP`,
+    default: `${company.name} – Vérandas, verrières & menuiseries aluminium`,
     template: `%s | ${company.name}`,
   },
   description: company.shortDescription,
   openGraph: {
-    title: `${company.name} – Sécurité privée & gardiennage BTP`,
+    title: `${company.name} – Vérandas, verrières & menuiseries aluminium`,
     description: company.shortDescription,
     url: siteUrl || undefined,
     siteName: company.name,
@@ -39,15 +39,15 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'SecurityService'],
+    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
     name: company.name,
     legalName: company.legalName,
     description: company.description,
     url: siteUrl || undefined,
     telephone: company.contact.phone.value,
     email: company.contact.email,
-    vatID: company.vatNumber,
-    foundingDate: company.creationDate,
+    vatID: company.vatNumber || undefined,
+    foundingDate: company.creationDate || undefined,
     address: {
       '@type': 'PostalAddress',
       streetAddress: company.address.line2
@@ -59,17 +59,21 @@ export default function RootLayout({
     },
     areaServed: company.areaServed,
     identifier: [
-      {
-        '@type': 'PropertyValue',
-        propertyID: 'SIREN',
-        value: company.siren,
-      },
-      {
-        '@type': 'PropertyValue',
-        propertyID: 'SIRET',
-        value: company.siret,
-      },
-    ],
+      company.siren
+        ? {
+            '@type': 'PropertyValue',
+            propertyID: 'SIREN',
+            value: company.siren,
+          }
+        : undefined,
+      company.siret
+        ? {
+            '@type': 'PropertyValue',
+            propertyID: 'SIRET',
+            value: company.siret,
+          }
+        : undefined,
+    ].filter(Boolean),
   };
 
   return (

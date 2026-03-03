@@ -9,10 +9,9 @@ import { Text } from '../components/atoms/Text';
 import { Button } from '../components/atoms/Button';
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'MAB SECURITE – Sécurité privée & gardiennage BTP à Paris, Marseille, Montpellier, Nîmes',
+  title: 'Art et Maison – Créateur de vérandas à vivre (Paris & Île-de-France)',
   description:
-    'MAB SECURITE, société de sécurité privée, accompagne les entreprises du BTP, les maîtres d’ouvrage et les donneurs d’ordre publics à Paris, Marseille, Montpellier, Nîmes et sur la côte sud : gardiennage de chantiers, surveillance humaine, rondes de sûreté, vidéosurveillance et sécurisation de sites.',
+    'Art et Maison conçoit, fabrique et installe des vérandas et verrières en aluminium (contemporaines ou classiques), des toitures escamotables et des stores de véranda. Intervention à Paris et en Île-de-France.',
   canonicalPath: '/',
 });
 
