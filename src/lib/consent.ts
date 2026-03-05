@@ -1,6 +1,6 @@
 export type ConsentStatus = 'unknown' | 'granted' | 'denied';
 
-const STORAGE_KEY = 'mab_securite_consent';
+const STORAGE_KEY = 'art_et_maison_consent';
 
 interface StoredConsent {
   status: Exclude<ConsentStatus, 'unknown'>;

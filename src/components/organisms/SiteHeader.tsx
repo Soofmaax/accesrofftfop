@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Shield, Phone } from 'lucide-react';
+import { Home, Menu, Phone, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { company } from '../../content/company';
 import { MainNav } from '../molecules/MainNav';
@@ -98,7 +98,7 @@ export function SiteHeader() {
                 priority
               />
             ) : (
-              <Shield className="h-5 w-5" aria-hidden="true" />
+              <Home className="h-5 w-5" aria-hidden="true" />
             )}
           </div>
           <div className="flex flex-col">
@@ -166,13 +166,9 @@ export function SiteHeader() {
             <div className="section-inner flex flex-col gap-1 py-3 text-sm">
               {[
                 { href: '/', label: 'Accueil' },
-                { href: '/prestations', label: 'Prestations' },
-                { href: '/solutions', label: 'Solutions' },
-                { href: '/securite-privee-paris', label: 'Paris / IDF' },
-                { href: '/securite-privee-marseille', label: 'Marseille' },
-                { href: '/securite-privee-montpellier', label: 'Montpellier' },
-                { href: '/securite-privee-nimes', label: 'Nîmes / Gard' },
-                { href: '/a-propos', label: 'À propos' },
+                { href: '/produits', label: 'Produits' },
+                { href: '/galerie', label: 'Réalisations' },
+                { href: '/a-propos', label: 'Qui sommes-nous ?' },
                 { href: '/contact', label: 'Contact' },
               ].map((item, index) => {
                 const isActive =

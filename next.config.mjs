@@ -41,6 +41,60 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/solutions/:path*',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/prestations',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/securite-privee-paris',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/securite-privee-marseille',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/securite-privee-montpellier',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/securite-privee-nimes',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/gardiennage-chantiers-btp-paris',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/guides/:path*',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/references',
+        destination: '/galerie',
+        permanent: true,
+      },
+      {
+        source: '/rejoindre-mab',
+        destination: '/contact',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

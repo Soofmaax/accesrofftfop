@@ -18,20 +18,20 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   const galleryItems = [
     {
-      label: 'Exemple de dispositif de sécurité déployé sur un chantier BTP',
-      src: '/images/securite-chantier-btp-nuit.png',
+      label: 'Véranda aluminium lumineuse',
+      src: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80',
     },
     {
-      label: 'Exemple de dispositif de sécurité pour un site industriel ou logistique',
-      src: '/images/securite-entrepot-plateforme-logistique.png',
+      label: 'Extension vitrée / verrière',
+      src: 'https://images.unsplash.com/photo-1582582621959-48d27397dc0f?auto=format&fit=crop&w=1600&q=80',
     },
     {
-      label: 'Exemple de dispositif de sécurité pour un événement professionnel',
-      src: '/images/securite-evenementiel-salon-professionnel.png',
+      label: 'Protection solaire – stores extérieurs',
+      src: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20b?auto=format&fit=crop&w=1600&q=80',
     },
     {
-      label: 'Exemple de dispositif de sécurité pour un site tertiaire ou administratif',
-      src: '/images/securite-siege-social-site-tertiaire.png',
+      label: 'Menuiseries aluminium – baies vitrées',
+      src: 'https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1600&q=80',
     },
   ];
 
@@ -41,22 +41,15 @@ export default function HomePage() {
       <section className="section pb-8">
         <div className="section-inner grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
           <div className="space-y-6 animate-fade-up">
-            <span className="badge">
-              Sécurité privée · B2B · Nîmes &amp; région
-            </span>
+            <span className="badge">Vérandas · Aluminium · Paris &amp; Île-de-France</span>
             <div className="space-y-4">
               <Heading level={1} className="text-balance">
-                Sécuriser durablement vos sites, vos équipes et vos publics.
+                Vérandas à vivre, verrières &amp; menuiseries aluminium sur mesure.
               </Heading>
               <Text className="max-w-xl sm:text-base">
-                {company.name}, société de sécurité privée basée à Nîmes, accompagne les
-                entreprises privées, les donneurs d&apos;ordre publics et les organisateurs
-                d&apos;événements. Nous intervenons notamment pour le{' '}
-                <strong>gardiennage de chantiers BTP en Île-de-France</strong>, la mise à
-                disposition d&apos;
-                <strong>agents de sécurité à Marseille, Montpellier et Nice</strong>, la{' '}
-                <strong>vidéosurveillance d&apos;entreprise à Paris</strong> et la{' '}
-                <strong>sécurité événementielle à Cannes</strong>.
+                {company.name} conçoit et installe des vérandas, verrières et solutions de
+                protection solaire pensées pour le confort au quotidien : isolation,
+                luminosité, aération et finitions soignées.
               </Text>
             </div>
 
@@ -67,39 +60,30 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/prestations">
+              <Link href="/produits">
                 <Button variant="secondary" className="inline-flex items-center gap-2">
-                  Découvrir nos prestations
+                  Voir nos produits
                 </Button>
               </Link>
             </div>
 
             <div className="grid gap-4 text-xs text-slate-300 sm:grid-cols-3">
               <div className="card-muted p-4">
-                <div className="text-sm font-semibold text-slate-100">
-                  Sécurité événementielle
-                </div>
+                <div className="text-sm font-semibold text-slate-100">Sur mesure</div>
                 <p className="mt-1 text-muted">
-                  Dispositifs dimensionnés pour salons, conventions, événements
-                  institutionnels et tournages.
+                  Étude, prise de cotes, fabrication et pose adaptées à votre architecture.
                 </p>
               </div>
               <div className="card-muted p-4">
-                <div className="text-sm font-semibold text-slate-100">
-                  Gardiennage &amp; rondes
-                </div>
+                <div className="text-sm font-semibold text-slate-100">Confort 4 saisons</div>
                 <p className="mt-1 text-muted">
-                  Présence sur site, rondes de sûreté et levées de doute pour vos locaux,
-                  chantiers et sites techniques.
+                  Isolation, vitrages performants, ventilation et occultation.
                 </p>
               </div>
               <div className="card-muted p-4">
-                <div className="text-sm font-semibold text-slate-100">
-                  Interlocuteur unique
-                </div>
+                <div className="text-sm font-semibold text-slate-100">Pose soignée</div>
                 <p className="mt-1 text-muted">
-                  Un référent dédié pour coordonner les missions, centraliser les échanges
-                  et assurer le suivi opérationnel.
+                  Une installation propre et maîtrisée, avec attention aux finitions.
                 </p>
               </div>
             </div>
@@ -137,176 +121,65 @@ export default function HomePage() {
                 </a>
               </p>
             </div>
-            <p className="text-xs text-muted">
-              Zone d’intervention : {company.areaServed}
-            </p>
+            <p className="text-xs text-muted">Zone d’intervention : {company.areaServed}</p>
           </aside>
         </div>
       </section>
 
-      {/* Pour qui ? */}
+      {/* Produits */}
       <section className="section pt-0">
-        <div className="section-inner space-y-5">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Heading level={2} className="text-sm sm:text-base">
-                Pour quels types d&apos;organisations ?
-              </Heading>
-              <Text variant="muted" className="text-xs sm:text-sm">
-                {company.name} intervient pour des structures privées comme publiques,
-                dans le cadre de relations contractuelles récurrentes ou d&apos;appels
-                d&apos;offres.
-              </Text>
-            </div>
-          </div>
-          <div className="grid gap-4 text-xs text-slate-300 md:grid-cols-3">
-            <div className="card-muted p-4 animate-fade-in-soft">
-              <div className="text-[13px] font-semibold text-slate-100">
-                Entreprises privées
-              </div>
-              <p className="mt-1.5 text-muted">
-                Sièges sociaux, sites industriels, entrepôts, plateformes logistiques,
-                réseaux d&apos;agences, sites techniques.
-              </p>
-            </div>
-            <div className="card-muted p-4 animate-fade-in-soft">
-              <div className="text-[13px] font-semibold text-slate-100">
-                Collectivités &amp; établissements publics
-              </div>
-              <p className="mt-1.5 text-muted">
-                Mairies, intercommunalités, établissements scolaires et universitaires,
-                équipements culturels et sportifs.
-              </p>
-            </div>
-            <div className="card-muted p-4 animate-fade-in-soft">
-              <div className="text-[13px] font-semibold text-slate-100">
-                Événementiel &amp; production
-              </div>
-              <p className="mt-1.5 text-muted">
-                Organisateurs d&apos;événements, agences, producteurs, sociétés de
-                production audiovisuelle, tournages et plateaux.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prestations clés */}
-      <section className="section">
         <div className="section-inner space-y-6">
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <Heading level={2} className="text-lg sm:text-xl">
-                Prestations clés pour les organisations professionnelles
+                Produits &amp; solutions
               </Heading>
               <Text variant="muted" className="text-sm">
-                Des solutions de sécurité structurées pour vos bâtiments, sites
-                opérationnels, événements et environnements sensibles, qu&apos;il s&apos;agisse
-                de <strong>gardiennage en Île-de-France</strong>, de sécurité BTP à Paris,
-                d&apos;<strong>agents de sécurité à Marseille ou Montpellier</strong>, ou de{' '}
-                <strong>sécurité événementielle à Cannes</strong>.
+                Vérandas, verrières, toitures ouvrantes, stores et menuiseries : découvrez
+                les gammes que nous concevons et installons.
               </Text>
             </div>
             <Link
-              href="/prestations"
+              href="/produits"
               className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400 hover:text-emerald-300"
             >
-              Voir le détail des prestations
+              Voir tous les produits
               <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <article key={service.slug} className="card-muted flex flex-col p-5">
-                <h3 className="text-sm font-semibold text-slate-50">{service.name}</h3>
+                <h3 className="text-sm font-semibold text-slate-50">
+                  <Link
+                    href={`/produits/${service.slug}`}
+                    className="underline-offset-2 hover:underline"
+                  >
+                    {service.name}
+                  </Link>
+                </h3>
                 <p className="mt-2 text-xs text-muted">{service.shortDescription}</p>
                 <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
-                  {service.highlights.slice(0, 2).map((item) => (
+                  {service.highlights.slice(0, 3).map((item) => (
                     <li key={item} className="flex gap-2">
                       <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-emerald-400" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
+                <div className="mt-4">
+                  <Link
+                    href={`/produits/${service.slug}`}
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300"
+                  >
+                    Détails
+                    <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
-
-          <p className="text-[11px] text-slate-400">
-            Pour des besoins très ciblés, vous pouvez également consulter nos pages
-            dédiées&nbsp;:&nbsp;
-            <Link
-              href="/solutions/securite-incendie/agent-ssiap-igh-paris"
-              className="underline-offset-2 hover:underline"
-            >
-              obligations SSIAP en IGH à Paris
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-electronique/videosurveillance-entreprise-paris"
-              className="underline-offset-2 hover:underline"
-            >
-              vidéosurveillance d&apos;entreprise à Paris
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/expertise-conseil/audit-surete-siege-social-paris"
-              className="underline-offset-2 hover:underline"
-            >
-              audit de sûreté de siège social à Paris
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/gardiennage-ile-de-france"
-              className="underline-offset-2 hover:underline"
-            >
-              gardiennage en Île-de-France
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/securite-entrepots-logistiques"
-              className="underline-offset-2 hover:underline"
-            >
-              sécurité des entrepôts et plateformes logistiques
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/securite-centres-commerciaux"
-              className="underline-offset-2 hover:underline"
-            >
-              sécurité centres commerciaux &amp; retail
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/agent-securite-marseille"
-              className="underline-offset-2 hover:underline"
-            >
-              agents de sécurité à Marseille
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/agent-securite-montpellier"
-              className="underline-offset-2 hover:underline"
-            >
-              agents de sécurité à Montpellier
-            </Link>
-            ,&nbsp;
-            <Link
-              href="/solutions/securite-humaine/agent-securite-nice"
-              className="underline-offset-2 hover:underline"
-            >
-              agents de sécurité à Nice
-            </Link>
-            &nbsp;et&nbsp;
-            <Link
-              href="/solutions/securite-evenementielle/securite-evenementielle-cannes"
-              className="underline-offset-2 hover:underline"
-            >
-              sécurité événementielle à Cannes
-            </Link>
-            .
-          </p>
 
           <div className="flex flex-wrap gap-3 pt-3">
             <Link href="/contact#formulaire-devis">
@@ -315,12 +188,12 @@ export default function HomePage() {
                 <ArrowRight className="h-3 w-3" />
               </Button>
             </Link>
-            <Link href="/solutions">
+            <Link href="/a-propos">
               <Button
                 variant="secondary"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm"
               >
-                Voir toutes nos solutions
+                Découvrir {company.name}
               </Button>
             </Link>
           </div>
@@ -333,18 +206,17 @@ export default function HomePage() {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <Heading level={2} className="text-lg sm:text-xl">
-                Galerie photo
+                Inspirations &amp; réalisations
               </Heading>
               <Text variant="muted" className="text-xs sm:text-sm">
-                Exemples de dispositifs de sécurité déployés sur des chantiers BTP, sites
-                industriels, sites tertiaires et événements sécurisés par {company.name}.
+                Quelques visuels d’inspiration autour des vérandas, verrières et menuiseries.
               </Text>
             </div>
             <Link
               href="/galerie"
               className="mt-2 inline-flex items-center text-[11px] font-medium text-emerald-400 hover:text-emerald-300"
             >
-              Voir la galerie complète
+              Voir la galerie
               <ArrowRight className="ml-1 h-3 w-3" />
             </Link>
           </div>
@@ -401,7 +273,7 @@ export default function HomePage() {
                 variant="secondary"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm"
               >
-                Demander un devis sécurité
+                Demander un devis
                 <ArrowRight className="h-3 w-3" />
               </Button>
             </Link>

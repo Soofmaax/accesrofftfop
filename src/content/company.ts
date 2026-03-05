@@ -4,11 +4,7 @@ export type ServiceSlug =
   | 'toitures-escamotables'
   | 'stores-protection-solaire'
   | 'fenetres-portes'
-  | 'volets-roulants'
-  | 'securite-evenementielle'
-  | 'gardiennage-surveillance'
-  | 'rondes-prevention'
-  | 'securisation-sites-perimetres';
+  | 'volets-roulants';
 
 export interface Service {
   slug: ServiceSlug;
@@ -77,22 +73,22 @@ export const company: Company = {
     country: 'France',
   },
   description:
-    'Art et Maison conçoit, fabrique et installe des vérandas, verrières et menuiseries en aluminium, dans des styles contemporains comme classiques. Nos solutions sont pensées pour améliorer le confort de l’habitat : isolation, aération, protection solaire et qualité de pose.',
+    'Art et Maison conçoit, fabrique et installe des vérandas, verrières et menuiseries en aluminium, dans des styles contemporains comme classiques. Nos solutions sont pensées pour améliorer le confort de l’habitat : isolation, aération, protection solaire et qualité de pose. Nous travaillons avec des gammes reconnues (ex. Technal, Sapa / Intexalu) pour garantir des finitions durables.',
   shortDescription:
-    'Créateur de vérandas et verrières en aluminium (classiques ou contemporaines), toitures escamotables et stores. Paris & Île-de-France.',
+    'Créateur de vérandas et verrières en aluminium (classiques ou contemporaines), toitures escamotables et stores. Pose à Paris & Île-de-France.',
   contact: {
     phone: {
       label: '01 48 89 47 11',
       value: '+33148894711',
     },
     email: 'info@art-et-maison.com',
-    websiteUrl: 'https://www.art-et-maison.com',
+    websiteUrl: 'https://art-et-maison.com',
   },
   branding: {
     baseline: 'Créateur de vérandas à vivre',
   },
   areaServed:
-    'Paris et Île-de-France (75, 92, 93, 94, 91, 77, 78) – pose en région parisienne.',
+    'Paris et Île-de-France (75, 92, 93, 94, 95, 91, 77, 78) – pose en région parisienne.',
 };
 
 export const services: Service[] = [

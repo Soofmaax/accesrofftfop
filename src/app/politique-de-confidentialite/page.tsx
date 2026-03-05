@@ -7,9 +7,9 @@ import { Heading } from '../../components/atoms/Heading';
 import { Text } from '../../components/atoms/Text';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Politique de confidentialité – MAB SECURITE',
+  title: `Politique de confidentialité – ${company.name}`,
   description:
-    'Politique de confidentialité de MAB SECURITE concernant les données personnelles collectées via le site et le formulaire de contact.',
+    `Politique de confidentialité de ${company.name} concernant les données personnelles collectées via le site et le formulaire de contact.`,
   canonicalPath: '/politique-de-confidentialite',
 });
 
@@ -58,7 +58,7 @@ export default function PolitiqueConfidentialitePage() {
           </Heading>
           <Text className="text-xs text-slate-300">
             Les données collectées via le <strong>formulaire de contact</strong> (identité,
-            coordonnées, nom de la société, informations relatives au projet) sont utilisées
+            coordonnées, localisation et informations relatives au projet) sont utilisées
             exclusivement pour&nbsp;:
           </Text>
           <ul className="ml-4 list-disc space-y-1">
@@ -66,19 +66,7 @@ export default function PolitiqueConfidentialitePage() {
             <li>vous recontacter et échanger sur votre besoin ;</li>
             <li>établir une proposition commerciale le cas échéant.</li>
           </ul>
-          <Text className="mt-2 text-xs text-slate-300">
-            Les données collectées via le <strong>formulaire de candidature agents</strong>{' '}
-            (nom, prénom, coordonnées, ville ou zone géographique, informations relatives à
-            l&apos;expérience et aux habilitations de sécurité) sont utilisées pour&nbsp;:
-          </Text>
-          <ul className="ml-4 list-disc space-y-1">
-            <li>étudier votre candidature ;</li>
-            <li>vous recontacter le cas échéant pour des missions adaptées à votre profil ;</li>
-            <li>
-              constituer un vivier d&apos;agents de sécurité mobilisable en fonction des besoins
-              opérationnels.
-            </li>
-          </ul>
+          
         </section>
 
         <section className="space-y-3 text-xs text-slate-300">
@@ -87,10 +75,10 @@ export default function PolitiqueConfidentialitePage() {
           </Heading>
           <Text className="text-xs text-slate-300">
             Les traitements de données mis en œuvre reposent sur l&apos;intérêt légitime de{' '}
-            {company.name} à répondre aux demandes qui lui sont adressées, à organiser ses
-            prestations et à constituer un vivier d&apos;intervenants. Ils reposent également
-            sur votre consentement lorsque vous soumettez volontairement vos informations via
-            les formulaires du site.
+            {company.name} à répondre aux demandes qui lui sont adressées et à assurer le
+            suivi commercial des projets. Ils reposent également sur votre consentement
+            lorsque vous soumettez volontairement vos informations via les formulaires du
+            site.
           </Text>
         </section>
 
@@ -100,18 +88,15 @@ export default function PolitiqueConfidentialitePage() {
           </Heading>
           <Text className="text-xs text-slate-300">
             Les données communiquées sont destinées aux équipes en charge du suivi
-            commercial et opérationnel de {company.name} et, pour les candidatures agents, aux
-            personnes en charge du recrutement et de la planification des missions. Elles
-            peuvent être hébergées dans des systèmes de messagerie professionnelle et dans
-            des bases de données sécurisées fournies par les prestataires d&apos;hébergement et
-            de services cloud de {company.name}.
+            commercial et opérationnel de {company.name}. Elles peuvent être hébergées dans
+            des systèmes de messagerie professionnelle et dans des bases de données
+            sécurisées fournies par les prestataires d&apos;hébergement et de services cloud de{' '}
+            {company.name}.
           </Text>
           <Text className="text-xs text-slate-300">
             Les données de contact sont conservées pendant la durée nécessaire à
             l&apos;instruction de votre demande, puis pendant la durée légale de prescription
-            applicable aux relations commerciales. Les candidatures agents peuvent être
-            conservées dans un vivier pendant une durée compatible avec cette finalité, dans
-            la limite des durées de prescription applicables.
+            applicable aux relations commerciales.
           </Text>
         </section>
 

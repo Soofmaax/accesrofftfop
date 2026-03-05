@@ -9,9 +9,9 @@ import { Heading } from '../../components/atoms/Heading';
 import { Text } from '../../components/atoms/Text';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Galerie photo – Exemples de dispositifs de sécurité MAB SECURITE',
+  title: `Galerie – Vérandas, verrières & menuiseries | ${company.name}`,
   description:
-    "Galerie photo illustrant les contextes d'intervention de MAB SECURITE : chantiers BTP, entrepôts logistiques, centres commerciaux, événements et sites tertiaires.",
+    'Galerie d’inspiration autour des vérandas, verrières et menuiseries aluminium : extensions vitrées, protections solaires, toitures ouvrantes et aménagements lumineux.',
   canonicalPath: '/galerie',
 });
 
@@ -22,92 +22,52 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 
 const allImages = [
   {
-    src: '/images/securite-chantier-btp-nuit.png',
-    label: 'Illustration de gardiennage de chantier BTP de nuit',
+    src: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=80',
+    label: 'Véranda aluminium lumineuse',
   },
   {
-    src: '/images/securite-entrepot-plateforme-logistique.png',
-    label: 'Illustration de sécurité pour entrepôt ou plateforme logistique',
+    src: 'https://images.unsplash.com/photo-1582582621959-48d27397dc0f?auto=format&fit=crop&w=1800&q=80',
+    label: 'Extension vitrée / verrière',
   },
   {
-    src: '/images/securite-evenementiel-salon-professionnel.png',
-    label: 'Illustration de sécurité événementielle pour salon ou convention',
+    src: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=1800&q=80',
+    label: 'Verrière et lumière naturelle',
   },
   {
-    src: '/images/securite-siege-social-site-tertiaire.png',
-    label: 'Illustration de sécurité pour un site tertiaire ou administratif',
+    src: 'https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1800&q=80',
+    label: 'Menuiseries aluminium – baies vitrées',
   },
   {
-    src: '/images/securite-privee-btp-01.png',
-    label: 'Illustration de sécurité privée pour chantier BTP (vue 1)',
+    src: 'https://images.unsplash.com/photo-1542317854-725117f650fc?auto=format&fit=crop&w=1800&q=80',
+    label: 'Espace de vie ouvert sur le jardin',
   },
   {
-    src: '/images/securite-privee-btp-02.png',
-    label: 'Illustration de sécurité privée pour chantier BTP (vue 2)',
+    src: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20b?auto=format&fit=crop&w=1800&q=80',
+    label: 'Protection solaire – store extérieur',
   },
   {
-    src: '/images/securite-privee-entrepot-logistique-01.png',
-    label: 'Illustration de sécurité privée pour entrepôt logistique (vue 1)',
+    src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80',
+    label: 'Confort et finitions',
   },
   {
-    src: '/images/securite-privee-entrepot-logistique-02.png',
-    label: 'Illustration de sécurité privée pour entrepôt logistique (vue 2)',
+    src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=80',
+    label: 'Ouvertures et circulations',
   },
   {
-    src: '/images/securite-privee-centre-commercial-retail-01.png',
-    label: 'Illustration de sécurité pour centre commercial et retail (vue 1)',
+    src: 'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1800&q=80',
+    label: 'Ambiance et luminosité',
   },
   {
-    src: '/images/securite-privee-centre-commercial-retail-02.png',
-    label: 'Illustration de sécurité pour centre commercial et retail (vue 2)',
+    src: 'https://images.unsplash.com/photo-1560448071-1e5adf7b6cf2?auto=format&fit=crop&w=1800&q=80',
+    label: 'Fenêtres & performances',
   },
   {
-    src: '/images/securite-evenementiel-exterieur-01.png',
-    label: 'Illustration de sécurité événementielle en extérieur (vue 1)',
+    src: 'https://images.unsplash.com/photo-1600566753151-384129cf4e3f?auto=format&fit=crop&w=1800&q=80',
+    label: 'Intérieur / extérieur',
   },
   {
-    src: '/images/securite-evenementiel-exterieur-02.png',
-    label: 'Illustration de sécurité événementielle en extérieur (vue 2)',
-  },
-  {
-    src: '/images/securite-siege-social-accueil-01.png',
-    label: 'Illustration de sécurité à l’accueil d’un siège social (vue 1)',
-  },
-  {
-    src: '/images/securite-siege-social-accueil-02.png',
-    label: 'Illustration de sécurité à l’accueil d’un siège social (vue 2)',
-  },
-  {
-    src: '/images/securite-rondes-nuit-01.png',
-    label: 'Illustration de rondes de sécurité de nuit sur site professionnel (vue 1)',
-  },
-  {
-    src: '/images/securite-rondes-nuit-02.png',
-    label: 'Illustration de rondes de sécurité de nuit sur site professionnel (vue 2)',
-  },
-  {
-    src: '/images/securite-videosurveillance-pc-01.png',
-    label: 'Illustration de PC de vidéosurveillance et écrans de contrôle (vue 1)',
-  },
-  {
-    src: '/images/securite-videosurveillance-pc-02.png',
-    label: 'Illustration de PC de vidéosurveillance et écrans de contrôle (vue 2)',
-  },
-  {
-    src: '/images/securite-agent-securite-01.png',
-    label: 'Illustration d’agent de sécurité en tenue professionnelle (vue 1)',
-  },
-  {
-    src: '/images/securite-agent-securite-02.png',
-    label: 'Illustration d’agent de sécurité en tenue professionnelle (vue 2)',
-  },
-  {
-    src: '/images/securite-poste-controle-01.png',
-    label: 'Illustration de poste de contrôle et supervision de site (vue 1)',
-  },
-  {
-    src: '/images/securite-poste-controle-02.png',
-    label: 'Illustration de poste de contrôle et supervision de site (vue 2)',
+    src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1800&q=80',
+    label: 'Design contemporain',
   },
 ];
 
@@ -130,13 +90,12 @@ export default function GaleriePage() {
           <header className="space-y-3">
             <p className="badge">Galerie photo</p>
             <Heading level={1} className="text-2xl sm:text-3xl">
-              Exemples de contextes d&apos;intervention sécurisés par {company.name}
+              Galerie d’inspiration : vérandas, verrières &amp; menuiseries
             </Heading>
             <Text className="max-w-2xl text-sm text-muted">
-              Cette galerie présente des visuels illustrant les principaux contextes pour lesquels{' '}
-              {company.name} conçoit et pilote des dispositifs de sécurité&nbsp;: chantiers BTP,
-              entrepôts et plateformes logistiques, centres commerciaux et retail, événements
-              professionnels et sites tertiaires ou administratifs.
+              Cette page présente des visuels d’inspiration autour des vérandas, verrières,
+              toitures ouvrantes, stores et menuiseries aluminium. Pour partager des photos de
+              réalisations ou demander un devis, contactez {company.name}.
             </Text>
           </header>
 
@@ -163,11 +122,10 @@ export default function GaleriePage() {
           </div>
 
           <p className="text-[11px] text-slate-400">
-            Ces visuels sont fournis à titre d&apos;illustration. Pour des exemples concrets de
-            dispositifs de sécurité déployés sur vos sites (chantiers, entrepôts, centres
-            commerciaux ou événements), n&apos;hésitez pas à nous contacter via la page{' '}
+            Ces visuels sont fournis à titre d&apos;illustration. Pour partager des photos de
+            réalisations ou demander un devis, utilisez la page{' '}
             <Link href="/contact#formulaire-devis" className="underline-offset-2 hover:underline">
-              Contact &amp; demande de devis
+              Contact
             </Link>
             .
           </p>

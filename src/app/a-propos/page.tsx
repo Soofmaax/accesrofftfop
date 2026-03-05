@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Ruler } from 'lucide-react';
 import { company } from '../../content/company';
 import { buildMetadata } from '../../lib/seo';
 import { Breadcrumbs } from '../../components/molecules/Breadcrumbs';
@@ -8,15 +9,15 @@ import { Heading } from '../../components/atoms/Heading';
 import { Text } from '../../components/atoms/Text';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'À propos de MAB SECURITE – Spécialiste sécurité BTP & sites professionnels',
+  title: 'Qui sommes-nous ? – Art et Maison, créateur de vérandas',
   description:
-    "Présentation de MAB SECURITE, société de sécurité privée basée à Nîmes et présente à Paris, Marseille, Montpellier et dans le Gard, spécialisée dans le gardiennage de chantiers BTP, la surveillance de sites professionnels et la sécurisation d'événements pour les entreprises et acteurs publics.",
+    'Présentation de Art et Maison : conception, fabrication sur mesure et installation de vérandas, verrières, toitures escamotables, stores et menuiseries aluminium à Paris & Île-de-France.',
   canonicalPath: '/a-propos',
 });
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Accueil', path: '/' },
-  { name: 'À propos', path: '/a-propos' },
+  { name: 'Qui sommes-nous ?', path: '/a-propos' },
 ]);
 
 export default function AProposPage() {
@@ -33,149 +34,142 @@ export default function AProposPage() {
             <Breadcrumbs
               items={[
                 { href: '/', label: 'Accueil' },
-                { href: '/a-propos', label: 'À propos' },
+                { href: '/a-propos', label: 'Qui sommes-nous ?' },
               ]}
             />
-            <p className="badge">À propos</p>
+            <p className="badge">Qui sommes-nous ?</p>
             <Heading level={1} className="text-2xl sm:text-3xl">
-              Une société de sécurité privée engagée aux côtés des professionnels
+              Art et Maison, créateur de vérandas
             </Heading>
             <Text className="max-w-3xl text-sm text-muted">
-              {company.name} met à disposition des entreprises privées, des collectivités et
-              des acteurs publics une structure à taille humaine, réactive et orientée
-              service. Les missions sont pilotées de manière structurée et documentée, dans
-              une logique de partenariat durable et de réponse aux exigences contractuelles
-              et réglementaires de leurs donneurs d&apos;ordre. {company.name} n&apos;intervient
-              pas pour des prestations de sécurité destinées aux particuliers ou aux
-              habitations privées.
+              {company.name} conçoit, fabrique et installe des vérandas, verrières et
+              menuiseries aluminium pour améliorer votre confort : luminosité, isolation,
+              aération et protections solaires. Nous intervenons à Paris et en Île-de-France.
             </Text>
           </header>
 
-        <section className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-          <article className="space-y-5 text-sm text-slate-300">
-            <div className="flex items-start gap-3">
-              <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
-                <ShieldCheck className="h-5 w-5" />
+          <section className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+            <article className="space-y-5 text-sm text-slate-300">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
+                  <Ruler className="h-5 w-5" />
+                </div>
+                <div className="space-y-2">
+                  <Heading level={2} className="text-base">
+                    Une véranda pensée pour être vécue
+                  </Heading>
+                  <Text className="text-sm text-slate-300">
+                    Chaque projet commence par une étude concrète : exposition, contraintes
+                    d&apos;accès, isolation, ventilation et besoins d&apos;occultation. L&apos;objectif
+                    est de créer une pièce à vivre agréable, toute l&apos;année.
+                  </Text>
+                </div>
               </div>
-              <div className="space-y-2">
-                <Heading level={2} className="text-base">
-                  Une structure dédiée à la sécurité privée
+
+              <Text className="text-sm text-slate-300">
+                Nous réalisons des vérandas contemporaines comme des styles plus classiques
+                (verrières, ateliers d&apos;artistes), ainsi que des solutions plus spécifiques :
+                toitures ouvrantes / coulissantes, bow-windows, grandes baies vitrées et
+                structures vitrées.
+              </Text>
+
+              <Text className="text-sm text-slate-300">
+                Pour la structure, nous travaillons avec des gammes reconnues (ex. Technal,
+                Sapa / Intexalu). Les vitrages et options sont choisis selon l&apos;usage :
+                confort thermique, sécurité, gestion solaire, acoustique.
+              </Text>
+
+              <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-xs text-slate-200">
+                <Heading level={3} className="text-[13px]">
+                  Fabrication &amp; pose en Île-de-France
                 </Heading>
-                <Text className="text-sm text-slate-300">
-                  Créée le 29/03/2023 et implantée à Nîmes, {company.name} se concentre
-                  exclusivement sur les métiers de la sécurité privée. Cette spécialisation
-                  permet de proposer des dispositifs ciblés et des interlocuteurs qui
-                  maîtrisent les enjeux de terrain.
+                <Text className="text-xs text-slate-200">
+                  Nous intervenons en région parisienne (Paris, Hauts-de-Seine, Yvelines,
+                  Essonne, Val-de-Marne, Val-d&apos;Oise, Seine-et-Marne) pour la pose et le suivi
+                  de chantier.
+                </Text>
+                <Text className="text-xs text-slate-400">
+                  Pour démarrer, vous pouvez consulter la page{' '}
+                  <Link href="/produits" className="underline-offset-2 hover:underline">
+                    Produits
+                  </Link>{' '}
+                  puis nous contacter pour un devis.
                 </Text>
               </div>
-            </div>
+            </article>
 
-            <Text className="text-sm text-slate-300">
-              Chaque mission fait l&apos;objet d&apos;un cadrage précis : analyse du
-              contexte et des enjeux, définition du périmètre, consignes de poste,
-              modalités de reporting. L&apos;objectif est d&apos;apporter un niveau de
-              sécurité adapté et justifié, en veillant à la continuité de vos activités et
-              au respect de vos contraintes opérationnelles.
-            </Text>
-
-            <Text className="text-sm text-slate-300">
-              {company.name} privilégie une relation suivie avec ses clients, basée sur la
-              transparence, la disponibilité et la régularité des échanges. Un
-              interlocuteur unique accompagne votre dossier, de la qualification du besoin
-              jusqu&apos;au retour d&apos;expérience en fin de mission.
-            </Text>
-
-            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-xs text-slate-200">
-              <Heading level={3} className="text-[13px]">
-                Direction générale &amp; organisation France Nord / France Sud
+            <aside className="card p-6 text-xs text-slate-200">
+              <Heading level={2} className="text-sm">
+                Informations clés
               </Heading>
-              <Text className="text-xs text-slate-200">
-                Le pilotage national de {company.name} est assuré par une direction
-                générale dédiée, qui définit la vision, valide les dispositifs de sécurité
-                proposés aux clients et supervise l&apos;ensemble des opérations menées sur
-                le territoire.
-              </Text>
-              <Text className="text-xs text-slate-200">
-                Pour garantir une proximité opérationnelle, l&apos;activité est structurée
-                en deux zones&nbsp;:
-              </Text>
-              <ul className="ml-4 list-disc space-y-1.5">
-                <li>
-                  <span className="font-semibold">France Nord</span> : Paris et
-                  Île-de-France, avec <span className="font-semibold">Béna</span> comme
-                  responsable opérationnel local.
-                </li>
-                <li>
-                  <span className="font-semibold">France Sud</span> : Marseille,
-                  Montpellier, Nîmes / Gard et côte méditerranéenne, sous la responsabilité
-                  opérationnelle de <span className="font-semibold">Sofiane</span>.
-                </li>
-              </ul>
-              <Text className="text-xs text-slate-400">
-                Les responsables de zone assurent le suivi quotidien des missions en lien
-                étroit avec la direction générale, afin de maintenir un niveau homogène de
-                qualité de service sur l&apos;ensemble des sites.
-              </Text>
-            </div>
-          </article>
-
-          <aside className="card p-6 text-xs text-slate-200">
-            <Heading level={2} className="text-sm">
-              Informations clés sur la société
-            </Heading>
-            <div className="mt-3 space-y-1.5">
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">Dénomination sociale&nbsp;:</span>{' '}
-                {company.legalName}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">Forme juridique&nbsp;:</span>{' '}
-                {company.legalForm}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">Code NAF / APE&nbsp;:</span>{' '}
-                {company.nafApe}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">SIREN&nbsp;:</span> {company.siren}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">SIRET&nbsp;:</span> {company.siret}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">TVA intracommunautaire&nbsp;:</span>{' '}
-                {company.vatNumber}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">Capital social&nbsp;:</span>{' '}
-                {company.shareCapital}
-              </Text>
-              <Text className="text-xs text-slate-200">
-                <span className="text-slate-400">Adresse du siège&nbsp;:</span>
-                <br />
-                {company.address.line1}
-                {company.address.line2 && (
-                  <>
-                    <br />
-                    {company.address.line2}
-                  </>
+              <div className="mt-3 space-y-1.5">
+                <Text className="text-xs text-slate-200">
+                  <span className="text-slate-400">Dénomination&nbsp;:</span> {company.legalName}
+                </Text>
+                {company.legalForm && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">Forme&nbsp;:</span> {company.legalForm}
+                  </Text>
                 )}
-                <br />
-                {company.address.postalCode} {company.address.city}
-                <br />
-                {company.address.country}
-              </Text>
-            </div>
+                {company.nafApe && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">Code NAF / APE&nbsp;:</span> {company.nafApe}
+                  </Text>
+                )}
+                {company.siren && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">SIREN&nbsp;:</span> {company.siren}
+                  </Text>
+                )}
+                {company.siret && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">SIRET&nbsp;:</span> {company.siret}
+                  </Text>
+                )}
+                {company.vatNumber && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">TVA&nbsp;:</span> {company.vatNumber}
+                  </Text>
+                )}
+                {company.shareCapital && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">Capital social&nbsp;:</span> {company.shareCapital}
+                  </Text>
+                )}
+                {company.creationDate && (
+                  <Text className="text-xs text-slate-200">
+                    <span className="text-slate-400">Création&nbsp;:</span> {company.creationDate}
+                  </Text>
+                )}
+                <Text className="text-xs text-slate-200">
+                  <span className="text-slate-400">Siège&nbsp;:</span>
+                  <br />
+                  {company.address.line1}
+                  {company.address.line2 && (
+                    <>
+                      <br />
+                      {company.address.line2}
+                    </>
+                  )}
+                  <br />
+                  {company.address.postalCode} {company.address.city}
+                  <br />
+                  {company.address.country}
+                </Text>
+              </div>
 
-            <Text className="mt-4 text-xs text-slate-400">
-              Les prestations de sécurité proposées s&apos;inscrivent dans le respect du
-              cadre réglementaire français applicable aux activités privées de sécurité
-              (Livre VI du Code de la sécurité intérieure).
-            </Text>
-          </aside>
-        </section>
+              <div className="mt-5 space-y-2">
+                <Link
+                  href="/contact#formulaire-devis"
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-soft transition hover:bg-emerald-400"
+                >
+                  Demander un devis
+                </Link>
+              </div>
+            </aside>
+          </section>
+        </div>
       </div>
-    </div>
     </>
   );
 }
