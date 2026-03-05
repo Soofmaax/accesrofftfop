@@ -7,3 +7,72 @@ NODE_VERSION = "18"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+from = "http://www.art-et-maison.com/*"
+to = "https://art-et-maison.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.art-et-maison.com/*"
+to = "https://art-et-maison.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "http://art-et-maison.com/*"
+to = "https://art-et-maison.com/:splat"
+status = 301
+force = true
+
+# Redirections depuis les anciennes URLs .html (site historique)
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/produits.html"
+to = "/produits"
+status = 301
+
+[[redirects]]
+from = "/produits-verandas.html"
+to = "/produits"
+status = 301
+
+[[redirects]]
+from = "/verandas.html"
+to = "/produits/verandas-sur-mesure"
+status = 301
+
+[[redirects]]
+from = "/ouvrante.html"
+to = "/produits/toitures-escamotables"
+status = 301
+
+[[redirects]]
+from = "/store.html"
+to = "/produits/stores-protection-solaire"
+status = 301
+
+[[redirects]]
+from = "/fenetres.html"
+to = "/produits/fenetres-portes"
+status = 301
+
+[[redirects]]
+from = "/volets.html"
+to = "/produits/volets-roulants"
+status = 301
+
+[[redirects]]
+from = "/qui.html"
+to = "/a-propos"
+status = 301
+
+[[redirects]]
+from = "/conseils.html"
+to = "/produits"
+status = 301

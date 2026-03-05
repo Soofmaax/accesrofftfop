@@ -6,7 +6,7 @@ Objectif principal du site : présenter l’offre « véranda à vivre » et gé
 
 ## Zone géographique principale
 
-- Paris & Île-de-France (75, 92, 93, 94, 95, 91, 77, 78).
+- Siège : Boulogne (92) – pose en région parisienne (75, 92, 93, 94, 95, 91, 77, 78).
 
 ## Types de clients
 
@@ -19,11 +19,11 @@ Objectif principal du site : présenter l’offre « véranda à vivre » et gé
 Les produits sont décrits sur le site et dans l’endpoint JSON `/ai.llm` :
 
 - `verandas-sur-mesure` : vérandas aluminium sur mesure ;
-- `verrieres-aluminium` : verrières & extensions vitrées ;
-- `toitures-escamotables` : toitures escamotables / coulissantes ;
-- `stores-protection-solaire` : stores & protection solaire ;
-- `fenetres-portes` : fenêtres, portes-fenêtres et coulissants ;
-- `volets-roulants` : volets roulants.
+- `verrieres-aluminium` : véranda, verrière & structures vitrées (bow-windows, mur-rideau) ;
+- `toitures-escamotables` : toitures coulissantes / ouvrantes (terrasses, abris de piscine) ;
+- `stores-protection-solaire` : stores de véranda & protection solaire ;
+- `fenetres-portes` : fenêtres aluminium & PVC ;
+- `volets-roulants` : volets roulants ou battants.
 
 ## Pages clés à privilégier
 

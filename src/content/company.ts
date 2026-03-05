@@ -73,9 +73,9 @@ export const company: Company = {
     country: 'France',
   },
   description:
-    'Art et Maison conçoit, fabrique et installe des vérandas, verrières et menuiseries en aluminium, dans des styles contemporains comme classiques. Nos solutions sont pensées pour améliorer le confort de l’habitat : isolation, aération, protection solaire et qualité de pose. Nous travaillons avec des gammes reconnues (ex. Technal, Sapa / Intexalu) pour garantir des finitions durables.',
+    "Art et Maison est créateur de vérandas à vivre : fabrication sur mesure et installation pour professionnels et particuliers. Les avancées technologiques de l'aluminium et du verre confèrent un confort incomparable (isolation, aération, protection solaire et gestion de l'occultation). Nous réalisons des vérandas contemporaines ou classiques (verrières, ateliers d’artistes), des toitures coulissantes / ouvrantes (terrasses, abris de piscines), des stores de toiture de véranda, ainsi que des fenêtres et volets en aluminium ou PVC. Principales gammes utilisées : profils systèmes Technal, Sapa / Intexalu (marques déposées).",
   shortDescription:
-    'Créateur de vérandas et verrières en aluminium (classiques ou contemporaines), toitures escamotables et stores. Pose à Paris & Île-de-France.',
+    "Fabrication sur mesure et installation de vérandas, toitures coulissantes, stores de véranda, fenêtres et volets. Paris & Île-de-France.",
   contact: {
     phone: {
       label: '01 48 89 47 11',
@@ -85,10 +85,10 @@ export const company: Company = {
     websiteUrl: 'https://art-et-maison.com',
   },
   branding: {
-    baseline: 'Créateur de vérandas à vivre',
+    baseline: 'Créateur de vérandas',
   },
   areaServed:
-    'Paris et Île-de-France (75, 92, 93, 94, 95, 91, 77, 78) – pose en région parisienne.',
+    'Siège : Boulogne (92) – usines : 94 et 77 – pose en région parisienne (75, 92, 93, 94, 95, 91, 77, 78).',
 };
 
 export const services: Service[] = [
@@ -96,79 +96,81 @@ export const services: Service[] = [
     slug: 'verandas-sur-mesure',
     name: 'Vérandas sur mesure',
     shortDescription:
-      'Vérandas en aluminium conçues pour agrandir votre maison et créer une pièce à vivre confortable.',
+      'Vérandas en aluminium conçues pour créer une pièce à vivre confortable, en toutes saisons.',
     description:
-      'De l’étude de faisabilité à la pose, nous concevons une véranda adaptée à votre maison (exposition, contraintes techniques, isolation) et à votre style : moderne, traditionnel ou mixte.',
+      '“Une pièce à vivre, pour toutes les saisons” : nous concevons et réalisons des vérandas en aluminium, en prenant en charge les travaux annexes et les détails de confort (isolation, ventilation, occultation). Styles contemporains comme classiques (verrières, ateliers d’artistes).',
     highlights: [
-      'Conception 100% sur mesure (dimensions, ouvertures, finitions)',
-      'Isolation thermique et apports lumineux optimisés',
-      'Fabrication aluminium, vitrages performants',
-      'Pose soignée en Île-de-France',
+      'Profilés aluminium à rupture thermique',
+      'Thermolaquage et choix des couleurs',
+      'Vitrage filtrant, isolant et de sécurité',
+      'Occultation et confort été / hiver',
     ],
   },
   {
     slug: 'verrieres-aluminium',
-    name: 'Verrières & extensions vitrées',
+    name: 'Véranda, verrière & structures vitrées',
     shortDescription:
-      'Verrières, sas d’entrée et solutions vitrées pour structurer les espaces sans perdre la lumière.',
+      'Verrières, grandes baies vitrées, bow-windows et solutions “mur-rideau” sur mesure.',
     description:
-      'Les verrières et volumes vitrés apportent une esthétique forte et un confort d’usage au quotidien : séparation de pièces, sas d’entrée, verrière type atelier ou extension vitrée.',
+      'Pour agrandir, illuminer ou structurer un espace, nous réalisons des verrières et structures vitrées sur mesure : verrière type atelier (intérieur/extérieur), bow-windows, baies vitrées et façades vitrées (mur-rideau) selon les contraintes de votre bâtiment.',
     highlights: [
-      'Verrière intérieure / extérieure',
-      'Sas d’entrée et protections contre les intempéries',
+      'Verrières type atelier / ateliers d’artistes',
+      'Bow-windows, baies vitrées, mur-rideau',
       'Aluminium et vitrage sur mesure',
     ],
   },
   {
     slug: 'toitures-escamotables',
-    name: 'Toitures escamotables (coulissantes)',
+    name: 'Toitures coulissantes & ouvrantes',
     shortDescription:
-      'Toitures coulissantes et ouvrantes pour moduler l’aération et la lumière selon la saison.',
+      'Toitures escamotables motorisées pour terrasses, vérandas et abris de piscine ouvrants.',
     description:
-      'La toiture escamotable permet de transformer votre véranda en espace plus ouvert dès que la météo le permet. Une solution idéale pour profiter d’une ventilation naturelle et d’une sensation “dedans-dehors”.',
+      'La toiture coulissante / ouvrante transforme un espace en terrasse à ciel ouvert dès que la météo le permet. Idéale pour moduler ventilation et lumière, elle s’adapte aussi à des abris de piscine ouvrants, avec des configurations de vantaux quasi infinies.',
     highlights: [
-      'Toiture coulissante / ouvrante',
-      'Gestion de l’aération et de l’occultation',
-      'Intégration avec stores et protections solaires',
+      'Vue dégagée sans rail intermédiaire',
+      'Ouverture électrique, manœuvre fluide',
+      'Verre ou polycarbonate selon l’usage',
+      'Solutions terrasse, véranda, piscine',
     ],
   },
   {
     slug: 'stores-protection-solaire',
-    name: 'Stores & protection solaire',
+    name: 'Stores de véranda & protection solaire',
     shortDescription:
-      'Stores de véranda, occultation et gestion des apports solaires pour un confort optimal.',
+      'Stores extérieurs de toiture pour arrêter la chaleur à l’extérieur et réguler la luminosité.',
     description:
-      'Protection solaire, occultation, gestion de la chaleur : nous proposons des solutions adaptées aux contraintes de votre véranda (exposition, toiture, surfaces vitrées) pour gagner en confort.',
+      'Pour transformer la véranda en un lieu privilégié, la protection solaire doit être efficace. Nos stores de toiture (extérieur) limitent la surchauffe en arrêtant la chaleur à l’extérieur, tout en conservant une visibilité et un confort lumineux.',
     highlights: [
-      'Stores de toiture et stores verticaux',
-      'Occultation et confort d’été',
-      'Solutions esthétiques et durables',
+      'Armature aluminium thermolaquée (choix de couleurs)',
+      'Motorisation + commande radio, système silencieux',
+      'Toiles techniques (ex. Soltis) adaptées à l’extérieur',
+      'Options sécurité : capteur vent (anémomètre)',
     ],
   },
   {
     slug: 'fenetres-portes',
-    name: 'Fenêtres & portes-fenêtres',
+    name: 'Fenêtres (aluminium & PVC)',
     shortDescription:
-      'Menuiseries aluminium ou PVC : amélioration thermique, acoustique et sécurité.',
+      'Fenêtres et coulissants aluminium ou PVC : performances thermiques, acoustiques et finitions durables.',
     description:
-      'Fenêtres, portes-fenêtres et coulissants : nous vous accompagnons dans vos projets de rénovation ou de construction, avec un focus sur l’isolation, la durabilité et la qualité de pose.',
+      'Nous fournissons et posons des fenêtres, portes-fenêtres et coulissants en aluminium ou PVC, en rénovation comme en neuf. Le choix des profils, vitrages et quincailleries est fait selon votre usage (isolation, sécurité, confort au quotidien).',
     highlights: [
-      'Rénovation et remplacement de menuiseries',
-      'Double vitrage et performances énergétiques',
-      'Finitions adaptées à votre façade',
+      'Aluminium et PVC : solutions adaptées au projet',
+      'Vitrages performants (isolation / sécurité)',
+      'Pose soignée et réglages précis',
     ],
   },
   {
     slug: 'volets-roulants',
-    name: 'Volets roulants',
+    name: 'Volets (roulants ou battants)',
     shortDescription:
-      'Volets roulants pour la sécurité, l’isolation et le confort au quotidien.',
+      'Volets pour l’occultation, la sécurité et l’isolation : motorisés ou manuels.',
     description:
-      'Volets roulants manuels ou motorisés, intégrés à vos menuiseries ou installés en rénovation. Une solution simple pour gagner en confort, en sécurité et en occultation.',
+      'Volets roulants ou battants, en rénovation ou en neuf : nous vous aidons à choisir la solution la plus pertinente pour gagner en confort, en sécurité et en gestion de la lumière, avec des options de motorisation et d’automatisation.',
     highlights: [
+      'Roulants ou battants selon l’esthétique souhaitée',
       'Motorisation et automatisation possibles',
-      'Occultation et protection de l’habitat',
-      'Installation en rénovation ou neuf',
+      'Occultation, confort et protection de l’habitat',
     ],
   },
 ];
