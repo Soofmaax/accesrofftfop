@@ -85,7 +85,12 @@ const nextConfig = {
       },
       {
         source: '/references',
-        destination: '/galerie',
+        destination: '/realisations',
+        permanent: true,
+      },
+      {
+        source: '/galerie',
+        destination: '/realisations',
         permanent: true,
       },
       {
@@ -140,7 +145,7 @@ const nextConfig = {
       },
       {
         source: '/conseils.html',
-        destination: '/produits',
+        destination: '/conseils',
         permanent: true,
       },
     ];

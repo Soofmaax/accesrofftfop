@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company, services } from '../../../content/company';
+import { zones } from '../../../content/zones';
 import { buildMetadata } from '../../../lib/seo';
 import { Heading } from '../../../components/atoms/Heading';
 import { Text } from '../../../components/atoms/Text';
@@ -182,6 +183,23 @@ export default function ProduitDetailPage({ params }: PageProps) {
             <Text variant="muted" className="mt-2 text-xs">
               {company.areaServed}
             </Text>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {zones.slice(0, 6).map((zone) => (
+                <Link
+                  key={zone.slug}
+                  href={`/zones/${zone.slug}`}
+                  className="rounded-full border border-slate-700 bg-slate-950/60 px-3 py-2 text-[11px] font-semibold text-slate-100 transition hover:border-emerald-500"
+                >
+                  {zone.name}
+                </Link>
+              ))}
+              <Link
+                href="/zones"
+                className="rounded-full border border-slate-700 bg-slate-950/60 px-3 py-2 text-[11px] font-semibold text-slate-100 transition hover:border-emerald-500"
+              >
+                Toutes les zones
+              </Link>
+            </div>
           </div>
 
           {service.faqs?.length ? (

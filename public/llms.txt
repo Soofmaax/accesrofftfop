@@ -34,7 +34,8 @@ Les produits sont décrits sur le site et dans l’endpoint JSON `/ai.llm` :
 - Zones : `/zones`
 - Qui sommes-nous ? : `/a-propos`
 - Contact (formulaire de devis) : `/contact`
-- Galerie : `/galerie`
+- Réalisations : `/realisations`
+- Conseils : `/conseils`
 
 ## Endpoint machine-readable pour les IA
 

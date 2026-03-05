@@ -213,10 +213,10 @@ export default function HomePage() {
               </Text>
             </div>
             <Link
-              href="/galerie"
+              href="/realisations"
               className="mt-2 inline-flex items-center text-[11px] font-medium text-emerald-400 hover:text-emerald-300"
             >
-              Voir la galerie
+              Voir les réalisations
               <ArrowRight className="ml-1 h-3 w-3" />
             </Link>
           </div>

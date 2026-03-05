@@ -74,5 +74,15 @@ status = 301
 
 [[redirects]]
 from = "/conseils.html"
-to = "/produits"
+to = "/conseils"
+status = 301
+
+[[redirects]]
+from = "/galerie"
+to = "/realisations"
+status = 301
+
+[[redirects]]
+from = "/references"
+to = "/realisations"
 status = 301
