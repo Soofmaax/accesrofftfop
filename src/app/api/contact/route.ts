@@ -76,15 +76,24 @@ export async function POST(request: Request) {
   const truncatedMessage =
     message && message.length > 8000 ? message.slice(0, 8000) : message || '';
 
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const recipient = process.env.CONTACT_RECIPIENT_EMAIL || smtpUser;
+  const resendApiKey = process.env.RESEND_API_KEY;
 
-  if (!smtpHost || !smtpUser || !smtpPass || !recipient) {
+  const smtpHost = process.env.SMTP_HOST || (resendApiKey ? 'smtp.resend.com' : undefined);
+  const smtpPort = process.env.SMTP_PORT
+    ? Number(process.env.SMTP_PORT)
+    : resendApiKey
+      ? 465
+      : 587;
+  const smtpUser = process.env.SMTP_USER || (resendApiKey ? 'resend' : undefined);
+  const smtpPass = process.env.SMTP_PASS || resendApiKey;
+
+  const fromEmail = process.env.CONTACT_EMAIL_FROM || company.contact.email;
+  const recipient =
+    process.env.CONTACT_EMAIL_TO || process.env.CONTACT_RECIPIENT_EMAIL || fromEmail;
+
+  if (!smtpHost || !smtpUser || !smtpPass || !recipient || !fromEmail) {
     console.error(
-      '[contact] Configuration SMTP incomplète. Vérifiez SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS et CONTACT_RECIPIENT_EMAIL.',
+      '[contact] Configuration SMTP incomplète. Vérifiez SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS (ou RESEND_API_KEY) + CONTACT_EMAIL_FROM/CONTACT_EMAIL_TO.',
     );
     return NextResponse.json(
       {
@@ -150,7 +159,7 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      from: smtpUser,
+      from: fromEmail,
       to: recipient,
       replyTo: trimmedEmail,
       subject: mailSubject,
