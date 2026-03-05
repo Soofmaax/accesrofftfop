@@ -20,14 +20,18 @@ export function SiteFooter() {
               {company.name}
             </div>
             <p className="text-sm text-slate-400">{company.shortDescription}</p>
-            <div className="space-y-1 text-xs text-slate-500">
-              <p>
-                SIREN&nbsp;: {company.siren} – SIRET&nbsp;: {company.siret}
-              </p>
-              <p>Code NAF / APE&nbsp;: {company.nafApe}</p>
-              <p>TVA intracommunautaire&nbsp;: {company.vatNumber}</p>
-              <p>Capital social&nbsp;: {company.shareCapital}</p>
-            </div>
+            {(company.siren || company.siret || company.nafApe || company.vatNumber || company.shareCapital) && (
+              <div className="space-y-1 text-xs text-slate-500">
+                {company.siren && company.siret && (
+                  <p>
+                    SIREN&nbsp;: {company.siren} – SIRET&nbsp;: {company.siret}
+                  </p>
+                )}
+                {company.nafApe && <p>Code NAF / APE&nbsp;: {company.nafApe}</p>}
+                {company.vatNumber && <p>TVA intracommunautaire&nbsp;: {company.vatNumber}</p>}
+                {company.shareCapital && <p>Capital social&nbsp;: {company.shareCapital}</p>}
+              </div>
+            )}
           </div>
 
           {/* Contact & address */}
@@ -77,20 +81,23 @@ export function SiteFooter() {
                   Navigation
                 </div>
                 <div className="mt-3 flex flex-col gap-1 text-slate-300">
-                  <Link href="/prestations" className="hover:text-emerald-300">
-                    Prestations
+                  <Link href="/produits" className="hover:text-emerald-300">
+                    Produits
                   </Link>
-                  <Link href="/solutions" className="hover:text-emerald-300">
-                    Solutions
+                  <Link href="/zones" className="hover:text-emerald-300">
+                    Zones
                   </Link>
                   <Link href="/secteurs" className="hover:text-emerald-300">
-                    Secteurs
+                    Pour qui ?
                   </Link>
-                  <Link href="/galerie" className="hover:text-emerald-300">
-                    Galerie photo
+                  <Link href="/realisations" className="hover:text-emerald-300">
+                    Réalisations
+                  </Link>
+                  <Link href="/conseils" className="hover:text-emerald-300">
+                    Conseils
                   </Link>
                   <Link href="/a-propos" className="hover:text-emerald-300">
-                    À propos
+                    Qui sommes-nous ?
                   </Link>
                   <Link href="/contact" className="hover:text-emerald-300">
                     Contact
@@ -123,7 +130,7 @@ export function SiteFooter() {
             © {year} {company.name}. Tous droits réservés.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <p>Site vitrine institutionnel – Sécurité privée B2B.</p>
+            <p>Vérandas, menuiseries aluminium &amp; protections solaires.</p>
             <p className="text-[11px] text-slate-500">
               Site conçu &amp; optimisé par{' '}
               <a

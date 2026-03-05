@@ -10,7 +10,7 @@ interface BreadcrumbItemInput {
  * Paths should be absolutes from the site root (e.g. "/solutions/...").
  */
 export function buildBreadcrumbJsonLd(items: BreadcrumbItemInput[]) {
-  const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
+  const baseUrl = company.contact.websiteUrl || 'https://art-et-maison.com';
   const normalizedBase = baseUrl.replace(/\/$/, '');
 
   return {

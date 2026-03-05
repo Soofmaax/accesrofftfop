@@ -4,7 +4,7 @@
       "startServerCommand": "npm start",
       "url": [
         "http://localhost:3000/",
-        "http://localhost:3000/prestations",
+        "http://localhost:3000/produits",
         "http://localhost:3000/secteurs",
         "http://localhost:3000/contact"
       ],

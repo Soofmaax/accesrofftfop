@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 /**
  * Endpoint machine-readable pour les IA et intégrations externes.
- * Donne une vue structurée de l'offre MAB SECURITE.
+ * Donne une vue structurée de l'offre Art et Maison.
  */
 export async function GET() {
   const payload = {
@@ -49,7 +49,7 @@ export async function GET() {
       title: engagement.title,
       description: engagement.description,
     })),
-    source: 'MAB SECURITE website content (Next.js app)',
+    source: 'Art et Maison website content (Next.js app)',
     updatedAt: new Date().toISOString(),
   };
 

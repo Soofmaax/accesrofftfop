@@ -8,13 +8,13 @@ interface SeoParams {
 }
 
 /**
- * Build a Next.js Metadata object with sensible defaults for MAB SECURITE.
+ * Build a Next.js Metadata object with sensible defaults.
  * Can be used from any page file:
  *
  * export const metadata = buildMetadata({ ... });
  */
 export function buildMetadata({ title, description, canonicalPath }: SeoParams): Metadata {
-  const baseUrl = company.contact.websiteUrl || 'https://www.mab-securite.fr';
+  const baseUrl = company.contact.websiteUrl || 'https://art-et-maison.com';
   const url = canonicalPath ? `${baseUrl.replace(/\/$/, '')}${canonicalPath}` : baseUrl;
 
   return {
@@ -30,6 +30,11 @@ export function buildMetadata({ title, description, canonicalPath }: SeoParams):
       siteName: company.name,
       locale: 'fr_FR',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }

@@ -2,13 +2,10 @@ import { NavLink } from './NavLink';
 
 const navItems = [
   { href: '/', label: 'Accueil' },
-  { href: '/prestations', label: 'Prestations' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/securite-privee-paris', label: 'Paris / IDF' },
-  { href: '/securite-privee-marseille', label: 'Marseille' },
-  { href: '/securite-privee-montpellier', label: 'Montpellier' },
-  { href: '/securite-privee-nimes', label: 'Nîmes / Gard' },
-  { href: '/a-propos', label: 'À propos' },
+  { href: '/produits', label: 'Produits' },
+  { href: '/zones', label: 'Zones' },
+  { href: '/realisations', label: 'Réalisations' },
+  { href: '/a-propos', label: 'Qui sommes-nous ?' },
   { href: '/contact', label: 'Contact' },
 ];
 

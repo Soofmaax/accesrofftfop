@@ -7,9 +7,9 @@ import { Heading } from '../../components/atoms/Heading';
 import { Text } from '../../components/atoms/Text';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Mentions légales – MAB SECURITE',
+  title: `Mentions légales – ${company.name}`,
   description:
-    'Mentions légales du site de MAB SECURITE : informations relatives à la société éditrice, à son activité de sécurité privée et au cadre juridique applicable.',
+    `Mentions légales du site ${company.name} : informations relatives à la société éditrice et aux conditions d'utilisation du site.`,
   canonicalPath: '/mentions-legales',
 });
 
@@ -48,20 +48,44 @@ export default function MentionsLegalesPage() {
           <Text className="text-sm">
             Nom&nbsp;: {company.name}
             <br />
-            Forme&nbsp;: {company.legalForm}
+            {company.legalForm && (
+              <>
+                Forme&nbsp;: {company.legalForm}
+                <br />
+              </>
+            )}
+            Activité&nbsp;: Vérandas, menuiseries aluminium &amp; protection solaire
             <br />
-            Activité&nbsp;: Sécurité privée
-            <br />
-            Code NAF / APE&nbsp;: {company.nafApe}
-            <br />
-            SIREN&nbsp;: {company.siren}
-            <br />
-            SIRET&nbsp;: {company.siret}
-            <br />
-            TVA intracommunautaire&nbsp;: {company.vatNumber}
-            <br />
-            Capital social&nbsp;: {company.shareCapital}
-            <br />
+            {company.nafApe && (
+              <>
+                Code NAF / APE&nbsp;: {company.nafApe}
+                <br />
+              </>
+            )}
+            {company.siren && (
+              <>
+                SIREN&nbsp;: {company.siren}
+                <br />
+              </>
+            )}
+            {company.siret && (
+              <>
+                SIRET&nbsp;: {company.siret}
+                <br />
+              </>
+            )}
+            {company.vatNumber && (
+              <>
+                TVA intracommunautaire&nbsp;: {company.vatNumber}
+                <br />
+              </>
+            )}
+            {company.shareCapital && (
+              <>
+                Capital social&nbsp;: {company.shareCapital}
+                <br />
+              </>
+            )}
             Adresse&nbsp;:
             <br />
             {company.address.line1}
@@ -75,8 +99,12 @@ export default function MentionsLegalesPage() {
             {company.address.postalCode} {company.address.city}
             <br />
             {company.address.country}
-            <br />
-            Date de création&nbsp;: {company.creationDate}
+            {company.creationDate && (
+              <>
+                <br />
+                Date de création&nbsp;: {company.creationDate}
+              </>
+            )}
           </Text>
         </section>
 

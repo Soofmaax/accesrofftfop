@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { company, services } from '../../../content/company';
 import { rateLimitByIp } from '../../../lib/rate-limit';
 
 export async function POST(request: Request) {
@@ -37,11 +38,12 @@ export async function POST(request: Request) {
     );
   }
 
-  const { companyName, contactName, email, phone, subject, message, date, website } = data as {
-    companyName?: string;
-    contactName?: string;
+  const { fullName, email, phone, postalCode, city, subject, message, date, website } = data as {
+    fullName?: string;
     email?: string;
     phone?: string;
+    postalCode?: string;
+    city?: string;
     subject?: string;
     message?: string;
     date?: string;
@@ -53,24 +55,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
   }
 
-  const trimmedCompanyName = companyName?.trim() ?? '';
-  const trimmedContactName = contactName?.trim() ?? '';
+  const trimmedFullName = fullName?.trim() ?? '';
   const trimmedEmail = email?.trim() ?? '';
   const trimmedPhone = phone?.trim() ?? '';
+  const trimmedPostalCode = postalCode?.trim() ?? '';
+  const trimmedCity = city?.trim() ?? '';
 
   const emailIsValid =
     trimmedEmail.length > 3 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
   const phoneDigits = trimmedPhone.replace(/[^\d+]/g, '');
   const phoneIsValid = phoneDigits.length >= 6 && phoneDigits.length <= 20;
 
-  if (
-    !trimmedCompanyName ||
-    !trimmedContactName ||
-    !trimmedEmail ||
-    !trimmedPhone ||
-    !emailIsValid ||
-    !phoneIsValid
-  ) {
+  if (!trimmedFullName || !trimmedEmail || !trimmedPhone || !trimmedPostalCode || !emailIsValid || !phoneIsValid) {
     return NextResponse.json(
       { success: false, message: 'Certains champs obligatoires sont manquants.' },
       { status: 400 },
@@ -80,15 +76,24 @@ export async function POST(request: Request) {
   const truncatedMessage =
     message && message.length > 8000 ? message.slice(0, 8000) : message || '';
 
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const recipient = process.env.CONTACT_RECIPIENT_EMAIL || smtpUser;
+  const resendApiKey = process.env.RESEND_API_KEY;
 
-  if (!smtpHost || !smtpUser || !smtpPass || !recipient) {
+  const smtpHost = process.env.SMTP_HOST || (resendApiKey ? 'smtp.resend.com' : undefined);
+  const smtpPort = process.env.SMTP_PORT
+    ? Number(process.env.SMTP_PORT)
+    : resendApiKey
+      ? 465
+      : 587;
+  const smtpUser = process.env.SMTP_USER || (resendApiKey ? 'resend' : undefined);
+  const smtpPass = process.env.SMTP_PASS || resendApiKey;
+
+  const fromEmail = process.env.CONTACT_EMAIL_FROM || company.contact.email;
+  const recipient =
+    process.env.CONTACT_EMAIL_TO || process.env.CONTACT_RECIPIENT_EMAIL || fromEmail;
+
+  if (!smtpHost || !smtpUser || !smtpPass || !recipient || !fromEmail) {
     console.error(
-      '[contact] Configuration SMTP incomplète. Vérifiez SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS et CONTACT_RECIPIENT_EMAIL.',
+      '[contact] Configuration SMTP incomplète. Vérifiez SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS (ou RESEND_API_KEY) + CONTACT_EMAIL_FROM/CONTACT_EMAIL_TO.',
     );
     return NextResponse.json(
       {
@@ -110,17 +115,22 @@ export async function POST(request: Request) {
     },
   });
 
+  const subjectLabel = subject
+    ? services.find((item) => item.slug === subject)?.name || subject
+    : '';
+
   const mailSubject =
-    '[MAB SECURITE] Nouvelle demande de contact' +
-    (subject ? ` – ${subject}` : '');
+    `[${company.name}] Nouvelle demande de contact` +
+    (subjectLabel ? ` – ${subjectLabel}` : '');
 
   const textBody = [
-    `Société / organisation : ${trimmedCompanyName}`,
-    `Contact : ${trimmedContactName}`,
+    `Nom : ${trimmedFullName}`,
     `E-mail : ${trimmedEmail}`,
     `Téléphone : ${trimmedPhone}`,
-    date ? `Période / date souhaitée : ${date}` : null,
-    subject ? `Type de besoin : ${subject}` : null,
+    `Code postal : ${trimmedPostalCode}`,
+    trimmedCity ? `Ville : ${trimmedCity}` : null,
+    date ? `Période souhaitée : ${date}` : null,
+    subjectLabel ? `Type de projet : ${subjectLabel}` : null,
     '',
     'Message :',
     truncatedMessage && truncatedMessage.trim()
@@ -136,21 +146,22 @@ export async function POST(request: Request) {
       : '(aucun message renseigné)';
 
   const htmlBody = `
-    <p><strong>Société / organisation :</strong> ${trimmedCompanyName}</p>
-    <p><strong>Contact :</strong> ${trimmedContactName}</p>
+    <p><strong>Nom :</strong> ${trimmedFullName}</p>
     <p><strong>E-mail :</strong> ${trimmedEmail}</p>
     <p><strong>Téléphone :</strong> ${trimmedPhone}</p>
-    ${date ? `<p><strong>Période / date souhaitée :</strong> ${date}</p>` : ''}
-    ${subject ? `<p><strong>Type de besoin :</strong> ${subject}</p>` : ''}
+    <p><strong>Code postal :</strong> ${trimmedPostalCode}</p>
+    ${trimmedCity ? `<p><strong>Ville :</strong> ${trimmedCity}</p>` : ''}
+    ${date ? `<p><strong>Période souhaitée :</strong> ${date}</p>` : ''}
+    ${subjectLabel ? `<p><strong>Type de projet :</strong> ${subjectLabel}</p>` : ''}
     <p><strong>Message :</strong></p>
     <p>${safeHtmlMessage}</p>
   `;
 
   try {
     await transporter.sendMail({
-      from: smtpUser,
+      from: fromEmail,
       to: recipient,
-      replyTo: email,
+      replyTo: trimmedEmail,
       subject: mailSubject,
       text: textBody,
       html: htmlBody,
