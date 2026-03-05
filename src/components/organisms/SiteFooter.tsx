@@ -84,6 +84,9 @@ export function SiteFooter() {
                   <Link href="/produits" className="hover:text-emerald-300">
                     Produits
                   </Link>
+                  <Link href="/zones" className="hover:text-emerald-300">
+                    Zones
+                  </Link>
                   <Link href="/secteurs" className="hover:text-emerald-300">
                     Pour qui ?
                   </Link>

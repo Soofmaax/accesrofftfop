@@ -93,6 +93,56 @@ const nextConfig = {
         destination: '/contact',
         permanent: true,
       },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/produits.html',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/produits-verandas.html',
+        destination: '/produits',
+        permanent: true,
+      },
+      {
+        source: '/verandas.html',
+        destination: '/produits/verandas-sur-mesure',
+        permanent: true,
+      },
+      {
+        source: '/ouvrante.html',
+        destination: '/produits/toitures-escamotables',
+        permanent: true,
+      },
+      {
+        source: '/store.html',
+        destination: '/produits/stores-protection-solaire',
+        permanent: true,
+      },
+      {
+        source: '/fenetres.html',
+        destination: '/produits/fenetres-portes',
+        permanent: true,
+      },
+      {
+        source: '/volets.html',
+        destination: '/produits/volets-roulants',
+        permanent: true,
+      },
+      {
+        source: '/qui.html',
+        destination: '/a-propos',
+        permanent: true,
+      },
+      {
+        source: '/conseils.html',
+        destination: '/produits',
+        permanent: true,
+      },
     ];
   },
   async headers() {

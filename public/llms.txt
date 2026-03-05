@@ -31,6 +31,7 @@ Les produits sont décrits sur le site et dans l’endpoint JSON `/ai.llm` :
 - Produits : `/produits`
 - Détail produit : `/produits/[slug]`
 - Pour qui ? : `/secteurs`
+- Zones : `/zones`
 - Qui sommes-nous ? : `/a-propos`
 - Contact (formulaire de devis) : `/contact`
 - Galerie : `/galerie`

@@ -31,5 +31,10 @@ export function buildMetadata({ title, description, canonicalPath }: SeoParams):
       locale: 'fr_FR',
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { company, services } from '../content/company';
+import { zones } from '../content/zones';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = company.contact.websiteUrl || 'https://art-et-maison.com';
@@ -8,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/produits',
     ...services.map((service) => `/produits/${service.slug}`),
+    '/zones',
+    ...zones.map((zone) => `/zones/${zone.slug}`),
     '/secteurs',
     '/a-propos',
     '/contact',

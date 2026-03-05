@@ -45,11 +45,54 @@ export default function ProduitDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const baseUrl = company.contact.websiteUrl.replace(/\/$/, '');
+
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: 'Accueil', path: '/' },
     { name: 'Produits', path: '/produits' },
     { name: service.name, path: `/produits/${service.slug}` },
   ]);
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    serviceType: service.name,
+    description: service.description,
+    url: `${baseUrl}/produits/${service.slug}`,
+    provider: {
+      '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+      name: company.name,
+      url: baseUrl,
+      telephone: company.contact.phone.value,
+      email: company.contact.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: company.address.line2
+          ? `${company.address.line1}, ${company.address.line2}`
+          : company.address.line1,
+        postalCode: company.address.postalCode,
+        addressLocality: company.address.city,
+        addressCountry: company.address.country,
+      },
+    },
+    areaServed: company.areaServed,
+  };
+
+  const faqJsonLd = service.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: service.faqs.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
@@ -58,6 +101,18 @@ export default function ProduitDetailPage({ params }: PageProps) {
         // JSON-LD pour le fil d'Ariane (BreadcrumbList) de la page produit
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        // JSON-LD Service (page produit)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          // JSON-LD FAQPage (si une FAQ est disponible)
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <section className="section pb-0">
         <div className="section-inner">
@@ -128,6 +183,29 @@ export default function ProduitDetailPage({ params }: PageProps) {
               {company.areaServed}
             </Text>
           </div>
+
+          {service.faqs?.length ? (
+            <section className="card-muted p-5">
+              <Heading level={3} className="text-sm">
+                Questions fréquentes
+              </Heading>
+              <div className="mt-3 space-y-2">
+                {service.faqs.map((item) => (
+                  <details
+                    key={item.question}
+                    className="rounded-xl border border-slate-800 bg-slate-950/50 p-4"
+                  >
+                    <summary className="cursor-pointer text-xs font-semibold text-slate-100">
+                      {item.question}
+                    </summary>
+                    <Text variant="muted" className="mt-2 text-xs">
+                      {item.answer}
+                    </Text>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           <div className="flex flex-wrap gap-3">
             <Link href="/produits">

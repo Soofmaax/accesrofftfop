@@ -21,6 +21,29 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: 'Produits', path: '/produits' },
 ]);
 
+const offerCatalogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: `Produits – ${company.name}`,
+  url: `${company.contact.websiteUrl.replace(/\/$/, '')}/produits`,
+  itemListElement: services.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: service.name,
+      description: service.shortDescription,
+      url: `${company.contact.websiteUrl.replace(/\/$/, '')}/produits/${service.slug}`,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: company.name,
+        url: company.contact.websiteUrl,
+      },
+      areaServed: company.areaServed,
+    },
+  })),
+};
+
 export default function ProduitsPage() {
   return (
     <>
@@ -29,6 +52,12 @@ export default function ProduitsPage() {
         // JSON-LD pour le fil d'Ariane (BreadcrumbList) de la page Produits
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        // JSON-LD OfferCatalog (liste structurée des produits)
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogJsonLd) }}
+      />
+
       <section className="section pb-0">
         <div className="section-inner">
           <Breadcrumbs

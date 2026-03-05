@@ -12,6 +12,10 @@ export interface Service {
   shortDescription: string;
   description: string;
   highlights: string[];
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 export interface Sector {
@@ -105,6 +109,33 @@ export const services: Service[] = [
       'Vitrage filtrant, isolant et de sécurité',
       'Occultation et confort été / hiver',
     ],
+    faqs: [
+      {
+        question: 'Faut-il un permis pour une véranda ?',
+        answer:
+          "Cela dépend principalement de la surface créée et des règles d’urbanisme (PLU). Nous vous aidons à vérifier la faisabilité et à préparer les éléments nécessaires (dimensions, implantation, aspects).",
+      },
+      {
+        question: 'Comment éviter l’effet serre en été ?',
+        answer:
+          'Le confort d’été se travaille dès la conception : vitrages adaptés, ventilation, ouvertures, et surtout protection solaire (stores extérieurs / occultation) pour arrêter la chaleur à l’extérieur.',
+      },
+      {
+        question: 'Peut-on faire une véranda “4 saisons” ?',
+        answer:
+          'Oui, avec des profils à rupture thermique, des vitrages performants et une bonne gestion de la ventilation et de l’occultation. Le choix de la toiture (vitrée/isolée/ouvrante) est aussi déterminant.',
+      },
+      {
+        question: 'Quels styles de vérandas proposez-vous ?',
+        answer:
+          'Contemporaines ou classiques : verrières, ateliers d’artistes, formes plus traditionnelles. Les coloris et finitions sont personnalisables (thermolaquage).',
+      },
+      {
+        question: 'Intervenez-vous à Paris et en Île-de-France ?',
+        answer:
+          'Oui, nous intervenons à Paris et dans l’ensemble de l’Île-de-France pour l’étude, la fabrication et la pose.',
+      },
+    ],
   },
   {
     slug: 'verrieres-aluminium',
@@ -117,6 +148,33 @@ export const services: Service[] = [
       'Verrières type atelier / ateliers d’artistes',
       'Bow-windows, baies vitrées, mur-rideau',
       'Aluminium et vitrage sur mesure',
+    ],
+    faqs: [
+      {
+        question: 'Quelle différence entre verrière et véranda ?',
+        answer:
+          'La verrière est souvent une structure vitrée plus “atelier” (intérieur ou extérieur) pour laisser passer la lumière et structurer un espace. La véranda vise davantage à créer une pièce à vivre complète, avec une approche globale isolation / ventilation / occultation.',
+      },
+      {
+        question: 'Peut-on installer une verrière en extérieur ?',
+        answer:
+          'Oui, selon le projet : sas vitré, extension vitrée, façade type mur-rideau. Nous dimensionnons les profils et le vitrage en fonction des contraintes et de l’exposition.',
+      },
+      {
+        question: 'Proposez-vous des grandes baies vitrées ?',
+        answer:
+          'Oui : baies vitrées, bow-windows et solutions vitrées sur mesure, avec une attention particulière à la performance et à la pose.',
+      },
+      {
+        question: 'Quels vitrages recommandez-vous ?',
+        answer:
+          'Selon l’usage : isolation thermique, vitrage de sécurité, contrôle solaire, confort acoustique. Nous vous conseillons après étude (exposition, contraintes, budget).',
+      },
+      {
+        question: 'Intervenez-vous en copropriété ?',
+        answer:
+          'Oui, et nous vous aidons à cadrer le projet (contraintes d’aspect extérieur, accès, planning) pour faciliter les échanges.',
+      },
     ],
   },
   {
@@ -132,6 +190,33 @@ export const services: Service[] = [
       'Verre ou polycarbonate selon l’usage',
       'Solutions terrasse, véranda, piscine',
     ],
+    faqs: [
+      {
+        question: 'À quoi sert une toiture ouvrante / coulissante ?',
+        answer:
+          'À moduler l’aération et la lumière : vous profitez d’un effet dedans/dehors quand il fait beau, tout en gardant une protection quand la météo change.',
+      },
+      {
+        question: 'La toiture est-elle motorisée ?',
+        answer:
+          'Oui, la manœuvre est généralement électrique pour un usage simple et fiable au quotidien.',
+      },
+      {
+        question: 'Peut-on utiliser du verre ou du polycarbonate ?',
+        answer:
+          'Oui. Le choix dépend de l’usage (confort thermique, luminosité, budget, contraintes). Nous vous orientons selon votre projet.',
+      },
+      {
+        question: 'Est-ce compatible avec des stores / protections solaires ?',
+        answer:
+          'Oui, on peut intégrer des solutions de protection solaire et d’occultation pour améliorer le confort d’été.',
+      },
+      {
+        question: 'Intervenez-vous pour des terrasses et abris de piscine ?',
+        answer:
+          'Oui : toitures ouvrantes pour terrasses (ex. restaurant “à ciel ouvert”) et solutions ouvrantes pour abris de piscine.',
+      },
+    ],
   },
   {
     slug: 'stores-protection-solaire',
@@ -146,6 +231,33 @@ export const services: Service[] = [
       'Toiles techniques (ex. Soltis) adaptées à l’extérieur',
       'Options sécurité : capteur vent (anémomètre)',
     ],
+    faqs: [
+      {
+        question: 'Pourquoi un store extérieur plutôt qu’intérieur ?',
+        answer:
+          'Un store extérieur arrête la chaleur avant qu’elle ne traverse le vitrage : c’est la solution la plus efficace pour limiter la surchauffe.',
+      },
+      {
+        question: 'Le store est-il motorisé ?',
+        answer:
+          'Oui, avec commande radio selon configuration. L’objectif est un usage simple et une tension régulière de la toile.',
+      },
+      {
+        question: 'Les toiles sont-elles adaptées aux intempéries ?',
+        answer:
+          'Oui, nous utilisons des toiles techniques conçues pour l’extérieur, résistantes et adaptées aux contraintes de la protection solaire.',
+      },
+      {
+        question: 'Existe-t-il une sécurité en cas de vent ?',
+        answer:
+          'Oui, une option type anémomètre peut refermer automatiquement le store en cas de vent fort.',
+      },
+      {
+        question: 'Peut-on conserver une visibilité vers l’extérieur ?',
+        answer:
+          'Oui : les stores sont pensés pour protéger du soleil tout en gardant une lumière agréable et une visibilité selon la toile choisie.',
+      },
+    ],
   },
   {
     slug: 'fenetres-portes',
@@ -159,6 +271,33 @@ export const services: Service[] = [
       'Vitrages performants (isolation / sécurité)',
       'Pose soignée et réglages précis',
     ],
+    faqs: [
+      {
+        question: 'Aluminium ou PVC : que choisir ?',
+        answer:
+          'L’aluminium est apprécié pour ses lignes fines et ses grandes dimensions. Le PVC est souvent performant et compétitif. Le bon choix dépend de l’esthétique, des contraintes et du budget.',
+      },
+      {
+        question: 'Proposez-vous des baies coulissantes ?',
+        answer:
+          'Oui : coulissants aluminium ou PVC selon les configurations, avec vitrage performant et pose soignée.',
+      },
+      {
+        question: 'Quels gains peut-on attendre en rénovation ?',
+        answer:
+          'Amélioration du confort thermique et acoustique, réduction des courants d’air et meilleure étanchéité, selon l’existant et les produits choisis.',
+      },
+      {
+        question: 'Est-ce compatible avec des volets ?',
+        answer:
+          'Oui, nous proposons aussi l’installation de volets (roulants ou battants) adaptés aux menuiseries.',
+      },
+      {
+        question: 'Faites-vous la dépose / repose en rénovation ?',
+        answer:
+          'Oui, avec une attention particulière aux finitions et aux réglages pour garantir le bon fonctionnement.',
+      },
+    ],
   },
   {
     slug: 'volets-roulants',
@@ -171,6 +310,33 @@ export const services: Service[] = [
       'Roulants ou battants selon l’esthétique souhaitée',
       'Motorisation et automatisation possibles',
       'Occultation, confort et protection de l’habitat',
+    ],
+    faqs: [
+      {
+        question: 'Volets roulants ou battants : lequel choisir ?',
+        answer:
+          'Les roulants sont appréciés pour la simplicité d’usage et la motorisation. Les battants conviennent bien à certains styles de façade. Le choix dépend de l’esthétique, des contraintes et de l’usage.',
+      },
+      {
+        question: 'Peut-on motoriser des volets roulants ?',
+        answer:
+          'Oui, et l’automatisation apporte un vrai confort au quotidien (commande, scénarios, etc.).',
+      },
+      {
+        question: 'Les volets améliorent-ils l’isolation ?',
+        answer:
+          'Oui, ils participent à l’occultation, à la protection et au confort, notamment en été et en hiver, en complément des menuiseries.',
+      },
+      {
+        question: 'Intervenez-vous en rénovation ?',
+        answer:
+          'Oui : nous installons en rénovation ou en neuf selon la configuration existante.',
+      },
+      {
+        question: 'Proposez-vous l’installation avec fenêtres ?',
+        answer:
+          'Oui, nous pouvons coordonner un projet global (fenêtres + volets) pour assurer cohérence et finitions.',
+      },
     ],
   },
 ];
